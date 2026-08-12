@@ -1,8 +1,19 @@
 """
 Model client: cache-first, fail-soft, fact-bounded.
 
-Talks to a local Ollama server over plain HTTP so there is no extra dependency
-to install and nothing leaves the machine.
+Two backends, both over plain HTTP with no extra dependency:
+
+    "auto"  a local Ollama server. Nothing leaves the machine at all.
+    "groq"  Groq's hosted API. Fast enough that a full run takes seconds
+            rather than the 15-20 minutes a thin-and-light laptop needs
+            for local inference.
+
+Prompts never contain personal data under either backend - describe.py
+withholds sample values for any column classified as personal data, and every
+other prompt carries only column names, statistics and findings.
+tests/test_privacy.py asserts it against the real dataset. With Groq the honest
+claim is therefore "no personal data leaves the machine", which is narrower
+than "no data leaves the machine" and still a real control.
 
 The three behaviours that matter:
 
@@ -24,7 +35,9 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
+import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass, field
@@ -35,6 +48,12 @@ from governance import config
 
 OLLAMA_URL = "http://127.0.0.1:11434"
 DEFAULT_MODEL = "qwen2.5:7b-instruct-q4_K_M"
+
+# Groq is an OpenAI-compatible endpoint, so one small function covers it.
+# The key is read from the environment and never stored in the repo.
+GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
+GROQ_DEFAULT_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
+
 NUMBER = re.compile(r"\d+(?:\.\d+)?")
 
 
@@ -120,16 +139,27 @@ def build_prompt(role: str, facts: dict[str, Any], instruction: str,
 class Client:
     """
     backend:
-        "auto"   use Ollama if a server answers, otherwise stay disabled
+        "auto"   Ollama if a local server answers, otherwise disabled
+        "groq"   Groq's hosted API. Needs GROQ_API_KEY in the environment.
         "off"    never call anything; generate() always returns None
         "echo"   deterministic placeholder text, for tests only. The output is
                  visibly marked so it can never be mistaken for real prose.
+
+    On choosing "groq": no personal data reaches a prompt in the first place -
+    describe.py withholds sample values for any column classified as personal
+    data, and every other prompt carries only column names, statistics and
+    findings. Verified by tests/test_privacy.py. But this is a hosted API in
+    another jurisdiction, so the honest claim becomes "no personal data leaves
+    the machine" rather than "no data leaves the machine". Say the narrower one.
     """
 
-    def __init__(self, model: str = DEFAULT_MODEL, backend: str = "auto",
+    def __init__(self, model: str | None = None, backend: str = "auto",
                  cache_path=None, timeout: int = 180):
-        self.model = model
+        if backend == "groq":
+            model = model or GROQ_DEFAULT_MODEL
+        self.model = model or DEFAULT_MODEL
         self.backend = backend
+        self.api_key = os.environ.get("GROQ_API_KEY", "").strip()
         self.timeout = timeout
         self.cache_path = cache_path or (config.OUT_DIR / "llm_cache.json")
         self._cache = self._load_cache()
@@ -138,6 +168,8 @@ class Client:
         self.rejections = 0
         self.rejected_values: set[float] = set()
         self.rejected_terms: set[str] = set()
+        self.rate_limited = 0
+        self.last_error: str | None = None
         self._available: bool | None = None
 
     # ---------------------------------------------------------------- cache
@@ -164,6 +196,8 @@ class Client:
             return False
         if self.backend == "echo":
             return True
+        if self.backend == "groq":
+            return bool(self.api_key)
         if self._available is None:
             try:
                 with urllib.request.urlopen(f"{OLLAMA_URL}/api/tags", timeout=3):
@@ -172,9 +206,49 @@ class Client:
                 self._available = False
         return self._available
 
+    def _call_groq(self, prompt: str, attempts: int = 4) -> str | None:
+        """
+        Groq's free tier enforces requests-per-minute limits, and a full run
+        fires ~30 prompts back to back. A 429 is expected rather than
+        exceptional, so honour Retry-After and back off instead of failing.
+        """
+        payload = json.dumps({
+            "model": self.model,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": 0.2,
+            "max_tokens": 260,
+        }).encode()
+
+        for attempt in range(attempts):
+            request = urllib.request.Request(
+                GROQ_URL, data=payload,
+                headers={"Content-Type": "application/json",
+                         "Authorization": f"Bearer {self.api_key}"})
+            try:
+                with urllib.request.urlopen(request, timeout=self.timeout) as response:
+                    body = json.loads(response.read())
+                return body["choices"][0]["message"]["content"].strip()
+            except urllib.error.HTTPError as exc:
+                if exc.code == 429 and attempt < attempts - 1:
+                    wait = float(exc.headers.get("Retry-After") or 2 ** attempt)
+                    self.rate_limited += 1
+                    time.sleep(min(wait, 30))
+                    continue
+                self.last_error = f"HTTP {exc.code}: {exc.read()[:200].decode(errors='replace')}"
+                if exc.code in (401, 403):
+                    self._available = False      # bad key; stop trying
+                return None
+            except (urllib.error.URLError, TimeoutError, OSError,
+                    KeyError, json.JSONDecodeError) as exc:
+                self.last_error = f"{type(exc).__name__}: {exc}"
+                return None
+        return None
+
     def _call_model(self, prompt: str) -> str | None:
         if self.backend == "echo":
             return f"[echo backend - not model output] {prompt.splitlines()[0][:60]}"
+        if self.backend == "groq":
+            return self._call_groq(prompt)
 
         payload = json.dumps({
             "model": self.model,
@@ -238,4 +312,6 @@ class Client:
                 "available": self.available, "calls": self.calls,
                 "cache_hits": self.cache_hits,
                 "rejected_for_invented_numbers": self.rejections,
-                "invented_values_seen": sorted(self.rejected_values)[:10]}
+                "invented_values_seen": sorted(self.rejected_values)[:10],
+                "rate_limited": self.rate_limited,
+                "last_error": self.last_error}

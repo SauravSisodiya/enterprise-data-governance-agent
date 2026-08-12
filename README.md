@@ -59,9 +59,46 @@ build. Hence both.
 pip install -r requirements.txt
 ```
 
+Then pick a model backend. **Either is optional** — the pipeline produces a
+complete, scored, cited report with no model at all.
+
+**Local (nothing leaves the machine):**
+
 ```bash
 ollama pull qwen2.5:7b-instruct-q4_K_M
 ```
+
+**Hosted (much faster on a thin-and-light laptop):**
+
+```bash
+setx GROQ_API_KEY "your-key-here"
+```
+
+```bash
+python -m governance.run --dataset synthetic --llm --backend groq
+```
+
+Measured: a full cold run is ~2 minutes on a discrete GPU, an estimated 15–20
+minutes on a 15 W ultraportable, and seconds via Groq. Every run is cached
+either way, so a second run is ~3.5 seconds regardless.
+
+### What leaves the machine
+
+**No personal data reaches a prompt under either backend.** `describe.py`
+withholds sample values for any column classified as personal data; every other
+prompt carries only column names, statistics and findings.
+`tests/test_privacy.py` asserts this against the real values in the dataset —
+literal strings, not patterns that resemble them.
+
+So the honest claim depends on the backend:
+
+| Backend | Claim |
+|---|---|
+| `auto` (Ollama) | Nothing leaves the machine. |
+| `groq` | No **personal data** leaves the machine. Prompts do. |
+
+The second is narrower and still a real control. Say the narrower one when
+demonstrating with Groq.
 
 ## Usage
 

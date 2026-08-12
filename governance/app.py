@@ -41,16 +41,17 @@ def band_chip(band: str) -> str:
             f"border-radius:10px;font-size:0.78rem;font-weight:600'>{band}</span>")
 
 
-def run_pipeline(dataset: str, path: str | None, use_llm: bool, use_graph: bool):
+def run_pipeline(dataset: str, path: str | None, use_llm: bool,
+                 use_graph: bool, backend: str = "auto"):
     from governance import report as reporting
     from governance import run as runner
 
     df, name, _ = runner.load(dataset, path)
     if use_graph:
         from governance.graph.build import run_graph
-        ctx = run_graph(df, name, llm_enabled=use_llm)
+        ctx = run_graph(df, name, llm_enabled=use_llm, backend=backend)
     else:
-        ctx = runner.run(df, name, llm_enabled=use_llm)
+        ctx = runner.run(df, name, llm_enabled=use_llm, backend=backend)
     reporting.write(ctx)
     return ctx
 
@@ -75,12 +76,21 @@ with st.sidebar:
     path = ("data/demo/online_retail.csv" if dataset == "online_retail" else None)
     use_llm = st.checkbox("narrative layer", value=False,
                           help="Adds prose. Every number is produced without it.")
+    import os
+    backend = st.radio("model backend", ["auto", "groq"], horizontal=True,
+                       help="auto = local Ollama, nothing leaves the machine. "
+                            "groq = hosted API; no personal data is ever put in "
+                            "a prompt, but prompts do leave the machine.",
+                       disabled=not use_llm)
+    if use_llm and backend == "groq" and not os.environ.get("GROQ_API_KEY"):
+        st.caption(":orange[GROQ_API_KEY is not set - the narrative layer will "
+                   "be skipped and the report produced without it.]")
     use_graph = st.checkbox("via LangGraph", value=True,
                             help="Same results as the sequential runner.")
 
     if st.button("Run", type="primary", width="stretch"):
         with st.spinner("running..."):
-            run_pipeline(dataset, path, use_llm, use_graph)
+            run_pipeline(dataset, path, use_llm, use_graph, backend)
         st.rerun()
 
     st.divider()
