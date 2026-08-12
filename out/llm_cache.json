@@ -1,0 +1,248 @@
+{
+  "5b93ab7626e4deac3fa27c17": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:36:23+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds unique customer identifiers which are pseudonymous but still personally identifiable and thus subject to strict data handling regulations; a business user would care about it due to potential compliance risks and privacy concerns. TERM: Customer Pseudonym"
+  },
+  "6eebd392ba5fc26a5bf31aef": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:36:25+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds personal names which are direct identifiers of individuals and thus pose significant privacy risks if mishandled; a business user would care about this due to potential legal and reputational consequences. TERM: PersonalNameIdentifier"
+  },
+  "1e5fa10c357b0b088de75a91": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:36:27+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds personal last names and is a direct identifier, posing privacy risks if unmasked; hence, it must be handled with strict compliance to protect individual data. TERM: PersonalLastNameIdentifier"
+  },
+  "1113f9b67c622f676fc2c0b7": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:36:30+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds unique customer email addresses, which are direct identifiers and could compromise privacy if mishandled; a business user would care about this because it represents personal identifiable information (PII) that must be handled with strict compliance to avoid data breaches. TERM: CustomerEmailPII"
+  },
+  "557d4ee68cb5545bd73b466e": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:36:32+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds personal phone numbers which are essential for direct customer communication but pose significant privacy risks due to their unmasked storage; a business user must ensure proper handling and protection to comply with data regulations. TERM: Direct Contact Information"
+  },
+  "1ade1074bc8bda14a18bc2e1": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:36:35+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds personal street addresses, which are unmasked and could expose quasi-identifying information, posing privacy risks; hence a business user must handle it with strict confidentiality to avoid compliance issues. TERM: PersonalStreetAddress"
+  },
+  "4d5e5fe6eb52d5e422c79f48": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:36:37+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds city names for customer addresses, which is crucial for understanding customer location and potentially local market trends; a business user would care about it to tailor marketing strategies or analyze regional sales performance. TERM: CustomerLocationCity"
+  },
+  "cad0900f010434e6c85795ee": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:36:40+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds state abbreviations indicating where transactions or entities are located; a business user would care about it to ensure compliance with state-specific regulations and to analyze regional performance. TERM: StateAbbreviation"
+  },
+  "2814b49ae93c1c11038b0c39": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:36:42+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds U.S. postcodes which are quasi-identifiers and contain personal information, making them sensitive and subject to privacy regulations; hence a business user must handle this data carefully to avoid compliance issues. TERM: Quasi-Identifier Postcode"
+  },
+  "cf1817b664f4ddbd1865dfd7": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:36:45+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds the date when users signed up for the service, which is critical for compliance and understanding user engagement patterns; a business user would care about it to ensure data privacy regulations are met and to analyze user acquisition trends. TERM: SignupDate"
+  },
+  "3fac6b2607fb63b3ee09f89f": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:36:48+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds the date of the customer's last order, which is crucial for understanding customer purchase behavior and could be used to identify inactive customers; a business user would care about it to optimize marketing strategies and improve customer retention. TERM: Last Order Date"
+  },
+  "451b357e063a3b79009a940f": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:36:50+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds the lifetime value of customer accounts, which is crucial for assessing long-term profitability and guiding retention strategies; a business user would care about it to optimize resource allocation and enhance customer relationships. TERM: CustomerLifetimeValue"
+  },
+  "8e911ca8f679235c4e4c9d7c": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:36:53+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds customer reference identifiers, which contain personal information despite the misleading name, as 8 values match national ID formats; a business user would care about it due to potential compliance risks and data privacy concerns. TERM: CustomerRefID"
+  },
+  "fa314f440fd8bba970b8a670": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:36:56+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds free-form notes related to customer interactions, which could include requests, confirmations, and inquiries; a business user would care about it for understanding customer communications and managing issues, but must be aware of potential privacy concerns due to embedded emails; TERM: Customer Interaction Notes"
+  },
+  "8ced3a4e54da69af26de2f44": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:37:03+00:00",
+    "prompt_preview": "You are a data governance analyst explaining a quality failure to a commercial stakeholder who does not work with data day to day.\n\nThe findings below have alre",
+    "response": "The completeness score of the synthetic dataset stands at 92.5 out of 100, falling short of the required threshold of 95.0. This means that critical data fields such as phone numbers, street addresses, and last order dates are missing from more than expected records, potentially leading to incomplete customer profiles and affecting the accuracy of business analytics and decision-making processes."
+  },
+  "242da87fc45dc2cbebc28f78": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:37:06+00:00",
+    "prompt_preview": "You are a data governance analyst explaining a quality failure to a commercial stakeholder who does not work with data day to day.\n\nThe findings below have alre",
+    "response": "The uniqueness score for customer_email is 92.0 out of 100, falling short of the required threshold of 99.0. This means there are duplicate email addresses in the dataset, which could lead to sending multiple marketing emails to the same customer or incorrect analysis results if these duplicates are not accounted for commercially."
+  },
+  "c6e0fe09a061ef51fa7fca16": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:37:09+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "This issue represents a significant control gap as it exposes direct personal data (customer emails) without adequate protection. If left unfixed, there is a high risk of unauthorized access to sensitive information, which could lead to potential misuse and reputational damage for both the organization and its customers."
+  },
+  "2d4a246a47e59e17f6643a62": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:37:12+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "This issue represents a significant control gap as it exposes direct personal identifiers within the 'first_name' column. If left unfixed, there is a high risk of unauthorized access leading to potential misuse of sensitive data, which could result in reputational damage and legal liabilities despite the absence of visible processing details or policies."
+  },
+  "f229251d927346113bbc10fb": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:37:16+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "This issue represents a significant control gap as it exposes direct personal identifiers within the 'last_name' column. If left unfixed, there is a high risk of unauthorized access leading to potential misuse of sensitive information, which could result in reputational damage and legal liabilities despite no visible processing purpose or retention policy being present."
+  },
+  "7c5a9c28b3c11ffcf5d13d23": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:37:21+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "Storing direct identifier data such as phone numbers in clear text exposes sensitive information and creates a significant risk to privacy. If left unfixed, this could result in unauthorized access to personal data, leading to potential misuse and reputational damage for both the organization and its customers."
+  },
+  "6bf080e1cba06f29fc0f8081": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:37:32+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "Storing the quasi-identifier data 'postcode_us' in clear text exposes sensitive information that could be used to identify individuals, posing a significant risk as highlighted by the high risk score and regulation references. If left unfixed, this control gap could lead to unauthorized access or misuse of the data, potentially compromising individual privacy despite the absence of direct personal identifiers."
+  },
+  "735515b7eba3f15b76cd002b": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:37:38+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "Storing the 'street_address' column in clear text exposes sensitive quasi-identifier data, which could lead to potential privacy risks if accessed improperly. If left unfixed, this control gap increases the likelihood of unauthorized access or misuse of the data, potentially leading to breaches of GDPR regulations and exposing individuals to privacy infringements."
+  },
+  "0d1344d91bbb4508f71f23e3": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:37:42+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "The high percentage (35%) of missing values in the 'phone_no' field represents a significant control gap, as it could lead to incomplete data sets and potential inaccuracies in analysis. If left unfixed, this issue may result in exposure during data processing activities, particularly concerning individuals' personal data under GDPR Art. 5(1)(d), potentially impacting the lawful basis for processing if consent, purpose, or retention policies are not properly addressed."
+  },
+  "466202311b2d3797a89d1577": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:37:48+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "This control gap exposes sensitive personal data to potential unauthorized access and misuse. If left unfixed, there is a high risk of these embedded emails being exposed, which could lead to privacy breaches and legal repercussions under GDPR regulations."
+  },
+  "8ea01478799dfac6cb62542b": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:37:52+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "This issue represents a control gap as it exposes potential risks related to personal data handling. If left unfixed, there is a high risk of unauthorized access or misuse of the personal data contained within the 'cust_ref' column, which could lead to data breaches and compromise user privacy, even though the exact nature of the data is currently unclear."
+  },
+  "0141f2372b3ea1bd8e19b8bd": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:37:55+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "The presence of 32% missing values in the 'street_address' field represents a control gap that could expose the dataset to risks related to data integrity and accuracy. If left unfixed, this issue may lead to incomplete or inaccurate records, potentially impacting the quality of analyses and reports generated from the dataset."
+  },
+  "5773b3d29f7c5c1e240909e4": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:38:01+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "This issue represents a control gap as it exposes potential privacy risks by allowing duplicate customer_email records to persist in the dataset. If left unfixed, these duplicates could lead to unnecessary data processing and storage, potentially increasing the risk of unauthorized access or misuse of personal information, which could be problematic under GDPR Art. 5(1)(d)."
+  },
+  "695269ca1ff95f83043adc90": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T08:38:06+00:00",
+    "prompt_preview": "You are writing the opening paragraph of a data governance report for an executive audience.\n\nThe findings below have already been computed and are final. Do no",
+    "response": "The synthetic dataset comprises 500 rows and 14 columns with an overall quality score of 94.75, indicating a high level of data integrity. However, two dimensions\u2014completeness and uniqueness\u2014are below threshold levels, which are known gaps due to unassessed accuracy and timeliness. With 15 total findings, all marked as unscored, there is currently no human approval required for this dataset."
+  },
+  "ca57e3d0afceca3fa70c90fc": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T09:27:42+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds unique invoice identifiers, which are crucial for tracking individual financial transactions; hence a business user would care about it to ensure accurate accounting and compliance. TERM: Invoice ID"
+  },
+  "d9329212cf93b88b52c88856": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T09:27:44+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds unique identifiers for products sold in the store, with a high variety of distinct values indicating extensive product offerings; a business user would care about it to understand product diversity and sales performance. TERM: ProductIdentifier"
+  },
+  "93403a3c932cbcdaf45b0fa7": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T09:27:47+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds product descriptions for lighting decorations, which a business user would care about due to its high distinct percent indicating diverse products and non-zero empty values suggesting potential data quality issues. TERM: ProductDescription"
+  },
+  "5d8ee753d3f748ddcb2e7438": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T09:27:49+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds the quantity of items sold per transaction, which is crucial for revenue analysis and inventory management; a business user would care about it to optimize stock levels and pricing strategies. TERM: SalesQuantity"
+  },
+  "8e66128a021827dd6910934d": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T09:27:52+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds invoice dates and times, which is crucial for financial reporting and analysis as it impacts revenue recognition and cash flow management; a business user would care about it to ensure accurate financial statements and timely payments. TERM: Invoice Timestamp"
+  },
+  "60ed429a981e351cd6f8997d": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T09:27:54+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds product prices, which is critical for financial analysis and reporting; a business user would care about it to ensure accurate revenue forecasting and pricing strategy optimization. TERM: ProductPrice"
+  },
+  "5ff6fa91af1de6f79873ea23": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T09:27:57+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds unique identifiers for customers, which is stored in the clear and contains pseudonymous identifier data, posing significant privacy risks; a business user should be aware of this to ensure proper handling and protection of personal information. TERM: Customer Unique Identifier"
+  },
+  "c1a3faa489655a0bbae6f434": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T09:27:59+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column likely holds country names for customer or user records, which is crucial for compliance and data localization requirements; a business user would care about it to ensure proper handling and processing of international data. TERM: Geographical Jurisdiction"
+  },
+  "6bea9ef80c10717d4532e261": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T09:28:02+00:00",
+    "prompt_preview": "You are a data governance analyst explaining a quality failure to a commercial stakeholder who does not work with data day to day.\n\nThe findings below have alre",
+    "response": "The dataset online_retail fails to meet the uniqueness requirement with a score of 97.44 out of 100, specifically due to issues in the Invoice and StockCode columns. This means that there are duplicate records in these fields, which could lead to inaccurate analysis and potentially incorrect business decisions if not addressed."
+  },
+  "9b5d7a16fe3a371d0012c043": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T09:28:05+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "This issue represents a significant control gap as it exposes sensitive pseudonymous identifier data (customer_id) without adequate protection. If left unfixed, this could lead to unauthorized access and misuse of customer information, potentially resulting in reputational damage and legal risks for the organization."
+  },
+  "691fd1be94a7d87c0c4272cb": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T09:28:08+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "This issue represents a control gap where duplicate records could lead to inaccurate analysis and potential data inconsistencies. If left unfixed, these 128 repeated rows with the same Invoice + StockCode could result in skewed financial reports or incorrect inventory management decisions, exposing the system to operational risks without ensuring data integrity."
+  },
+  "bffc05452d79a0f5bade882b": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T09:28:13+00:00",
+    "prompt_preview": "You are writing the opening paragraph of a data governance report for an executive audience.\n\nThe findings below have already been computed and are final. Do no",
+    "response": "The online_retail dataset comprises 5000 rows and 8 columns with an overall quality score of 98.72 out of 100, indicating a high level of data integrity. However, one dimension\u2014uniqueness\u2014is below the threshold, highlighting potential issues with duplicate entries. Notably, validity, consistency, accuracy, and timeliness were not assessed due to known limitations in our current evaluation process. Despite this gap, we have identified only two findings that require further attention, both of which are unscored. Currently, there are no findings awaiting human approval, suggesting a robust automated review system is in place."
+  },
+  "55854c9d187688e3b96c3376": {
+    "model": "qwen2.5:7b-instruct-q4_K_M",
+    "generated_at": "2026-08-12T09:56:12+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "[echo backend - not model output] You are a data governance lead writing the justification on "
+  }
+}

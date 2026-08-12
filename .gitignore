@@ -1,0 +1,40 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+node_modules/
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# Local Claude Code settings - personal to one machine, not project config.
+.claude/settings.local.json
+
+# Generated artefacts. All reproducible:
+#   python -m governance.synthetic       -> data/synthetic/*
+#   python -m governance.demo_data       -> data/demo/*
+#   python -m governance.policy.build    -> policy/index/*
+#   python -m governance.run             -> out/*
+out/
+data/synthetic/*.csv
+data/synthetic/*.json
+data/demo/*.csv
+policy/index/
+
+# ...with one deliberate exception.
+#
+# The language-model cache IS committed. Generating it takes ~2 minutes on a
+# machine with a discrete GPU and 15-20 on a thin-and-light CPU, but reading it
+# takes 3.5 seconds anywhere. Committing 18 KB means anyone who clones this can
+# see the narrative output immediately, and a demo never waits on a model.
+!out/
+!out/llm_cache.json
+out/*
+!out/llm_cache.json
+
+# Local snapshot copies. A git tag does this job better:
+#   git tag mvp && git push origin mvp
+MVP/
+MVP.zip
+*.zip
