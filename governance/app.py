@@ -192,16 +192,33 @@ with st.sidebar:
                           help="Adds prose. Every number is produced without it.")
     with st.expander("backend & orchestration"):
         import os
-        backend = st.radio("model backend", ["auto", "groq", "grok"],
+        from governance.narrative.client import Client as _Client
+
+        # Default to a working hosted backend instead of always defaulting
+        # to "auto" (which needs a local Ollama server most machines don't
+        # have running). This only determines the FIRST render of a fresh
+        # session - once the radio has a key, Streamlit preserves whatever
+        # the user actually selects afterward, including switching back to
+        # auto on purpose. A full app restart clears session state, so this
+        # re-runs and re-picks a default each time the app is restarted -
+        # that's the scenario this is meant to help with.
+        _key_available = {b: _Client(backend=b).available for b in ("groq", "grok")}
+        _default_backend = ("groq" if _key_available["groq"]
+                            else "grok" if _key_available["grok"] else "auto")
+        _backend_options = ["auto", "groq", "grok"]
+
+        backend = st.radio("model backend", _backend_options,
+                           index=_backend_options.index(_default_backend),
                            horizontal=True,
                            help="auto = local Ollama, nothing leaves the machine. "
                                 "groq = Groq's hosted API. grok = xAI's hosted "
                                 "Grok API. groq and grok are different providers - "
                                 "for either, no personal data is ever put in a "
                                 "prompt, but prompts do leave the machine.",
-                           disabled=not use_llm)
+                           disabled=not use_llm,
+                           key="model_backend")
         _backend_key_env = {"groq": "GROQ_API_KEY", "grok": "XAI_API_KEY"}.get(backend)
-        if use_llm and _backend_key_env:
+        if use_llm and _backend_key_env and not _key_available[backend]:
             # Check availability the SAME way the pipeline actually will
             # (governance.narrative.client.Client, which checks Streamlit
             # secrets before falling back to the environment) rather than a
@@ -209,12 +226,10 @@ with st.sidebar:
             # disagree (e.g. a key set only in .streamlit/secrets.toml would
             # pass Client's check but fail a plain os.environ.get()), which
             # would make this warning actively misleading.
-            from governance.narrative.client import Client as _Client
-            if not _Client(backend=backend).available:
-                st.caption(f":orange[{_backend_key_env} was not found (checked "
-                           "Streamlit secrets and the environment) - the "
-                           "narrative layer will be skipped and the report "
-                           "produced without it.]")
+            st.caption(f":orange[{_backend_key_env} was not found (checked "
+                       "Streamlit secrets and the environment) - the "
+                       "narrative layer will be skipped and the report "
+                       "produced without it.]")
         use_graph = st.checkbox("via LangGraph", value=True,
                                 help="Same results as the sequential runner.")
 

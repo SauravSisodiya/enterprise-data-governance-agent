@@ -244,5 +244,179 @@
     "generated_at": "2026-08-12T09:56:12+00:00",
     "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
     "response": "[echo backend - not model output] You are a data governance lead writing the justification on "
+  },
+  "bfe408dbf7a279efa3fafafa": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:33+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds pseudonymous customer identifier data and a business user would care about it because it contains sensitive information that requires careful handling due to its potential to be linked to personally identifiable information, as indicated by the compliance findings that it holds unmasked pii.\nTERM: Customer Identifier"
+  },
+  "0ec9c51b69963fe6d7e042f1": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:34+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds individuals' first names, which is a direct identifier of personal data, and business users would care about it because it contains sensitive information that requires proper handling and protection, as indicated by the compliance findings that it holds unmasked personally identifiable information.\nTERM: Personal Identifier"
+  },
+  "a7a7014b38f1f7470a4e7c69": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:34+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds individuals' last names, which is sensitive personal data, and a business user would care about it because it contains direct identifier information that is stored unmasked, posing a compliance concern.\nTERM: Surname"
+  },
+  "65c1b341ff1f636861b2ee1d": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:35+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds email addresses of customers, which a business user would care about because it contains personally identifiable information that is stored in the clear, posing a potential compliance risk.\nTERM: Customer Email Address"
+  },
+  "68da660170ac1901bf62891d": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:35+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds personal phone numbers and a business user would care about it because it contains sensitive personally identifiable information that is stored unmasked, posing a potential compliance risk.\nTERM: Personal Contact Information"
+  },
+  "0053a374f59c24b6ecc725d3": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:36+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds personal address data, which is a concern because it is stored unmasked and contains quasi-identifier information, making it a potential compliance risk that a business user would care about due to the sensitivity of the data it holds.\nTERM: Street Address"
+  },
+  "c7dd59dfbff584f14009df7d": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:38+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds the names of cities, which would be of interest to business users who need to analyze data by geographic location, and the presence of distinct city names in 3.6 percent of the rows suggests it could be a useful field for segmentation or filtering.\nTERM: City Name"
+  },
+  "2ddd067e18b9458a59df064a": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:38+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds US state abbreviations, which a business user would care about for geographic analysis, customer segmentation, or regulatory compliance, given its categorical nature and presence of distinct state codes like IL, TX, and NY.\nTERM: Geographic Location"
+  },
+  "214f2e63b14747719e019c21": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:39+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds United States postal codes, which is sensitive personal data, and a business user would care about it because it can be used to identify individuals and is stored in an unmasked and potentially vulnerable state, making it a compliance concern.\nTERM: Postal Code"
+  },
+  "462e688909eff9655fcfca30": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:39+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds the date when a user signed up, which a business user would care about because it can be used to track user engagement and retention over time, and the fact that it has a distinct percent of 67.4 suggests that it may be useful for analyzing user behavior.\nTERM: Signup Date"
+  },
+  "2d01bd55f4d64b5ad9b5aef0": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:40+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds the date of a customer's last order, which a business user would care about because it can help track customer purchasing patterns and identify inactive customers, with 38.0 percent of the values being empty, indicating that many customers may not have made a purchase.\nTERM: Last Order Date"
+  },
+  "5fdf0b6c9d84ee2f459e5452": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:41+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds the lifetime value of customers, which is a crucial metric for business users as it helps them understand the total value a customer is expected to bring to the business over their lifetime, and with 91.8 distinct percent of values, it provides a wide range of insights, such as the example values 1594.11, 2435.84, and 2217.41.\nTERM: Customer Lifetime Value"
+  },
+  "900475cfb5b39c4f04199e5c": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:41+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds customer reference numbers that may also include personal identification information, which a business user would care about because it could be used to track or verify customer interactions, and the presence of personal data has significant compliance implications, as indicated by the finding that 8 values match the national id format.\nTERM: Customer Reference"
+  },
+  "71d3c2b7d98fe9436d2709e4": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:42+00:00",
+    "prompt_preview": "You are a data steward writing one-line descriptions for an enterprise data catalog.\n\nThe findings below have already been computed and are final. Do not\nrecomp",
+    "response": "This column most likely holds customer service notes, and a business user would care about it because it contains information about customer interactions, such as issues with payments or refunds, which can be useful for understanding customer behavior and improving service quality.\nTERM: Customer Service Notes"
+  },
+  "140a3a9c434399e9263aea09": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:42+00:00",
+    "prompt_preview": "You are a data governance analyst explaining a quality failure to a commercial stakeholder who does not work with data day to day.\n\nThe findings below have alre",
+    "response": "The dataset is missing some expected data, which has resulted in a completeness score of 92.5, falling short of the required threshold of 95.0. This is due to issues with specific columns, including phone_no, street_address, and last_order_date. This quality failure means that the business may not have a full picture of its customers, which can impact its ability to effectively target and serve them, ultimately affecting commercial performance."
+  },
+  "59ca628429e3c18cdca11576": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:43+00:00",
+    "prompt_preview": "You are a data governance analyst explaining a quality failure to a commercial stakeholder who does not work with data day to day.\n\nThe findings below have alre",
+    "response": "The data quality issue we've identified relates to the uniqueness of records, specifically with the customer_email column, which is not meeting the required threshold. This means that some real-world records are appearing more than once, which could lead to inaccurate analysis and decision-making. As a result, the business may be at risk of targeting the same customer multiple times or failing to get a complete view of their customer base, which could have negative commercial implications."
+  },
+  "aacc5840f5c684c388082cee": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:43+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "The storage of customer_email in the clear presents a critical control gap, as it exposes sensitive personal data to potential unauthorized access. If left unfixed, this exposure could have severe consequences, particularly in light of the General Data Protection Regulation, which emphasizes the importance of protecting direct identifier data. Failing to address this issue would leave the organization vulnerable to potential risks associated with the handling of sensitive information, affecting all 500 rows in the dataset."
+  },
+  "813eaedd72e85bbb4ebe21ed": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:44+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "The fact that the first_name column holds direct identifier data and is stored in the clear represents a critical control gap, as it exposes sensitive personal information. If left unfixed, this exposure could have severe consequences, particularly in light of the GDPR regulation references, which emphasize the importance of protecting personal data. The presence of this control gap puts the organization at risk, highlighting the need for prompt attention to mitigate potential harm to the 500 individuals whose data is affected."
+  },
+  "da57561b4d80bab0c735116b": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:45+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "The fact that the last_name column holds direct identifier data and is stored in the clear represents a critical control gap, as it exposes sensitive personal information. If left unfixed, this exposure could have severe consequences, particularly in light of the GDPR regulation references, which emphasize the importance of protecting personal data. The presence of this control gap puts the organization at risk, highlighting the need for prompt attention to mitigate potential harm to the 500 individuals whose data is affected."
+  },
+  "f1b3013b82c18b55c4c97a91": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:45+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "The storage of phone numbers in the clear in the phone_no column represents a critical control gap, as it exposes sensitive personal data to potential unauthorized access. If left unfixed, this exposure could have severe consequences, particularly given the sensitive nature of the data and the fact that the entire dataset of 500 rows is affected. This control gap poses a significant risk, as highlighted by the critical risk band and risk score of 100, and could undermine the overall security and integrity of the data."
+  },
+  "e1f58a3e21a1357acb4280cb": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:46+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "The storage of customer_id in the clear presents a control gap, as it exposes sensitive pseudonymous identifier data to potential unauthorized access. If left unfixed, this exposure could lead to significant risks, particularly given the high risk score of 67, which could have serious consequences for the organization. The presence of this exposure, affecting all 500 rows in the dataset, underscores the need for prompt attention to mitigate the potential harm."
+  },
+  "2a72396285689c5c7adeb386": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:47+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "The storage of postcode data in the clear creates a control gap, exposing sensitive information that could be used to identify individuals. If left unfixed, this exposure could lead to a significant risk of re-identification, potentially compromising the privacy of 500 individuals. This control gap poses a high risk, with a risk score of 67, and is a concern under GDPR regulations, including GDPR Art. 4(1), GDPR Recital 26, and GDPR Art. 32(1)(a)."
+  },
+  "8723344d511cc4e0654283f5": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:47+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "The storage of street_address in the clear presents a control gap, as it exposes sensitive quasi identifier data that could potentially be used to identify individuals. If left unfixed, this exposure could lead to a significant risk of compromising the privacy of the 500 individuals represented in the dataset. This control gap is particularly concerning given the high risk score of 67, which indicates a substantial potential for harm if the data is mishandled or falls into the wrong hands."
+  },
+  "fb2da8b676374519105bdee9": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:48+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "The high percentage of missing values in the phone_no column represents a control gap, as it indicates uncertainty about the quality and reliability of the data. If left unfixed, this could lead to inaccurate analysis or decision-making, potentially affecting the overall quality of the dataset. This exposure, with a risk score of 60, poses a significant concern, particularly in light of the GDPR Art. 5(1)(d) regulation reference, and could undermine the integrity of the data processing pipeline."
+  },
+  "3931916db785520b3aef09cc": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:49+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "This issue matters because the presence of personal data in a column not clearly indicated as such creates a control gap, potentially leading to unintended exposure of sensitive information. If left unfixed, this could result in a loss of trust and potential harm to the individuals whose data is being processed. The high risk score of 51 underscores the importance of addressing this exposure to prevent any potential harm."
+  },
+  "50889bbf67610b1c06dff7b6": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:49+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "The absence of street_address values for 32.0% of the records creates a control gap, as it hinders our ability to ensure data quality and accuracy. If left unfixed, this could lead to difficulties in maintaining reliable and consistent data, potentially affecting our overall data governance and management. This exposure, with a risk score of 40, poses a medium risk, and addressing it is necessary to mitigate potential issues related to GDPR Art. 5(1)(d)."
+  },
+  "4029ca9bc00546d577656b5c": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:50+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "The presence of duplicate records with the same customer_email represents a control gap, as it indicates that the current data processing procedures are not adequately ensuring data quality. If left unfixed, this control gap could lead to inaccurate analysis or unintended consequences, potentially undermining the reliability of the dataset. The associated medium risk score of 32 suggests that this issue warrants attention to prevent potential exposure, particularly in light of relevant regulations such as GDPR Art. 5(1)(d)."
+  },
+  "c361edc25251d11eaa6bcc19": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:51+00:00",
+    "prompt_preview": "You are a data governance lead writing the justification on a remediation ticket for an engineering team.\n\nThe findings below have already been computed and are",
+    "response": "The presence of 25 poorly formed email addresses in the customer_email column represents a control gap, as it indicates that the current validation processes are not sufficient to ensure data quality. If left unfixed, this could lead to issues with communication and customer engagement, potentially resulting in missed opportunities or reputational damage. By not addressing this issue, the organization would be exposed to the risk of inaccurate or undeliverable communications, which could have a negative impact on business operations and customer relationships, with a risk score of 21."
+  },
+  "9898541da5aec5dbe62db6cb": {
+    "model": "llama-3.3-70b-versatile",
+    "generated_at": "2026-08-13T10:46:52+00:00",
+    "prompt_preview": "You are writing the opening paragraph of a data governance report for an executive audience.\n\nThe findings below have already been computed and are final. Do no",
+    "response": "Our dataset, which is synthetic in nature, comprises 500 rows and 14 columns, and has achieved an overall quality score of 94.75 out of 100. While this score indicates a high level of quality, our assessment has identified dimensions that fall below the threshold, specifically completeness and uniqueness. It is important to note that our evaluation did not assess accuracy and timeliness, as these dimensions were not measured, and this is a known gap in our analysis rather than a result. The assessment has yielded a total of 14 findings, all of which are currently unscored. Overall, our dataset appears to be of high quality, but further review is needed to fully understand its strengths and weaknesses."
   }
 }

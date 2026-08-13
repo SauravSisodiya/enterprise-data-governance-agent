@@ -71,8 +71,7 @@ def run_graph(df, name: str, llm_enabled: bool = False,
               backend: str = "auto") -> GovernanceContext:
     from governance.state import new_context
 
-    state = new_context(name, df, llm_enabled=llm_enabled)
-    state["llm_backend"] = backend
+    state = new_context(name, df, llm_enabled=llm_enabled, llm_backend=backend)
     return build_graph().invoke(state)
 
 

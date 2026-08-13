@@ -77,6 +77,15 @@ DEFAULT_MODEL = "qwen2.5:7b-instruct-q4_K_M"
 
 # Groq is an OpenAI-compatible endpoint, so one small function covers it.
 # The key is read from the environment and never stored in the repo.
+# Sent on every hosted-API request below. Without an explicit User-Agent,
+# urllib sends the literal string "Python-urllib/3.x", which is one of the
+# most commonly blocked signatures by Cloudflare's bot-detection - both Groq
+# and xAI sit behind Cloudflare, and a blocked request comes back as
+# "HTTP 403: error code: 1010" (Cloudflare's own code for "banned based on
+# your browser's signature"), not as an API-level auth or model error. This
+# header alone is usually sufficient to get past that specific block.
+USER_AGENT = "governance-agent-narrative-client/1.0"
+
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_DEFAULT_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
 
@@ -295,7 +304,8 @@ class Client:
             request = urllib.request.Request(
                 GROQ_URL, data=payload,
                 headers={"Content-Type": "application/json",
-                         "Authorization": f"Bearer {self.api_key}"})
+                         "Authorization": f"Bearer {self.api_key}",
+                         "User-Agent": USER_AGENT})
             try:
                 with urllib.request.urlopen(request, timeout=self.timeout) as response:
                     body = json.loads(response.read())
@@ -335,7 +345,8 @@ class Client:
             request = urllib.request.Request(
                 GROK_URL, data=payload,
                 headers={"Content-Type": "application/json",
-                         "Authorization": f"Bearer {self.api_key}"})
+                         "Authorization": f"Bearer {self.api_key}",
+                         "User-Agent": USER_AGENT})
             try:
                 with urllib.request.urlopen(request, timeout=self.timeout) as response:
                     body = json.loads(response.read())

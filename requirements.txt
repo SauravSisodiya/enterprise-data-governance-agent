@@ -17,4 +17,4 @@ langgraph>=0.2
 streamlit>=1.30
 
 # local model client
-ollama>=0.3
+#ollama>=0.3

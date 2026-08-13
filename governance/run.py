@@ -71,8 +71,7 @@ def _apply(state: GovernanceContext, update: dict) -> None:
 
 def run(df: pd.DataFrame, name: str, profile: config.DatasetProfile | None = None,
         llm_enabled: bool = False, backend: str = "auto") -> GovernanceContext:
-    state = new_context(name, df, llm_enabled=llm_enabled)
-    state["llm_backend"] = backend
+    state = new_context(name, df, llm_enabled=llm_enabled, llm_backend=backend)
     for node in nodes.SEQUENCE:
         _apply(state, node(state))
     return state

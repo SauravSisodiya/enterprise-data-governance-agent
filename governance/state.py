@@ -267,10 +267,19 @@ class GovernanceContext(TypedDict, total=False):
     executive_summary: str | None
 
     llm_enabled: bool
+    # Declared as a real field (not just assigned post-construction) because
+    # LangGraph's StateGraph only tracks keys present in this schema as
+    # channels - an undeclared key set directly on the dict before .invoke()
+    # is silently dropped when the graph runs, even though it survives fine
+    # in the sequential runner (which never goes through .invoke() at all).
+    # That mismatch previously made the LangGraph path always fall back to
+    # "auto" regardless of what backend was actually requested.
+    llm_backend: str
 
 
 def new_context(dataset_name: str, df: pd.DataFrame,
-                llm_enabled: bool = False) -> GovernanceContext:
+                llm_enabled: bool = False,
+                llm_backend: str = "auto") -> GovernanceContext:
     return GovernanceContext(
         dataset_name=dataset_name,
         dataframe=df,
@@ -284,4 +293,5 @@ def new_context(dataset_name: str, df: pd.DataFrame,
         recommendations=[],
         executive_summary=None,
         llm_enabled=llm_enabled,
+        llm_backend=llm_backend,
     )

@@ -187,9 +187,18 @@ def narrative_node(state: GovernanceContext) -> dict:
 
     client = Client(backend=state.get("llm_backend", "auto"))
     if not client.available:
+        if client.backend in ("groq", "grok"):
+            key_env = {"groq": "GROQ_API_KEY", "xai": "XAI_API_KEY",
+                      "grok": "XAI_API_KEY"}.get(client.backend, "API key")
+            reason = (f"no {key_env} found (checked Streamlit secrets and "
+                     "the environment) - deterministic report is unaffected")
+        else:
+            reason = (f"backend '{client.backend}': local Ollama server not "
+                     "reachable at http://127.0.0.1:11434 - deterministic "
+                     "report is unaffected")
         return {"audit_log": [report.audit(
             state, "narrative_layer", "skipped",
-            reason="no model reachable; deterministic report is unaffected")]}
+            backend=client.backend, reason=reason)]}
 
     findings = state.get("findings", [])
     # Descriptions are generated with the findings in hand so the catalog
