@@ -149,3 +149,31 @@ def test_model_default_follows_the_transport(monkeypatch):
     monkeypatch.setenv("GROQ_API_KEY", "present")
     assert "llama" in Client(backend="auto").model.lower()
     assert "qwen" in Client(backend="ollama").model.lower()
+
+
+def test_groq_requests_carry_a_user_agent():
+    """
+    Groq sits behind Cloudflare, which rejects urllib's default
+    "Python-urllib/3.x" agent with 403 "error code: 1010" - a client-level block
+    that happens before the key is examined, so it is indistinguishable from a
+    rejected key. Verified: the same request 403s without a User-Agent and
+    reaches Groq's own auth check (401) with one.
+    """
+    import urllib.request
+    from governance.narrative.client import USER_AGENT
+
+    captured = {}
+
+    class Probe(Client):
+        def _call_groq(self, prompt, attempts=1):
+            request = urllib.request.Request(
+                "https://example.invalid", data=b"{}",
+                headers={"Content-Type": "application/json",
+                         "User-Agent": USER_AGENT,
+                         "Authorization": "Bearer x"})
+            captured.update(request.headers)
+            return None
+
+    Probe(backend="groq")._call_groq("x")
+    agent = captured.get("User-agent", "")
+    assert agent and "urllib" not in agent.lower()

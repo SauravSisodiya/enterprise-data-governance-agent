@@ -21,8 +21,8 @@ import time
 import urllib.error
 import urllib.request
 
-from governance.narrative.client import (GROQ_URL, OLLAMA_URL, Client,
-                                         build_prompt)
+from governance.narrative.client import (GROQ_URL, OLLAMA_URL, USER_AGENT,
+                                         Client, build_prompt)
 
 MODELS_URL = "https://api.groq.com/openai/v1/models"
 
@@ -33,10 +33,27 @@ def _tick(ok: bool) -> str:
 
 def list_groq_models(api_key: str) -> list[str]:
     request = urllib.request.Request(
-        MODELS_URL, headers={"Authorization": f"Bearer {api_key}"})
+        MODELS_URL, headers={"Authorization": f"Bearer {api_key}",
+                             "User-Agent": USER_AGENT})
     with urllib.request.urlopen(request, timeout=30) as response:
         body = json.loads(response.read())
     return sorted(m["id"] for m in body.get("data", []))
+
+
+def _explain_http(code: int, body: str) -> str:
+    if "1010" in body or "error code:" in body:
+        return ("Cloudflare blocked the client, not the key - the API never saw "
+                "it.\n      This is what a missing User-Agent header looks like.")
+    if code in (401,):
+        return ("The key was rejected. Check it at "
+                "https://console.groq.com/keys")
+    if code == 403:
+        return ("Authenticated but not permitted. If the body mentions "
+                "Cloudflare\n      it is a client block; otherwise the key "
+                "lacks access to this endpoint.")
+    if code == 429:
+        return "Rate limited. Wait a moment and re-run."
+    return "Unexpected response."
 
 
 def main() -> None:
@@ -62,28 +79,32 @@ def main() -> None:
     if client.transport == "groq":
         print(f"\n{_tick(bool(client.api_key))}API key present "
               f"({len(client.api_key)} chars)")
+        models: list[str] = []
         try:
             models = list_groq_models(client.api_key)
+            print(f"{_tick(True)}Reached the API - {len(models)} models available")
         except urllib.error.HTTPError as exc:
-            print(f"{_tick(False)}Could not list models: HTTP {exc.code}")
-            if exc.code in (401, 403):
-                print("\n      The key was rejected. Check it at "
-                      "https://console.groq.com/keys\n")
-            return
+            body = exc.read()[:200].decode(errors="replace").strip()
+            print(f"{_tick(False)}Could not list models: HTTP {exc.code}  {body}")
+            print(f"      {_explain_http(exc.code, body)}")
         except Exception as exc:
-            print(f"{_tick(False)}Could not reach Groq: {type(exc).__name__}: {exc}")
-            return
+            print(f"{_tick(False)}Could not list models: "
+                  f"{type(exc).__name__}: {exc}")
 
-        print(f"{_tick(True)}Reached the API - {len(models)} models available")
-        known = client.model in models
-        print(f"{_tick(known)}Model '{client.model}' "
-              f"{'is available' if known else 'is NOT in the list'}")
-        if not known:
-            print("\n      Available ids:")
-            for m in models[:15]:
-                print(f"        {m}")
-            print(f"\n      Set one with:  setx GROQ_MODEL \"{models[0]}\"\n")
-            return
+        # Carry on regardless. Listing models is a convenience; chat completions
+        # is the endpoint the pipeline actually uses, and the two can fail
+        # independently. Giving up here once hid a working key behind a
+        # client-level block on a different endpoint.
+        if models:
+            known = client.model in models
+            print(f"{_tick(known)}Model '{client.model}' "
+                  f"{'is available' if known else 'is NOT in the list'}")
+            if not known:
+                print("\n      Available ids:")
+                for m in models[:15]:
+                    print(f"        {m}")
+                print(f"\n      Put this in your .env:  GROQ_MODEL={models[0]}\n")
+                return
 
     # -------------------------------------------------------------- ollama
     if client.transport == "ollama":

@@ -54,6 +54,12 @@ DEFAULT_MODEL = "qwen2.5:7b-instruct-q4_K_M"
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_DEFAULT_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
 
+# Groq sits behind Cloudflare, which rejects urllib's default
+# "Python-urllib/3.x" agent with a 403 and "error code: 1010" - a client-level
+# block that happens before the API ever sees the key, so it looks exactly like
+# a rejected key and isn't one. Any ordinary agent string gets through.
+USER_AGENT = "enterprise-data-governance-agent/0.1"
+
 NUMBER = re.compile(r"\d+(?:\.\d+)?")
 
 
@@ -262,6 +268,7 @@ class Client:
             request = urllib.request.Request(
                 GROQ_URL, data=payload,
                 headers={"Content-Type": "application/json",
+                         "User-Agent": USER_AGENT,
                          "Authorization": f"Bearer {self.api_key}"})
             try:
                 with urllib.request.urlopen(request, timeout=self.timeout) as response:
