@@ -140,7 +140,7 @@ def main() -> None:
     ap.add_argument("--path", help="path to a CSV, for datasets without a profile")
     ap.add_argument("--llm", action="store_true",
                     help="enable the narrative layer (default: off)")
-    ap.add_argument("--backend", default="auto", choices=["auto", "groq", "off", "echo"],
+    ap.add_argument("--backend", default="auto", choices=["auto", "groq", "ollama", "off", "echo"],
                     help="model backend; 'echo' emits marked placeholder text "
                          "for testing without a model")
     ap.add_argument("--graph", action="store_true",

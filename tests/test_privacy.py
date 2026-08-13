@@ -110,3 +110,42 @@ def test_api_key_is_never_written_to_the_cache(tmp_path, monkeypatch):
 
     written = (tmp_path / "cache.json").read_text(encoding="utf-8")
     assert "test-key-should-not-be-persisted" not in written
+
+
+def test_auto_prefers_groq_when_a_key_is_present(monkeypatch):
+    """
+    Local inference is impractical on the target hardware, so 'auto' reaches
+    for the hosted API first and falls back to local only when there is no key.
+    """
+    monkeypatch.setenv("GROQ_API_KEY", "present")
+    assert Client(backend="auto").transport == "groq"
+
+
+def test_auto_falls_back_to_local_without_a_key(monkeypatch):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    client = Client(backend="auto")
+    monkeypatch.setattr(client, "_ollama_responds", lambda: True)
+    assert client.transport == "ollama"
+
+
+def test_auto_is_off_when_neither_is_available(monkeypatch):
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    client = Client(backend="auto")
+    monkeypatch.setattr(client, "_ollama_responds", lambda: False)
+    assert client.transport == "off"
+    assert client.available is False
+
+
+def test_local_can_be_forced_over_an_available_key(monkeypatch):
+    """
+    The stronger claim - nothing leaves the machine - has to stay reachable
+    even when a Groq key happens to be configured.
+    """
+    monkeypatch.setenv("GROQ_API_KEY", "present")
+    assert Client(backend="ollama").transport == "ollama"
+
+
+def test_model_default_follows_the_transport(monkeypatch):
+    monkeypatch.setenv("GROQ_API_KEY", "present")
+    assert "llama" in Client(backend="auto").model.lower()
+    assert "qwen" in Client(backend="ollama").model.lower()

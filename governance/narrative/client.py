@@ -139,11 +139,22 @@ def build_prompt(role: str, facts: dict[str, Any], instruction: str,
 class Client:
     """
     backend:
-        "auto"   Ollama if a local server answers, otherwise disabled
+        "auto"   resolve at runtime, preferring the hosted API:
+                     GROQ_API_KEY set          -> "groq"
+                     else a local server answers -> "ollama"
+                     else                        -> "off"
         "groq"   Groq's hosted API. Needs GROQ_API_KEY in the environment.
+        "ollama" force local inference even when a Groq key is present.
         "off"    never call anything; generate() always returns None
         "echo"   deterministic placeholder text, for tests only. The output is
                  visibly marked so it can never be mistaken for real prose.
+
+    Groq is preferred because local inference is impractical on the hardware
+    this has to run on: measured 10.8 tok/s CPU-only on a desktop-class chip,
+    so roughly 3-5 tok/s on a 15 W ultraportable, putting a cold run at 15-20
+    minutes. The same run through Groq takes seconds. Ollama remains available
+    and is the only option that keeps the stronger "nothing leaves the machine"
+    claim, so it is one flag away rather than deleted.
 
     On choosing "groq": no personal data reaches a prompt in the first place -
     describe.py withholds sample values for any column classified as personal
@@ -155,11 +166,10 @@ class Client:
 
     def __init__(self, model: str | None = None, backend: str = "auto",
                  cache_path=None, timeout: int = 180):
-        if backend == "groq":
-            model = model or GROQ_DEFAULT_MODEL
-        self.model = model or DEFAULT_MODEL
-        self.backend = backend
+        self.requested = backend
         self.api_key = os.environ.get("GROQ_API_KEY", "").strip()
+        self._explicit_model = model
+        self._transport: str | None = None
         self.timeout = timeout
         self.cache_path = cache_path or (config.OUT_DIR / "llm_cache.json")
         self._cache = self._load_cache()
@@ -190,14 +200,7 @@ class Client:
         return hashlib.sha256(f"{self.model}\n{prompt}".encode()).hexdigest()[:24]
 
     # ------------------------------------------------------------ transport
-    @property
-    def available(self) -> bool:
-        if self.backend == "off":
-            return False
-        if self.backend == "echo":
-            return True
-        if self.backend == "groq":
-            return bool(self.api_key)
+    def _ollama_responds(self) -> bool:
         if self._available is None:
             try:
                 with urllib.request.urlopen(f"{OLLAMA_URL}/api/tags", timeout=3):
@@ -205,6 +208,42 @@ class Client:
             except Exception:
                 self._available = False
         return self._available
+
+    @property
+    def transport(self) -> str:
+        """What will actually be called, once 'auto' has been resolved."""
+        if self._transport is None:
+            if self.requested != "auto":
+                self._transport = self.requested
+            elif self.api_key:
+                self._transport = "groq"
+            elif self._ollama_responds():
+                self._transport = "ollama"
+            else:
+                self._transport = "off"
+        return self._transport
+
+    @property
+    def model(self) -> str:
+        if self._explicit_model:
+            return self._explicit_model
+        return GROQ_DEFAULT_MODEL if self.transport == "groq" else DEFAULT_MODEL
+
+    @property
+    def backend(self) -> str:
+        """Kept for reporting; `transport` is what actually runs."""
+        return self.transport
+
+    @property
+    def available(self) -> bool:
+        transport = self.transport
+        if transport == "off":
+            return False
+        if transport == "echo":
+            return True
+        if transport == "groq":
+            return bool(self.api_key)
+        return self._ollama_responds()
 
     def _call_groq(self, prompt: str, attempts: int = 4) -> str | None:
         """
@@ -245,10 +284,12 @@ class Client:
         return None
 
     def _call_model(self, prompt: str) -> str | None:
-        if self.backend == "echo":
+        if self.transport == "echo":
             return f"[echo backend - not model output] {prompt.splitlines()[0][:60]}"
-        if self.backend == "groq":
+        if self.transport == "groq":
             return self._call_groq(prompt)
+        if self.transport == "off":
+            return None
 
         payload = json.dumps({
             "model": self.model,

@@ -62,25 +62,49 @@ pip install -r requirements.txt
 Then pick a model backend. **Either is optional** — the pipeline produces a
 complete, scored, cited report with no model at all.
 
-**Local (nothing leaves the machine):**
+**Hosted (default, and the practical choice on a thin-and-light laptop):**
 
 ```bash
-ollama pull qwen2.5:7b-instruct-q4_K_M
+setx GROQ_API_KEY "your-key-from-console.groq.com"
 ```
 
-**Hosted (much faster on a thin-and-light laptop):**
+Reopen the terminal, then verify before relying on it:
 
 ```bash
-setx GROQ_API_KEY "your-key-here"
+python -m governance.narrative.check
+```
+
+That resolves the backend, lists the models your account can actually reach,
+makes one real call, and proves the guardrails fire. A model backend fails
+silently from inside the pipeline — the narrative layer degrades quietly by
+design, so a bad key looks exactly like "no model configured". Correct for a
+run, useless for setting one up.
+
+**Local (keeps the stronger privacy claim):**
+
+```bash
+ollama pull qwen2.5:7b-instruct-q4_K_M && ollama serve
 ```
 
 ```bash
-python -m governance.run --dataset synthetic --llm --backend groq
+python -m governance.run --dataset synthetic --llm --backend ollama
 ```
 
-Measured: a full cold run is ~2 minutes on a discrete GPU, an estimated 15–20
-minutes on a 15 W ultraportable, and seconds via Groq. Every run is cached
-either way, so a second run is ~3.5 seconds regardless.
+`--backend auto` (the default) resolves to Groq when `GROQ_API_KEY` is set,
+falls back to a local server if one answers, and to no prose at all otherwise.
+
+### Why hosted is the default
+
+Measured on the same model and prompt:
+
+| | tok/s | full cold run |
+|---|---|---|
+| RTX 4070 laptop GPU | 32.3 | ~2 min |
+| CPU only, 8 P-cores at 55 W | 10.8 | ~6 min |
+| 15 W ultraportable (estimated 3–5) | — | 15–20 min |
+| Groq | — | seconds |
+
+Every run is cached regardless, so a second run is ~3.5s on any machine.
 
 ### What leaves the machine
 
@@ -94,114 +118,11 @@ So the honest claim depends on the backend:
 
 | Backend | Claim |
 |---|---|
-| `auto` (Ollama) | Nothing leaves the machine. |
+| `ollama` | Nothing leaves the machine. |
 | `groq` | No **personal data** leaves the machine. Prompts do. |
 
 The second is narrower and still a real control. Say the narrower one when
 demonstrating with Groq.
-
-## Usage
-
-Generate the evaluation dataset and its answer key:
-
-```bash
-python -m governance.synthetic
-```
-
-Run the pipeline (no language model required):
-
-```bash
-python -m governance.run --dataset synthetic
-```
-
-Measure it against the answer key:
-
-```bash
-python -m governance.evaluate
-```
-
-Build the policy index (once, after dropping in the regulation text):
-
-```bash
-python -m governance.policy.build --query "customer email address"
-```
-
-Run through LangGraph instead (identical results — same node functions):
-
-```bash
-python -m governance.run --dataset synthetic --graph
-```
-
-Open the dashboard:
-
-```bash
-streamlit run governance/app.py
-```
-
-Run on any other CSV:
-
-```bash
-python -m governance.run --path data/demo/online_retail.csv
-```
-
-```bash
-python -m pytest tests/ -q
-```
-
-## Orchestration
-
-```
-                 metadata
-                 ╱        ╲       both consume the catalog, neither
-           quality      compliance  consumes the other — so they fan out
-                 ╲        ╱
-                   join            barrier: both branches complete
-                     │
-       risk → cite → gate → recommend ⟶ narrative (conditional)
-```
-
-The graph does not reimplement the pipeline. Both it and the sequential runner
-call the same functions in `governance/graph/nodes.py`, so parity is structural
-rather than something that has to be re-verified. `tests/test_graph.py` asserts
-it anyway, and also proves the claim that drives the state design: remove the
-`operator.add` reducer from `issues` and LangGraph raises `InvalidUpdateError`
-rather than guess how to merge two concurrent writes.
-
-State carries two collections for that reason:
-
-| key | role |
-|---|---|
-| `issues` | the **inbox** — quality and compliance both append; needs the reducer |
-| `findings` | the **settled record** — written by risk scoring, then replaced as citation and gating apply |
-
-They cannot share a key: an append reducer would double the list every time a
-later node touched it.
-
-## The dashboard
-
-Five tabs, one per deliverable, plus the review queue. The dashboard is not a
-sixth deliverable — it is the surface the other five are delivered through.
-
-It reads `out/governance_report.json` and **never calls a model to render a
-page**; all prose was generated and cached when the report was produced. A
-dashboard that generates text on page load is one that stalls in front of an
-audience.
-
-The review queue holds every finding scoring `REVIEW_THRESHOLD` or above.
-Approve and Reject stay disabled until a reviewer is named — a decision without
-a named actor is not auditable. Decisions persist in
-`out/review_decisions.json`, keyed on the finding id (a stable hash), so a
-decision made today still attaches to the same finding after the next run.
-Every decision is appended to `out/audit_log.jsonl`.
-
-## The assistant
-
-Scoped question-answering over the findings, not a general chatbot. Retrieval
-runs over `governance_report.json` only — no access to the dataset, the
-regulation corpus, or anything outside. Every answer names the finding ids it
-drew on, and those ids come from the retrieval step rather than from the model,
-so an answer cannot cite a finding that does not exist. Ask it something the
-report cannot answer and it says so.
 
 ## The policy corpus
 
