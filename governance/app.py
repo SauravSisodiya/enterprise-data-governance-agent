@@ -29,6 +29,7 @@ if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
 import json
+import re
 
 import pandas as pd
 import streamlit as st
@@ -40,6 +41,26 @@ BAND_COLOUR = {"Critical": "#C21B66", "High": "#E0502A",
 
 st.set_page_config(page_title="Enterprise Data Governance Agent",
                    page_icon="🛡", layout="wide")
+
+# Restrained visual polish only - no new information is conveyed by any of
+# this, so if it ever looks wrong it's safe to delete entirely without
+# touching behaviour. Colours/spacing only; the theme (font, base palette)
+# lives in .streamlit/config.toml instead, since that's the mechanism
+# Streamlit actually supports for theming - this CSS handles the handful of
+# things config.toml can't reach (metric card borders, tab spacing).
+st.markdown("""
+<style>
+[data-testid="stMetric"] {
+    background: var(--secondary-background-color, #F4F6F8);
+    border: 1px solid rgba(15, 76, 92, 0.12);
+    border-radius: 10px;
+    padding: 12px 16px 8px;
+}
+.stTabs [data-baseweb="tab-list"] { gap: 2px; }
+.stTabs [data-baseweb="tab"] { padding: 8px 18px; }
+[data-testid="stSidebar"] hr { margin: 0.6rem 0; }
+</style>
+""", unsafe_allow_html=True)
 
 
 # --------------------------------------------------------------------------
@@ -54,6 +75,24 @@ def band_chip(band: str) -> str:
     colour = BAND_COLOUR.get(band, "#5F5F70")
     return (f"<span style='background:{colour};color:#fff;padding:2px 9px;"
             f"border-radius:10px;font-size:0.78rem;font-weight:600'>{band}</span>")
+
+
+def _safe_dataset_name(filename: str) -> str:
+    """
+    Turn an uploaded filename into a name usable as both a dataset id and a
+    filename on disk: lowercase, alphanumeric plus underscore/hyphen only, no
+    extension. "Q3 Customers (final).csv" -> "q3_customers_final".
+    """
+    stem = Path(filename).stem
+    safe = re.sub(r"[^a-zA-Z0-9_-]+", "_", stem).strip("_-").lower()
+    return safe or "uploaded_dataset"
+
+
+def _uploaded_dataset_names() -> list[str]:
+    """Names of datasets previously uploaded through the sidebar and saved to config.UPLOAD_DIR - persists across sessions/restarts."""
+    if not config.UPLOAD_DIR.exists():
+        return []
+    return sorted(p.stem for p in config.UPLOAD_DIR.glob("*.csv"))
 
 
 def run_pipeline(dataset: str, path: str | None, use_llm: bool,
@@ -74,51 +113,110 @@ def run_pipeline(dataset: str, path: str | None, use_llm: bool,
 # --------------------------------------------------------------------------
 # sidebar
 # --------------------------------------------------------------------------
+# --------------------------------------------------------------------------
+# sidebar
+# --------------------------------------------------------------------------
 with st.sidebar:
-    st.markdown("### Enterprise Data Governance Agent")
+    st.markdown("### 🛡 Enterprise Data Governance Agent")
+    st.caption("Automated quality, compliance and governance reporting.")
     report = load_report()
 
     if report:
-        st.caption(f"**{report['dataset']}** · {report['summary']['rows']:,} rows "
-                   f"× {report['summary']['columns']} columns")
-        st.caption(f"generated {report['generated_at']}")
-        st.caption("language model: "
-                   f"{'on' if report.get('llm_enabled') else 'off'}")
+        with st.container(border=True):
+            st.caption("**current report**")
+            st.caption(f"{report['dataset']} · {report['summary']['rows']:,} rows "
+                       f"× {report['summary']['columns']} columns")
+            st.caption(f"generated {report['generated_at']}")
+            st.caption("language model: "
+                       f"{'on' if report.get('llm_enabled') else 'off'}")
 
     st.divider()
-    st.markdown("**Run the pipeline**")
-    dataset = st.selectbox("dataset", ["synthetic", "online_retail"])
-    path = ("data/demo/online_retail.csv" if dataset == "online_retail" else None)
+
+    # ---- 1. dataset ------------------------------------------------------
+    st.markdown("**1. Dataset**")
+    uploaded_names = _uploaded_dataset_names()
+    dataset_options = ["synthetic", "online_retail"] + uploaded_names
+
+    default_dataset = st.session_state.get("selected_dataset", "synthetic")
+    if default_dataset not in dataset_options:
+        default_dataset = "synthetic"
+    dataset = st.selectbox("dataset", dataset_options,
+                           index=dataset_options.index(default_dataset),
+                           label_visibility="collapsed")
+
+    with st.expander("＋ upload a new CSV dataset"):
+        new_file = st.file_uploader("CSV file", type=["csv"],
+                                    label_visibility="collapsed")
+        if new_file is not None:
+            try:
+                preview = pd.read_csv(new_file)
+            except Exception as e:
+                st.error(f"Could not read this as CSV: {e}")
+            else:
+                st.caption(f"{len(preview):,} rows × {len(preview.columns)} columns")
+                st.dataframe(preview.head(5), width="stretch", hide_index=True)
+                safe_name = _safe_dataset_name(new_file.name)
+                if safe_name in ("synthetic", "online_retail"):
+                    st.warning(f"'{safe_name}' is a reserved dataset name - "
+                              "rename the file before uploading.")
+                elif st.button("Save and select this dataset", width="stretch"):
+                    config.UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+                    (config.UPLOAD_DIR / f"{safe_name}.csv").write_bytes(
+                        new_file.getvalue())
+                    st.session_state["selected_dataset"] = safe_name
+                    st.rerun()
+
+    path = ("data/demo/online_retail.csv" if dataset == "online_retail"
+            else str(config.UPLOAD_DIR / f"{dataset}.csv") if dataset in uploaded_names
+            else None)
+
+    st.divider()
+
+    # ---- 2. model settings ------------------------------------------------
+    st.markdown("**2. Model settings**")
     use_llm = st.checkbox("narrative layer", value=False,
                           help="Adds prose. Every number is produced without it.")
-    import os
-    backend = st.radio("model backend", ["auto", "groq", "grok"], horizontal=True,
-                       help="auto = local Ollama, nothing leaves the machine. "
-                            "groq = Groq's hosted API. grok = xAI's hosted "
-                            "Grok API. groq and grok are different providers - "
-                            "for either, no personal data is ever put in a "
-                            "prompt, but prompts do leave the machine.",
-                       disabled=not use_llm)
-    _backend_key_env = {"groq": "GROQ_API_KEY", "grok": "XAI_API_KEY"}.get(backend)
-    if use_llm and _backend_key_env and not os.environ.get(_backend_key_env):
-        st.caption(f":orange[{_backend_key_env} is not set - the narrative "
-                   "layer will be skipped and the report produced without it.]")
-    use_graph = st.checkbox("via LangGraph", value=True,
-                            help="Same results as the sequential runner.")
+    with st.expander("backend & orchestration"):
+        import os
+        backend = st.radio("model backend", ["auto", "groq", "grok"],
+                           horizontal=True,
+                           help="auto = local Ollama, nothing leaves the machine. "
+                                "groq = Groq's hosted API. grok = xAI's hosted "
+                                "Grok API. groq and grok are different providers - "
+                                "for either, no personal data is ever put in a "
+                                "prompt, but prompts do leave the machine.",
+                           disabled=not use_llm)
+        _backend_key_env = {"groq": "GROQ_API_KEY", "grok": "XAI_API_KEY"}.get(backend)
+        if use_llm and _backend_key_env and not os.environ.get(_backend_key_env):
+            st.caption(f":orange[{_backend_key_env} is not set - the narrative "
+                       "layer will be skipped and the report produced without it.]")
+        use_graph = st.checkbox("via LangGraph", value=True,
+                                help="Same results as the sequential runner.")
 
-    if st.button("Run", type="primary", width="stretch"):
+    st.divider()
+
+    if st.button("▶ Run governance scan", type="primary", width="stretch"):
         with st.spinner("running..."):
             run_pipeline(dataset, path, use_llm, use_graph, backend)
         st.rerun()
 
     st.divider()
+
+    # ---- 3. reviewer -------------------------------------------------------
+    st.markdown("**3. Reviewer**")
     reviewer = st.text_input("Reviewer name", value="",
-                             placeholder="required to approve or reject")
+                             placeholder="required to approve or reject",
+                             label_visibility="collapsed")
     st.caption("Every decision is written to the audit log with this name.")
 
 if report is None:
     st.title("No report yet")
-    st.write("Run the pipeline from the sidebar, or:")
+    st.markdown(
+        "1. Pick a dataset in the sidebar, or upload your own CSV.\n"
+        "2. Optionally turn on the narrative layer and choose a model backend.\n"
+        "3. Click **▶ Run governance scan**.\n\n"
+        "Or run it from the command line instead:"
+    )
     st.code("python -m governance.run --dataset synthetic", language="bash")
     st.stop()
 
@@ -128,7 +226,19 @@ summary = report["summary"]
 # --------------------------------------------------------------------------
 # header
 # --------------------------------------------------------------------------
-st.markdown(f"## {report['dataset']}")
+st.markdown(f"""
+<div style="padding:16px 22px;border-radius:12px;
+            background:var(--secondary-background-color, #F4F6F8);
+            border:1px solid rgba(15,76,92,.14);margin-bottom:18px;">
+  <div style="font-size:1.6rem;font-weight:700;color:#0F4C5C;">
+    🛡 {report['dataset']}
+  </div>
+  <div style="color:#5F5F70;font-size:.85rem;margin-top:2px;">
+    generated {report['generated_at']} · language model
+    {'on' if report.get('llm_enabled') else 'off'}
+  </div>
+</div>
+""", unsafe_allow_html=True)
 counts = review.summary(report.get("findings", []))
 cols = st.columns(5)
 cols[0].metric("Quality score", f"{summary.get('overall_quality_score', 0):.1f}")
@@ -137,8 +247,8 @@ cols[2].metric("Awaiting review", counts.get("pending_review", 0))
 cols[3].metric("Approved", counts.get(review.APPROVED, 0))
 cols[4].metric("Rejected", counts.get(review.REJECTED, 0))
 
-tabs = st.tabs(["Catalog", "Quality", "Compliance", "Assistant", "Report",
-                "Review queue"])
+tabs = st.tabs(["📋 Catalog", "✅ Quality", "🔏 Compliance", "💬 Assistant",
+                "📄 Report", "🕓 Review queue"])
 
 # --------------------------------------------------------------------------
 # 1. Data Catalog

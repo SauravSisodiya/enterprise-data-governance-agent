@@ -27,6 +27,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 SYNTHETIC_DIR = DATA_DIR / "synthetic"
 DEMO_DIR = DATA_DIR / "demo"
+UPLOAD_DIR = DATA_DIR / "uploads"     # datasets uploaded through the dashboard
 POLICY_DIR = ROOT / "policy"
 OUT_DIR = ROOT / "out"
 

@@ -1,0 +1,11 @@
+# Visual theme only - no behavioural settings here. Colours are picked to sit
+# alongside the risk-band palette already used in governance/app.py
+# (BAND_COLOUR: critical #C21B66, high #E0502A, medium #E88B00, low #008F82)
+# rather than clashing with it.
+[theme]
+base = "light"
+primaryColor = "#0F4C5C"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F4F6F8"
+textColor = "#1A1A2E"
+font = "sans serif"
