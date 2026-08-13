@@ -100,6 +100,29 @@ def test_groq_backend_is_disabled_without_a_key(monkeypatch):
     assert client.available is False
 
 
+def test_grok_backend_is_disabled_without_a_key(monkeypatch):
+    """Same guarantee as test_groq_backend_is_disabled_without_a_key, for the
+    separate xAI/Grok backend."""
+    monkeypatch.delenv("XAI_API_KEY", raising=False)
+    client = Client(backend="grok")
+    assert client.available is False
+
+
+def test_grok_and_groq_keys_are_not_cross_read(monkeypatch):
+    """
+    A key set for one hosted provider must never make the OTHER provider
+    appear available. These are different companies; conflating them would be
+    a silent, confusing failure mode.
+    """
+    monkeypatch.setenv("GROQ_API_KEY", "groq-key-only")
+    monkeypatch.delenv("XAI_API_KEY", raising=False)
+    assert Client(backend="grok").available is False
+
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    monkeypatch.setenv("XAI_API_KEY", "xai-key-only")
+    assert Client(backend="groq").available is False
+
+
 def test_api_key_is_never_written_to_the_cache(tmp_path, monkeypatch):
     monkeypatch.setenv("GROQ_API_KEY", "test-key-should-not-be-persisted")
     client = Client(backend="echo", cache_path=tmp_path / "cache.json")

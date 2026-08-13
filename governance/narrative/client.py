@@ -1,19 +1,34 @@
 """
 Model client: cache-first, fail-soft, fact-bounded.
 
-Two backends, both over plain HTTP with no extra dependency:
+Three backends, all over plain HTTP with no extra dependency:
 
     "auto"  a local Ollama server. Nothing leaves the machine at all.
-    "groq"  Groq's hosted API. Fast enough that a full run takes seconds
-            rather than the 15-20 minutes a thin-and-light laptop needs
-            for local inference.
+    "groq"  Groq's hosted API (fast LPU inference of open models such as
+            Llama). Fast enough that a full run takes seconds rather than
+            the 15-20 minutes a thin-and-light laptop needs for local
+            inference.
+    "grok"  xAI's hosted Grok API. Not the same company or model family as
+            Groq above - the names are easy to conflate, so this file spells
+            each one out in full wherever it matters. OpenAI-compatible
+            endpoint, same request/response shape as the Groq call below,
+            just a different URL, key and model name.
 
-Prompts never contain personal data under either backend - describe.py
+Prompts never contain personal data under any backend - describe.py
 withholds sample values for any column classified as personal data, and every
 other prompt carries only column names, statistics and findings.
-tests/test_privacy.py asserts it against the real dataset. With Groq the honest
-claim is therefore "no personal data leaves the machine", which is narrower
-than "no data leaves the machine" and still a real control.
+tests/test_privacy.py asserts it against the real dataset. With Groq or Grok
+the honest claim is therefore "no personal data leaves the machine", which is
+narrower than "no data leaves the machine" and still a real control.
+
+Key resolution: for either hosted backend, the API key is resolved by
+_resolve_secret() below, which checks Streamlit secrets first (so a key
+pasted into the Streamlit Community Cloud Secrets panel works) and falls
+back to a plain OS environment variable (which python-dotenv loads from a
+local .env file, if one exists, for local development). This means the
+SAME code path works whether you're running `streamlit run governance/app.py`
+locally with a .env file, running the CLI with `export XAI_API_KEY=...`, or
+deployed on Streamlit Cloud with secrets configured in its dashboard.
 
 The three behaviours that matter:
 
@@ -46,6 +61,17 @@ from typing import Any
 
 from governance import config
 
+try:
+    # Optional: loads a local .env file into os.environ, for local
+    # development. Not required in production/Streamlit Cloud, where secrets
+    # come from st.secrets instead (see _resolve_secret() below) - so a
+    # missing python-dotenv install (or missing .env file) is not an error.
+    from dotenv import load_dotenv
+
+    load_dotenv()
+except Exception:
+    pass
+
 OLLAMA_URL = "http://127.0.0.1:11434"
 DEFAULT_MODEL = "qwen2.5:7b-instruct-q4_K_M"
 
@@ -54,7 +80,42 @@ DEFAULT_MODEL = "qwen2.5:7b-instruct-q4_K_M"
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 GROQ_DEFAULT_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
 
+# Grok (xAI) - also OpenAI-compatible, same shape as Groq above, different
+# provider entirely. Key read from XAI_API_KEY, never stored in the repo.
+# xAI ships new model versions periodically; check https://docs.x.ai/docs/models
+# if this default no longer matches the current model lineup.
+GROK_URL = "https://api.x.ai/v1/chat/completions"
+GROK_DEFAULT_MODEL = os.environ.get("GROK_MODEL", "grok-4.5")
+
 NUMBER = re.compile(r"\d+(?:\.\d+)?")
+
+
+def _resolve_secret(env_name: str) -> str:
+    """
+    Resolve a named secret (e.g. "XAI_API_KEY"), checking two places in order:
+
+    1. Streamlit secrets (.streamlit/secrets.toml locally, or the Secrets
+       panel on Streamlit Community Cloud). Streamlit Cloud does NOT expose
+       secrets as OS environment variables, so this has to be checked
+       explicitly - os.environ.get() alone would never see a Cloud secret.
+    2. A plain OS environment variable, e.g. `export XAI_API_KEY=...`, or one
+       loaded from a local .env file by load_dotenv() above.
+
+    Wrapped in try/except because st.secrets raises if no secrets.toml exists
+    at all (the normal case for the CLI runner, and for local development
+    without Streamlit secrets configured) - that's expected, not an error,
+    so it silently falls through to the environment variable.
+    """
+    try:
+        import streamlit as st
+
+        value = st.secrets.get(env_name)
+        if value:
+            return str(value).strip()
+    except Exception:
+        pass
+
+    return os.environ.get(env_name, "").strip()
 
 
 @dataclass
@@ -141,25 +202,36 @@ class Client:
     backend:
         "auto"   Ollama if a local server answers, otherwise disabled
         "groq"   Groq's hosted API. Needs GROQ_API_KEY in the environment.
+        "grok"   xAI's hosted Grok API. Needs XAI_API_KEY in the environment.
+                 Not the same provider as "groq" above - double check which
+                 one you mean before setting this.
         "off"    never call anything; generate() always returns None
         "echo"   deterministic placeholder text, for tests only. The output is
                  visibly marked so it can never be mistaken for real prose.
 
-    On choosing "groq": no personal data reaches a prompt in the first place -
-    describe.py withholds sample values for any column classified as personal
-    data, and every other prompt carries only column names, statistics and
-    findings. Verified by tests/test_privacy.py. But this is a hosted API in
-    another jurisdiction, so the honest claim becomes "no personal data leaves
-    the machine" rather than "no data leaves the machine". Say the narrower one.
+    On choosing "groq" or "grok": no personal data reaches a prompt in the
+    first place - describe.py withholds sample values for any column
+    classified as personal data, and every other prompt carries only column
+    names, statistics and findings. Verified by tests/test_privacy.py. But
+    both are hosted APIs in another jurisdiction, so the honest claim becomes
+    "no personal data leaves the machine" rather than "no data leaves the
+    machine". Say the narrower one.
     """
 
     def __init__(self, model: str | None = None, backend: str = "auto",
                  cache_path=None, timeout: int = 180):
         if backend == "groq":
             model = model or GROQ_DEFAULT_MODEL
+        elif backend == "grok":
+            model = model or GROK_DEFAULT_MODEL
         self.model = model or DEFAULT_MODEL
         self.backend = backend
-        self.api_key = os.environ.get("GROQ_API_KEY", "").strip()
+        # Each hosted backend reads its own key. Only the key for the
+        # SELECTED backend is ever read, so an unrelated key sitting in the
+        # environment (e.g. GROQ_API_KEY set while backend="grok") is never
+        # picked up by accident.
+        key_env = {"groq": "GROQ_API_KEY", "grok": "XAI_API_KEY"}.get(backend)
+        self.api_key = _resolve_secret(key_env) if key_env else ""
         self.timeout = timeout
         self.cache_path = cache_path or (config.OUT_DIR / "llm_cache.json")
         self._cache = self._load_cache()
@@ -196,7 +268,7 @@ class Client:
             return False
         if self.backend == "echo":
             return True
-        if self.backend == "groq":
+        if self.backend in ("groq", "grok"):
             return bool(self.api_key)
         if self._available is None:
             try:
@@ -244,11 +316,53 @@ class Client:
                 return None
         return None
 
+    def _call_grok(self, prompt: str, attempts: int = 4) -> str | None:
+        """
+        Same shape as _call_groq above - xAI's endpoint is OpenAI-compatible
+        too - kept as a separate method rather than parameterising _call_groq
+        so the two providers stay easy to tell apart at a glance, and so a
+        future divergence (different retry policy, different payload shape)
+        doesn't force one method to know about both.
+        """
+        payload = json.dumps({
+            "model": self.model,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": 0.2,
+            "max_tokens": 260,
+        }).encode()
+
+        for attempt in range(attempts):
+            request = urllib.request.Request(
+                GROK_URL, data=payload,
+                headers={"Content-Type": "application/json",
+                         "Authorization": f"Bearer {self.api_key}"})
+            try:
+                with urllib.request.urlopen(request, timeout=self.timeout) as response:
+                    body = json.loads(response.read())
+                return body["choices"][0]["message"]["content"].strip()
+            except urllib.error.HTTPError as exc:
+                if exc.code == 429 and attempt < attempts - 1:
+                    wait = float(exc.headers.get("Retry-After") or 2 ** attempt)
+                    self.rate_limited += 1
+                    time.sleep(min(wait, 30))
+                    continue
+                self.last_error = f"HTTP {exc.code}: {exc.read()[:200].decode(errors='replace')}"
+                if exc.code in (401, 403):
+                    self._available = False      # bad key; stop trying
+                return None
+            except (urllib.error.URLError, TimeoutError, OSError,
+                    KeyError, json.JSONDecodeError) as exc:
+                self.last_error = f"{type(exc).__name__}: {exc}"
+                return None
+        return None
+
     def _call_model(self, prompt: str) -> str | None:
         if self.backend == "echo":
             return f"[echo backend - not model output] {prompt.splitlines()[0][:60]}"
         if self.backend == "groq":
             return self._call_groq(prompt)
+        if self.backend == "grok":
+            return self._call_grok(prompt)
 
         payload = json.dumps({
             "model": self.model,

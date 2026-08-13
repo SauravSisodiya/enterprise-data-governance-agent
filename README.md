@@ -68,7 +68,7 @@ complete, scored, cited report with no model at all.
 ollama pull qwen2.5:7b-instruct-q4_K_M
 ```
 
-**Hosted (much faster on a thin-and-light laptop):**
+**Hosted, via Groq (much faster on a thin-and-light laptop):**
 
 ```bash
 setx GROQ_API_KEY "your-key-here"
@@ -78,13 +78,71 @@ setx GROQ_API_KEY "your-key-here"
 python -m governance.run --dataset synthetic --llm --backend groq
 ```
 
+**Hosted, via xAI's Grok (a different provider from Groq above — check you
+want this one and not the one above):**
+
+Get a key at https://console.x.ai/, then:
+
+```bash
+setx XAI_API_KEY "your-key-here"
+```
+
+macOS/Linux, either backend — use `export` instead of `setx`:
+
+```bash
+export GROQ_API_KEY="your-key-here"
+# or
+export XAI_API_KEY="your-key-here"
+```
+
+```bash
+python -m governance.run --dataset synthetic --llm --backend grok
+```
+
+Optionally override the model with `GROQ_MODEL` / `GROK_MODEL` env vars —
+defaults are `llama-3.3-70b-versatile` (Groq) and `grok-4.5` (Grok); check
+each provider's current model list before assuming a default stays accurate.
+
+**Instead of exporting keys into your shell every time**, copy
+`.env.example` to `.env` and fill it in — `python-dotenv` loads it
+automatically (see `governance/narrative/client.py`), so `export`/`setx`
+become optional. `.env` is git-ignored; never commit it.
+
 Measured: a full cold run is ~2 minutes on a discrete GPU, an estimated 15–20
-minutes on a 15 W ultraportable, and seconds via Groq. Every run is cached
-either way, so a second run is ~3.5 seconds regardless.
+minutes on a 15 W ultraportable, and seconds via either hosted backend. Every
+run is cached either way, so a second run is ~3.5 seconds regardless.
+
+### Deploying to Streamlit Community Cloud
+
+Streamlit Cloud does **not** read `.env` files, and its Secrets panel does
+**not** become an OS environment variable — `os.environ.get("XAI_API_KEY")`
+alone would find nothing there. `governance/narrative/client.py` checks
+`st.secrets` first specifically to handle this; you don't need to change
+any code, just configure the secret:
+
+1. Push this repo to GitHub, then create the app on
+   https://share.streamlit.io pointing at `governance/app.py`.
+2. In the app's **Settings → Secrets**, paste (with real keys):
+   ```toml
+   GROQ_API_KEY = "your-groq-key-here"
+   XAI_API_KEY = "your-xai-key-here"
+   ```
+   (`.streamlit/secrets.toml.example` in this repo has the same template —
+   copy its contents rather than retyping them.)
+3. Redeploy. `pdfplumber`, `fastembed`, `langgraph`, `streamlit` and
+   `python-dotenv` all install from `requirements.txt` automatically; only
+   `ollama` (the `auto` backend) won't work on Cloud, since there's no local
+   Ollama server to reach there — use `groq` or `grok` as the backend when
+   deployed.
+
+For **local** development, either approach works: copy `.env.example` to
+`.env`, or copy `.streamlit/secrets.toml.example` to
+`.streamlit/secrets.toml`. If both exist, Streamlit secrets take priority
+(see `_resolve_secret()` in `governance/narrative/client.py`).
 
 ### What leaves the machine
 
-**No personal data reaches a prompt under either backend.** `describe.py`
+**No personal data reaches a prompt under any backend.** `describe.py`
 withholds sample values for any column classified as personal data; every other
 prompt carries only column names, statistics and findings.
 `tests/test_privacy.py` asserts this against the real values in the dataset —
@@ -95,9 +153,10 @@ So the honest claim depends on the backend:
 | Backend | Claim |
 |---|---|
 | `auto` (Ollama) | Nothing leaves the machine. |
-| `groq` | No **personal data** leaves the machine. Prompts do. |
+| `groq` (Groq) | No **personal data** leaves the machine. Prompts do. |
+| `grok` (xAI) | No **personal data** leaves the machine. Prompts do. |
 
-The second is narrower and still a real control. Say the narrower one when
+The hosted ones are narrower and still a real control. Say the narrower one when
 demonstrating with Groq.
 
 ## Usage

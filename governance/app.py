@@ -13,6 +13,21 @@ generates text on page load is a dashboard that stalls in front of an audience.
 """
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
+# `streamlit run governance/app.py` only adds THIS file's own directory
+# (governance/) to sys.path - never the project root - regardless of your
+# current working directory or how streamlit itself is launched (bare CLI,
+# `python -m streamlit run ...`, or Streamlit Community Cloud's own internal
+# launcher). Without this, `from governance import ...` below fails with
+# ModuleNotFoundError: No module named 'governance', because Python can't see
+# the package's own parent directory. Inserting it explicitly here makes the
+# import work no matter how this script is started.
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
+
 import json
 
 import pandas as pd
@@ -77,14 +92,17 @@ with st.sidebar:
     use_llm = st.checkbox("narrative layer", value=False,
                           help="Adds prose. Every number is produced without it.")
     import os
-    backend = st.radio("model backend", ["auto", "groq"], horizontal=True,
+    backend = st.radio("model backend", ["auto", "groq", "grok"], horizontal=True,
                        help="auto = local Ollama, nothing leaves the machine. "
-                            "groq = hosted API; no personal data is ever put in "
-                            "a prompt, but prompts do leave the machine.",
+                            "groq = Groq's hosted API. grok = xAI's hosted "
+                            "Grok API. groq and grok are different providers - "
+                            "for either, no personal data is ever put in a "
+                            "prompt, but prompts do leave the machine.",
                        disabled=not use_llm)
-    if use_llm and backend == "groq" and not os.environ.get("GROQ_API_KEY"):
-        st.caption(":orange[GROQ_API_KEY is not set - the narrative layer will "
-                   "be skipped and the report produced without it.]")
+    _backend_key_env = {"groq": "GROQ_API_KEY", "grok": "XAI_API_KEY"}.get(backend)
+    if use_llm and _backend_key_env and not os.environ.get(_backend_key_env):
+        st.caption(f":orange[{_backend_key_env} is not set - the narrative "
+                   "layer will be skipped and the report produced without it.]")
     use_graph = st.checkbox("via LangGraph", value=True,
                             help="Same results as the sequential runner.")
 

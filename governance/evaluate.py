@@ -113,11 +113,12 @@ def main() -> None:
     ctx = run.run(df, name, llm_enabled=False)
 
     expected = expected_keys()
-    observed = observed_keys(ctx.get("findings", []))
+    findings = ctx.get("findings", [])
+    observed = observed_keys(findings)
     overall = score(expected, observed)
 
     print(f"\n  evaluation set: {name}  "
-          f"({len(expected)} labelled defects, {len(ctx.get("findings", []))} findings raised)")
+          f"({len(expected)} labelled defects, {len(findings)} findings raised)")
 
     header = (f"    {'':<28} {'TP':>5} {'FP':>5} {'FN':>5}   "
               f"{'prec':>6} {'recall':>6} {'F1':>6}")

@@ -140,9 +140,12 @@ def main() -> None:
     ap.add_argument("--path", help="path to a CSV, for datasets without a profile")
     ap.add_argument("--llm", action="store_true",
                     help="enable the narrative layer (default: off)")
-    ap.add_argument("--backend", default="auto", choices=["auto", "groq", "off", "echo"],
-                    help="model backend; 'echo' emits marked placeholder text "
-                         "for testing without a model")
+    ap.add_argument("--backend", default="auto",
+                    choices=["auto", "groq", "grok", "off", "echo"],
+                    help="model backend; 'groq' needs GROQ_API_KEY, 'grok' "
+                         "needs XAI_API_KEY (different providers); 'echo' "
+                         "emits marked placeholder text for testing without "
+                         "a model")
     ap.add_argument("--graph", action="store_true",
                     help="run through LangGraph instead of sequentially")
     args = ap.parse_args()
