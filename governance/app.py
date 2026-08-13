@@ -170,6 +170,20 @@ with st.sidebar:
             else str(config.UPLOAD_DIR / f"{dataset}.csv") if dataset in uploaded_names
             else None)
 
+    # Catch a missing dataset file BEFORE the user clicks Run, not after -
+    # governance.run.load() raises SystemExit for this case (fine for the
+    # CLI, but SystemExit is invisible inside Streamlit: it's a BaseException,
+    # not an Exception, so it slips past Streamlit's own error handling and
+    # is silently swallowed by the script-runner's worker thread. See the
+    # try/except around run_pipeline() below for the safety-net half of this.
+    _dataset_missing = path is not None and not Path(path).exists()
+    if _dataset_missing and dataset == "online_retail":
+        st.caption(":orange[data/demo/online_retail.csv not found - run "
+                   "`python -m governance.demo_data` first, or Run below "
+                   "will silently do nothing.]")
+    elif _dataset_missing:
+        st.caption(f":orange[{path} not found.]")
+
     st.divider()
 
     # ---- 2. model settings ------------------------------------------------
@@ -187,18 +201,44 @@ with st.sidebar:
                                 "prompt, but prompts do leave the machine.",
                            disabled=not use_llm)
         _backend_key_env = {"groq": "GROQ_API_KEY", "grok": "XAI_API_KEY"}.get(backend)
-        if use_llm and _backend_key_env and not os.environ.get(_backend_key_env):
-            st.caption(f":orange[{_backend_key_env} is not set - the narrative "
-                       "layer will be skipped and the report produced without it.]")
+        if use_llm and _backend_key_env:
+            # Check availability the SAME way the pipeline actually will
+            # (governance.narrative.client.Client, which checks Streamlit
+            # secrets before falling back to the environment) rather than a
+            # separate raw os.environ.get() here - two different checks can
+            # disagree (e.g. a key set only in .streamlit/secrets.toml would
+            # pass Client's check but fail a plain os.environ.get()), which
+            # would make this warning actively misleading.
+            from governance.narrative.client import Client as _Client
+            if not _Client(backend=backend).available:
+                st.caption(f":orange[{_backend_key_env} was not found (checked "
+                           "Streamlit secrets and the environment) - the "
+                           "narrative layer will be skipped and the report "
+                           "produced without it.]")
         use_graph = st.checkbox("via LangGraph", value=True,
                                 help="Same results as the sequential runner.")
 
     st.divider()
 
-    if st.button("▶ Run governance scan", type="primary", width="stretch"):
-        with st.spinner("running..."):
-            run_pipeline(dataset, path, use_llm, use_graph, backend)
-        st.rerun()
+    if st.button("▶ Run governance scan", type="primary", width="stretch",
+                disabled=_dataset_missing):
+        try:
+            with st.spinner("running..."):
+                run_pipeline(dataset, path, use_llm, use_graph, backend)
+            st.rerun()
+        except SystemExit as e:
+            # governance.run.load() raises SystemExit (not a normal
+            # Exception) when the dataset file is missing - by design for
+            # the CLI, where an uncaught SystemExit at the top level is a
+            # clean, expected exit. Inside Streamlit that's the wrong
+            # behaviour: SystemExit is a BaseException, so Streamlit's own
+            # `except Exception` handler never sees it, and a background
+            # thread that raises SystemExit just ends silently with nothing
+            # shown to the user - the run appears to do nothing at all.
+            # Catching it explicitly here is what makes the failure visible.
+            st.error(str(e) or "The pipeline stopped without a message.")
+        except Exception as e:
+            st.error(f"The pipeline run failed: {e}")
 
     st.divider()
 

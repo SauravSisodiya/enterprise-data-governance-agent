@@ -42,8 +42,13 @@ def load(dataset: str | None = None,
         raise SystemExit("give --dataset synthetic or --path <file.csv>")
 
     if not csv.exists():
-        raise SystemExit(f"dataset not found: {csv}\n"
-                         f"run `python -m governance.synthetic` first")
+        if dataset == "online_retail" or "demo" in csv.parts:
+            hint = "run `python -m governance.demo_data` first"
+        elif dataset == "synthetic" or "synthetic" in csv.parts:
+            hint = "run `python -m governance.synthetic` first"
+        else:
+            hint = "check the path, or upload this dataset again"
+        raise SystemExit(f"dataset not found: {csv}\n{hint}")
 
     df = pd.read_csv(csv)
     profile = config.DATASET_PROFILES.get(name, config.DEFAULT_PROFILE)
