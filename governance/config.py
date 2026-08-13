@@ -18,12 +18,44 @@ Sections:
 """
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 # --------------------------------------------------------------------------
 # Paths
 # --------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parent.parent
+
+
+# --------------------------------------------------------------------------
+# .env
+# --------------------------------------------------------------------------
+def _load_dotenv() -> None:
+    """
+    Read KEY=value pairs from a .env file at the project root.
+
+    Twelve lines instead of a dependency. A real environment variable always
+    wins - setdefault, not assignment - so an explicitly exported key overrides
+    the file rather than the other way round.
+
+    The point of supporting this at all: `setx GROQ_API_KEY "gsk_..."` writes
+    the key into PowerShell's history file, where it stays. A gitignored .env
+    keeps it in exactly one place you control.
+    """
+    path = ROOT / ".env"
+    if not path.exists():
+        return
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        value = value.strip().strip('"').strip("'")
+        if value:
+            os.environ.setdefault(key.strip(), value)
+
+
+_load_dotenv()
 DATA_DIR = ROOT / "data"
 SYNTHETIC_DIR = DATA_DIR / "synthetic"
 DEMO_DIR = DATA_DIR / "demo"
