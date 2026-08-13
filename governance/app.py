@@ -42,23 +42,78 @@ BAND_COLOUR = {"Critical": "#C21B66", "High": "#E0502A",
 st.set_page_config(page_title="Enterprise Data Governance Agent",
                    page_icon="🛡", layout="wide")
 
-# Restrained visual polish only - no new information is conveyed by any of
-# this, so if it ever looks wrong it's safe to delete entirely without
-# touching behaviour. Colours/spacing only; the theme (font, base palette)
-# lives in .streamlit/config.toml instead, since that's the mechanism
-# Streamlit actually supports for theming - this CSS handles the handful of
-# things config.toml can't reach (metric card borders, tab spacing).
+# Visual polish only - no new information is conveyed by any of this, so if
+# it ever looks wrong it's safe to delete entirely without touching
+# behaviour. Handles the pieces .streamlit/config.toml's theme keys can't
+# reach: metric card backgrounds, bordered st.container() cards (used for
+# findings, recommendations and review-queue items), expander headers, and
+# framing around st.dataframe tables. Selectors are Streamlit's documented
+# data-testid attributes, which are the stable way to target these elements
+# - but testids can shift between Streamlit versions, so if a given piece
+# doesn't visually apply on your version, that's why: check the testid still
+# matches rather than assume the color values themselves are wrong.
 st.markdown("""
 <style>
+:root {
+    --teal-50:  #10262B;
+    --teal-100: #15323A;
+    --teal-200: #234A54;
+    --teal-300: #3DB4C2;
+    --teal-700: #8FE0E6;
+}
+
+/* Top metric cards (Quality score, Findings, Awaiting review, ...) */
 [data-testid="stMetric"] {
-    background: var(--secondary-background-color, #F4F6F8);
-    border: 1px solid rgba(15, 76, 92, 0.12);
+    background: var(--teal-50);
+    border: 1px solid var(--teal-200);
     border-radius: 10px;
     padding: 12px 16px 8px;
 }
-.stTabs [data-baseweb="tab-list"] { gap: 2px; }
+
+/* Bordered st.container(border=True) cards - findings, recommendations,
+   review-queue items throughout the Compliance/Report/Review queue tabs. */
+[data-testid="stVerticalBlockBorderWrapper"] {
+    background: var(--teal-50);
+    border: 1px solid var(--teal-200) !important;
+    border-radius: 10px;
+}
+
+/* Expanders - "upload a new CSV dataset", "backend & orchestration",
+   citation expanders, audit log. */
+[data-testid="stExpander"] {
+    border: 1px solid var(--teal-200);
+    border-radius: 10px;
+    background: var(--teal-50);
+}
+[data-testid="stExpander"] summary {
+    background: var(--teal-100);
+    border-radius: 10px;
+}
+
+/* Frame st.dataframe tables in a teal-bordered card - the header row itself
+   already picks up secondaryBackgroundColor natively from config.toml. */
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--teal-200);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* All buttons get a teal outline for consistency; primary buttons (Run
+   governance scan) already get a solid teal fill from config.toml's
+   primaryColor and are untouched here. */
+.stButton > button[kind="secondary"] {
+    border-color: var(--teal-300);
+    color: var(--teal-700);
+}
+.stButton > button[kind="secondary"]:hover {
+    border-color: var(--teal-700);
+    color: var(--teal-700);
+    background: var(--teal-50);
+}
+
+.stTabs [data-baseweb="tab-list"] { gap: 2px; background: var(--teal-50); border-radius: 10px 10px 0 0; }
 .stTabs [data-baseweb="tab"] { padding: 8px 18px; }
-[data-testid="stSidebar"] hr { margin: 0.6rem 0; }
+[data-testid="stSidebar"] hr { margin: 0.6rem 0; border-color: var(--teal-200); }
 </style>
 """, unsafe_allow_html=True)
 
@@ -283,12 +338,12 @@ summary = report["summary"]
 # --------------------------------------------------------------------------
 st.markdown(f"""
 <div style="padding:16px 22px;border-radius:12px;
-            background:var(--secondary-background-color, #F4F6F8);
-            border:1px solid rgba(15,76,92,.14);margin-bottom:18px;">
-  <div style="font-size:1.6rem;font-weight:700;color:#0F4C5C;">
+            background:var(--teal-50, #10262B);
+            border:1px solid var(--teal-200, #234A54);margin-bottom:18px;">
+  <div style="font-size:1.6rem;font-weight:700;color:var(--teal-700, #8FE0E6);">
     🛡 {report['dataset']}
   </div>
-  <div style="color:#5F5F70;font-size:.85rem;margin-top:2px;">
+  <div style="color:#9FC9C9;font-size:.85rem;margin-top:2px;">
     generated {report['generated_at']} · language model
     {'on' if report.get('llm_enabled') else 'off'}
   </div>

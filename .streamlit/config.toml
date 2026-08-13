@@ -1,11 +1,16 @@
-# Visual theme only - no behavioural settings here. Colours are picked to sit
-# alongside the risk-band palette already used in governance/app.py
-# (BAND_COLOUR: critical #C21B66, high #E0502A, medium #E88B00, low #008F82)
-# rather than clashing with it.
+# Visual theme only - no behavioural settings here.
+#
+# Dark teal palette. base="dark" plus custom colors, rather than relying on
+# Streamlit's built-in dark theme, so the sidebar/dataframe/code-block
+# colors (secondaryBackgroundColor) stay in the same teal family as the
+# accent color instead of Streamlit's default grey. The four risk-band
+# badge colors (Critical/High/Medium/Low, see BAND_COLOUR in app.py) are
+# deliberately NOT part of this palette - they carry real meaning
+# (severity) and stay as solid, high-contrast badges regardless of theme.
 [theme]
-base = "light"
-primaryColor = "#0F4C5C"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F4F6F8"
-textColor = "#1A1A2E"
+base = "dark"
+primaryColor = "#2E97A6"
+backgroundColor = "#0B1B1E"
+secondaryBackgroundColor = "#132E33"
+textColor = "#E4F3F2"
 font = "sans serif"

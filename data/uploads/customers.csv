@@ -1,0 +1,501 @@
+customer_id,first_name,last_name,customer_email,phone_no,street_address,city,state,postcode,signup_date,last_order_date,lifetime_value,cust_ref,notes
+CUST100179,Chloe,Mbeki,chloe.mbeki179@example.com,,373 Willow Road,Peoria,IL,80698,2022-04-28,2022-07-10,1594.11,CR-27388,Called to confirm the billing address after a failed payment.
+CUST100233,Leila,Costa,leila.costa233@example.com,(367) 776-9244,,Dallas,TX,11632,2022-06-16,2023-03-15,2435.84,CR-86611,"Requested a refund for the second item in the order, approved."
+CUST100015,Nadia,Ivanov,nadia.ivanov15@example.com,(988) 277-5212,,Buffalo,NY,69890,2022-02-04,2022-11-23,2217.41,CR-92421,"Enquired about loyalty points balance, no further action needed."
+CUST100327,Lucas,Costa,lucas.costa327@example.com,(336) 400-1325,307 Pine Crescent,Houston,TX,66420,2022-01-10,,750.06,CR-86384,"Enquired about loyalty points balance, no further action needed."
+CUST100268,Thomas,Nakamura,thomas.nakamura268@example.com,,96 Cedar Lane,New York,NY,98358,2023-05-26,,4527.44,CR-13161,Asked whether the item is available in a larger size.
+CUST100347,Ethan,Kowalski,ethan.kowalski347@example.com,(505) 670-3926,,Austin,TX,41251,2023-03-02,2023-06-26,3006.81,CR-46475,Asked to change the delivery window to weekday mornings only.
+CUST100308,Anna,Kowalski,anna.kowalski308@example.com,,,Orlando,FL,46525,2023-06-07,,4457.55,CR-17417,"Requested a refund for the second item in the order, approved."
+CUST100323,James,Reyes,james.reyes323@example.com,(953) 919-5268,273 Cedar Lane,Los Angeles,CA,55559,2023-11-05,,3010.57,CR-26310,"Requested a refund for the second item in the order, approved."
+CUST100254,Michael,Reyes,michael.reyes254@example.com,(232) 265-1920,,Seattle,WA,85183,2023-03-12,2023-12-31,1447.81,CR-19375,Called to confirm the billing address after a failed payment.
+CUST100265,Sofia,Andersson,sofia.andersson265@example.com,(885) 564-4918,271 Pine Crescent,Tacoma,WA,20168,2022-02-21,2022-04-13,2494.38,CR-66272,Called to confirm the billing address after a failed payment.
+CUST100260,Elena,Kowalski,elena.kowalski260@example.com,(326) 534-6884,112 Elm Court,Sacramento,CA,62342,2022-03-13,2022-03-21,1488.79,CR-87521,Wants marketing preferences updated to email only.
+CUST100423,Thomas,Nakamura,thomas.nakamura423@example.com,,281 Pine Crescent,Tacoma,WA,62912,2023-10-01,2023-10-19,1837.72,CR-77944,Asked to change the delivery window to weekday mornings only.
+CUST100086,Yuki,Costa,yuki.costa86@example.com,,,Orlando,FL,47355,2023-07-05,2023-10-17,3490.49,CR-43662,"Reported a damaged package, replacement dispatched."
+CUST100231,Leila,Fischer,leila.fischer231@example.com,,208 Pine Crescent,Orlando,FL,27638,2023-06-23,2024-05-31,1962.97,CR-68821,Asked to change the delivery window to weekday mornings only.
+CUST100161,Daniel,Murphy,daniel.murphy161@example.com,(512) 485-3834,,Orlando,FL,73852,2022-07-10,2023-03-20,2664.21,CR-54432,Asked to change the delivery window to weekday mornings only.
+CUST100298,Ethan,Mbeki,ethan.mbeki298@example.com,(937) 560-4015,,New York,NY,88124,2023-01-06,2023-04-07,2867.04,CR-31110,"Enquired about loyalty points balance, no further action needed."
+CUST100383,Michael,Mbeki,michael.mbeki383@example.com,(522) 255-5630,,Sacramento,CA,90683,2022-12-16,2023-03-20,405.75,CR-19942,Asked whether the item is available in a larger size.
+CUST100304,Nadia,Reyes,nadia.reyes304@example.com,(614) 456-5865,143 Maple Avenue,Tacoma,WA,22605,2023-05-31,2024-06-16,2037.97,CR-35199,"Reported a damaged package, replacement dispatched."
+CUST100085,Yuki,Weber,yuki.weber85@example.com,,156 Maple Avenue,San Diego,CA,11396,2022-11-05,2023-07-05,4199.59,CR-35569,Called to confirm the billing address after a failed payment.
+CUST100330,Marcus,Silva,marcus.silva330@example.com,,198 Elm Court,Dallas,TX,37234,2023-11-14,2024-04-05,4237.89,CR-73314,Wants marketing preferences updated to email only.
+CUST100390,Elena,Weber,elena.weber390@example.com,(939) 785-4480,383 Elm Court,Seattle,WA,53981,2023-05-17,,2093.81,CR-14108,"Reported a damaged package, replacement dispatched."
+CUST100376,Lucas,Ivanov,lucas.ivanov376@example.com,(711) 473-6729,,Rochester,NY,25154,2022-06-21,,2347.65,CR-72476,Wants marketing preferences updated to email only.
+CUST100117,Anna,Reyes,anna.reyes117@example.com,(287) 358-2434,246 Willow Road,Buffalo,NY,78766,2023-08-01,,3577.62,CR-94429,"Customer called about a delayed shipment, resolved on the same day."
+CUST100059,Chloe,Patel,chloe.patel59@example.com,(479) 292-1588,,Houston,TX,55654,2023-04-05,,1654.41,CR-29383,Wants marketing preferences updated to email only.
+CUST100191,Sarah,Haddad,@example24.com,(743) 890-2298,,Chicago,Illinois,81891,2023-05-28,,3059.47,CR-13471,"Enquired about loyalty points balance, no further action needed."
+CUST100042,Grace,Mbeki,grace.mbeki42@example.com,(826) 499-1801,284 Pine Crescent,Chicago,IL,59289,2022-07-22,2022-12-07,3983.9,CR-18530,Wants marketing preferences updated to email only.
+CUST100259,Priya,Silva,fatima26@ example.com,(609) 765-8570,285 Willow Road,Seattle,WA,30250,2023-08-23,,2859.58,CR-92381,"Enquired about loyalty points balance, no further action needed."
+CUST100001,David,Novak,david.novak1@example.com,(503) 472-3552,240 Cedar Lane,Springfield,IL,88537,2022-07-27,,2557.17,CR-99967,"Requested a refund for the second item in the order, approved."
+CUST100041,Anna,Silva,anna.silva41@example.com,(365) 527-3752,359 Pine Crescent,Chicago,IL,35631,2022-12-24,2023-12-09,1167.85,CR-58397,"Requested a refund for the second item in the order, approved."
+CUST100238,Aisha,Rossi,aisha.rossi238@example.com,(231) 842-1086,26 Elm Court,Buffalo,NY,67838,2022-07-19,2022-10-06,919.11,CR-47053,Asked to change the delivery window to weekday mornings only.
+CUST100364,Grace,Haddad,grace.haddad364@example.com,,256 Birch Street,Austin,TX,49556,2023-02-25,,4586.98,CR-17785,Called to confirm the billing address after a failed payment.
+CUST100443,Michael,Ivanov,michael.ivanov443@example.com,,190 Birch Street,Spokane,WA,59134,2022-07-19,,1139.29,CR-66994,"Customer called about a delayed shipment, resolved on the same day."
+CUST100445,Omar,Khan,omar.khan445@example.com,(393) 418-5856,,Tacoma,WA,19358,2022-07-15,2022-07-17,23.85,CR-93542,Wants marketing preferences updated to email only.
+CUST100334,Oliver,Tanaka,oliver.tanaka334@example.com,,,Houston,TX,20731,2022-09-02,,2061.88,CR-31605,Called to confirm the billing address after a failed payment.
+CUST100044,Lucas,Weber,lucas.weber44@example.com,(388) 904-5656,233 Willow Road,Seattle,WA,45496,2023-09-17,2023-10-29,285.68,CR-54126,Wants marketing preferences updated to email only.
+CUST100350,Aisha,Silva,aisha.silva350@example.com,(628) 245-2988,,New York,NY,69433,2023-02-20,2023-10-05,1999.22,CR-98225,Asked whether the item is available in a larger size.
+CUST100119,Fatima,Tanaka,fatima.tanaka119@example.com,,88 Maple Avenue,Seattle,WA,80330,2023-04-10,,2613.43,CR-90931,Asked whether the item is available in a larger size.
+CUST100428,Sarah,Khan,sarah.khan428@example.com,(745) 320-2850,,Peoria,IL,17130,2023-03-02,2023-12-19,2786.92,CR-52123,"Enquired about loyalty points balance, no further action needed."
+CUST100213,James,Costa,james.costa213@example.com,,,Los Angeles,CA,35643,2023-09-04,2024-06-21,1950.13,CR-26144,"Enquired about loyalty points balance, no further action needed."
+CUST100229,Fatima,Larsen,fatima.larsen229@example.com,,,Los Angeles,CA,52428,2023-10-03,2024-07-08,4287.79,CR-40016,Called to confirm the billing address after a failed payment.
+CUST100279,Omar,Chen,omar.chen279@example.com,(313) 400-1858,304 Pine Crescent,Los Angeles,CA,28749,2023-11-03,,1730.86,CR-24363,"Enquired about loyalty points balance, no further action needed."
+CUST100306,Omar,Moreau,omar.moreau306@example.com,,291 Pine Crescent,Houston,TX,71591,2022-11-28,,1106.88,CR-35759,Asked to change the delivery window to weekday mornings only.
+CUST100079,Anna,Khan,grace42@ example.com,(238) 400-1695,297 Elm Court,Houston,TX,48429,2023-09-20,2023-09-21,289.85,CR-80719,Asked to change the delivery window to weekday mornings only.
+CUST100147,Elena,Weber,elena.weber147@example.com,(764) 667-2506,303 Willow Road,Seattle,WA,61359,2022-09-01,2023-01-09,4624.98,CR-93778,"Customer called about a delayed shipment, resolved on the same day."
+CUST100257,Nadia,Weber,nadia.weber257@example.com,,171 Cedar Lane,Tampa,FL,89049,2022-04-02,2023-01-03,2466.52,CR-22017,"Reported a damaged package, replacement dispatched."
+CUST100457,Lucas,Kowalski,lucas.kowalski457@example.com,(666) 803-1972,,Spokane,WA,34340,2023-02-09,,1096.06,CR-16265,"Reported a damaged package, replacement dispatched."
+CUST100317,James,Rossi,james.rossi317@example.com,(974) 375-8482,41 Cedar Lane,Sacramento,CA,19159,2023-07-14,2023-10-05,2847.77,CR-81667,Asked to change the delivery window to weekday mornings only.
+CUST100353,Sarah,Ivanov,sarah.ivanov353@example.com,(427) 964-6019,,Springfield,IL,19047,2022-09-10,,2811.96,CR-95408,Asked to change the delivery window to weekday mornings only.
+CUST100424,Sarah,Nakamura,sarah.nakamura424@example.com,(980) 771-9186,331 Birch Street,Miami,FL,86325,2022-06-17,,1888.97,CR-73027,Asked to change the delivery window to weekday mornings only.
+CUST100215,Daniel,Silva,daniel.silva215@example.com,(700) 498-9027,63 Pine Crescent,Chicago,IL,73357,2022-07-09,,3670.53,CR-14589,Asked to change the delivery window to weekday mornings only.
+CUST100209,Leila,Kowalski,leila.kowalski209@example.com,,296 Oakwood Drive,Sacramento,CA,31763,2022-05-21,2023-01-14,133.3,CR-22885,Asked whether the item is available in a larger size.
+CUST100068,David,Costa,david.costa68@example.com,(919) 664-7007,2 Elm Court,Rochester,NY,84110,2023-06-30,,4135.43,CR-80068,"Customer called about a delayed shipment, resolved on the same day."
+CUST100412,Michael,Nakamura,michael.nakamura412@example.com,(318) 364-6811,284 Maple Avenue,Peoria,Illinois,23687,2023-07-20,2024-08-22,4388.45,CR-24427,"Requested a refund for the second item in the order, approved."
+CUST100131,Grace,Novak,grace.novak131@example.com,(764) 374-1082,297 Cedar Lane,Sacramento,CA,37490,2022-03-25,2022-04-05,4197.86,CR-67611,"Requested a refund for the second item in the order, approved."
+CUST100223,Yuki,Nakamura,@example54.com,(469) 293-3633,243 Pine Crescent,Los Angeles,CA,64014,2022-07-16,,1242.24,CR-69998,"Customer called about a delayed shipment, resolved on the same day."
+CUST100222,Leila,Moreau,leila.moreau222@example.com,(380) 974-1959,,Miami,FL,50868,2022-03-07,,741.8,CR-41041,Wants marketing preferences updated to email only.
+CUST100194,Aisha,Tanaka,aisha.tanaka194@example.com,(980) 948-5586,379 Willow Road,Rochester,NY,75236,2022-05-15,2023-03-09,2188.92,CR-16817,"Enquired about loyalty points balance, no further action needed."
+CUST100270,Marcus,Costa,marcus.costa270@example.com,,324 Pine Crescent,Austin,TX,61043,2023-05-06,,290.24,CR-44824,"Customer called about a delayed shipment, resolved on the same day."
+CUST100419,Lucas,Ivanov,lucas.ivanov419@example.com,,,Buffalo,NY,66679,2022-11-27,,897.35,CR-91334,Asked to change the delivery window to weekday mornings only.
+CUST100425,Marcus,Weber,marcus.weber425@example.com,,268 Maple Avenue,Miami,FL,27443,2022-06-23,2022-10-09,4216.93,CR-28611,Asked whether the item is available in a larger size.
+CUST100420,Mei,Nakamura,mei.nakamura420@example.com,(692) 522-5439,,Rochester,NY,82894,2022-05-17,2023-01-19,858.15,CR-18590,Called to confirm the billing address after a failed payment.
+CUST100014,Nadia,Khan,nadia.khan14@example.com,,377 Elm Court,Houston,TX,16019,2023-03-29,2024-01-25,1583.23,CR-17867,Asked to change the delivery window to weekday mornings only.
+CUST100066,Oliver,Okafor,oliver.okafor66@example.com,(733) 718-2550,114 Cedar Lane,Tacoma,WA,26730,2023-10-30,2024-04-17,514.4,CR-63712,Asked to change the delivery window to weekday mornings only.
+CUST100027,Yuki,Fischer,yuki.fischer27@example.com,,387 Elm Court,Peoria,IL,15625,2023-02-08,2023-06-12,1933.95,CR-32641,Customer asked us to follow up at fatima.nakamura@example.com rather than this account.
+CUST100419,Lucas,Ivanov,lucas.ivanov419@example.com,(614) 592-7635,297 Aspen Way,Buffalo,NY,66679,2022-11-27,2023-05-25,897.35,CR-91334,Asked to change the delivery window to weekday mornings only.
+CUST100056,Sarah,Dubois,sarah.dubois56@example.com,,364 Oakwood Drive,Miami,FL,22666,2022-10-20,,3034.69,CR-32477,Called to confirm the billing address after a failed payment.
+CUST100348,Michael,Reyes,michael.reyes348@example.com,(434) 300-9169,,Los Angeles,CA,42754,2022-02-28,,1306.75,CR-94268,Asked to change the delivery window to weekday mornings only.
+CUST100258,Chloe,Okafor,chloe.okafor258@example.com,,382 Birch Street,Peoria,Illinois,40085,2022-08-07,2023-04-13,4026.75,CR-28916,"Requested a refund for the second item in the order, approved."
+CUST100255,Lucas,Costa,lucas.costa255@example.com,(446) 268-9022,310 Maple Avenue,Rochester,NY,15374,2022-02-11,2023-02-08,2334.36,CR-81079,"Reported a damaged package, replacement dispatched."
+CUST100137,Lucas,Tanaka,lucas.tanaka137@example.com,(700) 453-7392,19 Maple Avenue,Dallas,TX,26239,2023-01-23,2023-09-30,3817.01,CR-67946,"Customer called about a delayed shipment, resolved on the same day."
+CUST100122,Nadia,Haddad,nadia.haddad122@example.com,(509) 471-9409,184 Willow Road,Tampa,FL,31681,2022-06-16,2022-12-13,1871.25,CR-96054,"Contact preference updated, best address is omar.okafor@example.com."
+CUST100172,Chloe,Kowalski,chloe.kowalski172@example.com,(313) 431-4275,98 Maple Avenue,Spokane,WA,39810,2022-05-07,2023-04-23,47.2,CR-25874,Asked whether the item is available in a larger size.
+CUST100068,David,Costa,david.costa68@example.com,,2 Elm Court,Rochester,NY,84110,2023-06-30,,4135.43,CR-80068,"Customer called about a delayed shipment, resolved on the same day."
+CUST100366,Ethan,Nakamura,ethan.nakamura366@example.com,(842) 341-9794,33 Pine Crescent,Rochester,NY,92427,2023-01-27,2023-03-29,3947.78,CR-16083,"Requested a refund for the second item in the order, approved."
+CUST100312,Ethan,Patel,ethan.patel312@example.com,(813) 602-9249,,Austin,TX,53593,2022-07-02,2023-06-21,3270.11,CR-95866,Wants marketing preferences updated to email only.
+CUST100447,Omar,Murphy,omar.murphy447@example.com,,,Miami,FL,12521,2023-09-26,2024-08-09,1083.24,CR-37915,Wants marketing preferences updated to email only.
+CUST100188,Marcus,Andersson,marcus.andersson188@example.com,(989) 963-8556,,New York,NY,44097,2023-09-06,2024-08-26,4522.78,CR-49979,"Reported a damaged package, replacement dispatched."
+CUST100284,Omar,Kowalski,omar.kowalski284@example.com,,,Tampa,FL,14479,2022-04-23,2023-04-11,3317.39,CR-14229,Called to confirm the billing address after a failed payment.
+CUST100094,James,Weber,james.weber94@example.com,,57 Pine Crescent,Dallas,TX,78601,2022-01-15,2022-10-13,516.2,CR-67665,Asked to change the delivery window to weekday mornings only.
+CUST100377,Thomas,Rossi,thomas.rossi377@example.com,,370 Oakwood Drive,Dallas,TX,97513,2022-05-21,2023-05-15,4393.57,CR-74365,"Requested a refund for the second item in the order, approved."
+CUST100083,Nadia,Chen,michael80@,(630) 341-7113,,San Diego,CA,40195,2023-01-19,2024-01-19,642.34,CR-59080,"Requested a refund for the second item in the order, approved."
+CUST100010,Lucas,Dubois,lucas.dubois10@example.com,,162 Willow Road,Seattle,WA,54058,2023-06-24,2023-09-13,2831.8,CR-64816,Called to confirm the billing address after a failed payment.
+CUST100280,James,Haddad,nadia82@.com,,,Orlando,FL,73756,2022-12-12,,1412.99,CR-71926,"Enquired about loyalty points balance, no further action needed."
+CUST100406,Ethan,Reyes,ethan.reyes406@example.com,(947) 988-4150,171 Willow Road,Dallas,Texas,22745,2022-04-25,,817.53,CR-44905,Wants marketing preferences updated to email only.
+CUST100401,Rajesh,Costa,rajesh.costa401@example.com,(918) 467-2818,178 Aspen Way,Spokane,WA,74970,2023-03-18,2023-09-03,4762.63,CR-48227,"Customer called about a delayed shipment, resolved on the same day."
+CUST100239,Marcus,Haddad,marcus.haddad239@example.com,(661) 727-3111,270 Cedar Lane,Los Angeles,CA,21215,2023-09-14,,3768.87,CR-19709,"Requested a refund for the second item in the order, approved."
+CUST100313,Aisha,Dubois,aisha.dubois313@example.com,(865) 465-4038,,Orlando,FL,10294,2022-08-20,,1053.53,CR-17458,"Reported a damaged package, replacement dispatched."
+CUST100370,Fatima,Patel,fatima.patel370@example.com,(637) 207-9107,113 Maple Avenue,Houston,TX,21216,2023-08-25,,4242.69,CR-22251,Called to confirm the billing address after a failed payment.
+CUST100241,Grace,Weber,grace.weber241@example.com,,,Chicago,IL,51327,2022-04-26,2023-01-06,4477.42,CR-87094,Wants marketing preferences updated to email only.
+CUST100273,Chloe,Kowalski,chloe.kowalski273@example.com,,,New York,NY,34451,2022-11-25,,4403.09,CR-81075,Wants marketing preferences updated to email only.
+CUST100157,Mei,Moreau,mei.moreau157@example.com,(504) 930-9502,137 Maple Avenue,Chicago,IL,19320,2022-12-01,2022-12-15,4236.63,CR-63818,"Enquired about loyalty points balance, no further action needed."
+CUST100176,Thomas,Nakamura,thomas.nakamura176@example.com,(409) 230-6216,298 Oakwood Drive,San Diego,CA,56236,2023-04-04,2024-05-03,132.71,CR-52395,Asked to change the delivery window to weekday mornings only.
+CUST100190,Chloe,Tanaka,chloe.tanaka190@example.com,,261 Pine Crescent,Orlando,FL,55773,2023-10-31,2024-08-17,598.22,CR-78240,"Reported a damaged package, replacement dispatched."
+CUST100138,Sofia,Silva,sofia.silva138@example.com,,114 Oakwood Drive,Spokane,WA,67081,2023-02-13,2023-12-29,2324.11,CR-41441,Wants marketing preferences updated to email only.
+CUST100321,Ethan,Larsen,ethan.larsen321@example.com,(549) 644-4840,221 Pine Crescent,San Diego,CA,19165,2022-04-07,,2927.07,CR-12121,"Requested a refund for the second item in the order, approved."
+CUST100081,Priya,Murphy,priya.murphy81@example.com,,329 Aspen Way,Miami,FL,51301,2022-12-30,2023-11-13,3968.94,CR-37470,Duplicate account query - the other one is registered to aisha.larsen@example.com.
+CUST100328,Nadia,Ivanov,nadia.ivanov328@example.com,,322 Willow Road,Orlando,FL,13441,2023-06-24,2024-07-17,2145.51,CR-45886,"Reported a damaged package, replacement dispatched."
+CUST100007,Daniel,Ivanov,daniel.ivanov7@example.com,,256 Aspen Way,Los Angeles,CA,11940,2023-09-17,,1847.99,CR-17846,Asked whether the item is available in a larger size.
+CUST100184,Rajesh,Costa,rajesh.costa184@example.com,,43 Cedar Lane,Austin,TX,50229,2023-10-22,2023-12-21,2613.02,CR-52963,Wants marketing preferences updated to email only.
+CUST100299,Fatima,Patel,fatima.patel299@example.com,(825) 698-6212,127 Cedar Lane,Austin,TX,28347,2022-01-01,,4200.53,CR-94456,"Enquired about loyalty points balance, no further action needed."
+CUST100072,Anna,Larsen,james100.example.com,(509) 468-1686,167 Birch Street,Miami,FL,24460,2023-11-23,,3625.18,CR-83329,"Reported a damaged package, replacement dispatched."
+CUST100382,Daniel,Nakamura,daniel.nakamura382@example.com,(724) 644-3453,,Miami,FL,58677,2023-07-19,,1528.05,CR-75224,Wants marketing preferences updated to email only.
+CUST100204,Nadia,Ivanov,nadia.ivanov204@example.com,,311 Cedar Lane,Peoria,IL,91124,2022-11-05,,4799.5,CR-52528,"Customer called about a delayed shipment, resolved on the same day."
+CUST100174,David,Nakamura,david.nakamura174@example.com,(921) 781-4624,365 Birch Street,Miami,FL,49149,2023-10-03,2024-06-20,3629.22,CR-23713,Asked to change the delivery window to weekday mornings only.
+CUST100374,Anna,Weber,anna.weber374@example.com,(766) 873-6209,255 Pine Crescent,Tacoma,WA,72677,2023-03-02,2023-07-17,3012.49,CR-21647,Wants marketing preferences updated to email only.
+CUST100247,Chloe,Tanaka,chloe.tanaka247@example.com,,231 Pine Crescent,Tacoma,WA,78991,2022-03-31,2022-09-05,4463.32,CR-20501,Duplicate account query - the other one is registered to thomas.reyes@example.com.
+CUST100156,James,Dubois,james.dubois156@example.com,(277) 495-8255,,Chicago,IL,35438,2023-07-12,2023-10-23,3881.05,CR-37054,Called to confirm the billing address after a failed payment.
+CUST100221,Lucas,Larsen,lucas.larsen221@example.com,(545) 768-5080,115 Pine Crescent,Tacoma,WA,40003,2023-06-08,2024-03-18,1411.72,CR-88951,Asked whether the item is available in a larger size.
+CUST100065,Priya,Fischer,priya.fischer65@example.com,(226) 323-5907,179 Cedar Lane,Spokane,Washington,73668,2022-06-05,,1223.09,CR-62028,Asked to change the delivery window to weekday mornings only.
+CUST100296,Sarah,Weber,sarah.weber296@example.com,(322) 690-7645,66 Pine Crescent,Chicago,IL,53978,2022-01-14,,842.35,CR-95080,Asked whether the item is available in a larger size.
+CUST100048,Rajesh,Costa,rajesh.costa48@example.com,,395 Willow Road,Tampa,FL,23460,2022-08-01,,4606.46,333-72-1012,Wants marketing preferences updated to email only.
+CUST100206,Yuki,Silva,yuki.silva206@example.com,(244) 614-4786,339 Aspen Way,Spokane,WA,60524,2022-01-06,,1152.64,CR-71868,"Enquired about loyalty points balance, no further action needed."
+CUST100177,Leila,Dubois,@example112.com,(443) 659-5163,2 Elm Court,Miami,FL,89623,2023-10-16,2024-11-10,856.63,CR-81082,Asked whether the item is available in a larger size.
+CUST100344,Elena,Murphy,elena.murphy344@example.com,,282 Pine Crescent,Tampa,FL,32208,2022-10-26,2023-08-02,2007.3,CR-79258,Asked whether the item is available in a larger size.
+CUST100182,Chloe,Ivanov,chloe.ivanov182@example.com,(829) 572-5736,,Houston,TX,81291,2022-08-05,,1550.06,CR-79317,"Customer called about a delayed shipment, resolved on the same day."
+CUST100002,Rajesh,Reyes,rajesh.reyes2@example.com,(673) 623-3482,325 Willow Road,San Diego,CA,26446,2022-12-15,2023-12-18,1366.49,CR-24779,"Customer called about a delayed shipment, resolved on the same day."
+CUST100064,Omar,Ivanov,omar.ivanov64@example.com,,80 Aspen Way,Tacoma,WA,94574,2023-10-30,,2509.37,CR-87503,"Customer called about a delayed shipment, resolved on the same day."
+CUST100192,Ethan,Murphy,ethan.murphy192@example.com,(562) 635-2766,257 Birch Street,Tacoma,WA,34740,2022-03-30,2022-04-17,2289.67,CR-57952,"Reported a damaged package, replacement dispatched."
+CUST100314,Rajesh,Kowalski,rajesh.kowalski314@example.com,(920) 364-6977,111 Birch Street,San Diego,CA,92687,2022-04-22,2022-10-08,2950.7,CR-71534,"Enquired about loyalty points balance, no further action needed."
+CUST100163,Sarah,Haddad,sarah.haddad163@example.com,,46 Willow Road,Austin,TX,20383,2023-01-28,2023-03-03,4331.91,CR-14157,"Enquired about loyalty points balance, no further action needed."
+CUST100165,Omar,Andersson,omar.andersson165@example.com,(880) 770-2030,,Sacramento,CA,37765,2023-03-09,2023-12-25,3453.9,CR-55309,"Reported a damaged package, replacement dispatched."
+CUST100429,Oliver,Chen,oliver.chen429@example.com,,47 Elm Court,Tacoma,WA,47838,2023-10-01,2024-05-15,3192.61,CR-79435,"Customer called about a delayed shipment, resolved on the same day."
+CUST100011,Daniel,Reyes,daniel.reyes11@example.com,(293) 308-8901,123 Elm Court,Spokane,WA,52865,2022-05-12,2022-05-28,658.3,CR-18850,Asked to change the delivery window to weekday mornings only.
+CUST100090,Fatima,Rossi,fatima.rossi90@example.com,(242) 329-3054,275 Maple Avenue,Los Angeles,CA,16762,2023-08-06,,2056.11,CR-59342,Called to confirm the billing address after a failed payment.
+CUST100318,Grace,Reyes,grace.reyes318@example.com,(760) 888-9647,337 Maple Avenue,Chicago,IL,47646,2022-05-12,2022-08-06,4624.89,CR-34257,Wants marketing preferences updated to email only.
+CUST100053,Omar,Ivanov,omar.ivanov53@example.com,(438) 477-2805,329 Cedar Lane,Orlando,FL,50773,2022-09-24,2023-06-25,2654.74,CR-71438,Called to confirm the billing address after a failed payment.
+CUST100244,Chloe,Okafor,chloe.okafor244@example.com,,111 Oakwood Drive,Austin,TX,77309,2022-12-07,2023-08-31,565.93,CR-60053,Wants marketing preferences updated to email only.
+CUST100316,Aisha,Novak,aisha.novak316@example.com,(879) 984-4604,,Buffalo,NY,90260,2022-09-24,2022-12-15,3322.91,448-15-4357,Wants marketing preferences updated to email only.
+CUST100006,David,Novak,david.novak6@example.com,(829) 460-3792,177 Elm Court,Orlando,FL,71053,2023-02-22,2024-03-17,266.11,CR-92353,"Enquired about loyalty points balance, no further action needed."
+CUST100203,Grace,Moreau,grace.moreau203@example.com,(790) 789-3899,,Tampa,FL,67501,2022-12-20,2023-10-13,2351.62,CR-81680,Wants marketing preferences updated to email only.
+CUST100062,Fatima,Reyes,fatima.reyes62@example.com,,,Buffalo,NY,64677,2023-06-06,,2522.2,CR-78404,Asked whether the item is available in a larger size.
+CUST100081,Priya,Murphy,priya.murphy81@example.com,(791) 295-8179,329 Aspen Way,Miami,Florida,51301,2022-12-30,2023-11-13,3968.94,CR-37470,Asked to change the delivery window to weekday mornings only.
+CUST100159,Mei,Okafor,mei.okafor159@example.com,(413) 612-1410,169 Maple Avenue,Tampa,FL,44205,2022-10-28,2023-06-20,2961.16,CR-16635,"Enquired about loyalty points balance, no further action needed."
+CUST100322,Rajesh,Ivanov,rajesh.ivanov322@example.com,,,Chicago,IL,16497,2023-08-15,,943.67,CR-28967,Called to confirm the billing address after a failed payment.
+CUST100431,Anna,Murphy,anna.murphy431@example.com,,272 Elm Court,Peoria,IL,90848,2023-06-14,2024-03-14,3058.67,CR-66614,Called to confirm the billing address after a failed payment.
+CUST100208,Leila,Tanaka,leila.tanaka208@example.com,,176 Cedar Lane,Orlando,FL,48781,2022-03-14,,315.64,CR-67188,Called to confirm the billing address after a failed payment.
+CUST100235,Priya,Mbeki,priya.mbeki235@example.com,(330) 278-6602,288 Birch Street,San Diego,CA,47533,2023-07-26,,3604.28,CR-46365,"Reported a damaged package, replacement dispatched."
+CUST100395,Marcus,Nakamura,marcus.nakamura395@example.com,,218 Oakwood Drive,Chicago,IL,73365,2022-02-28,2023-04-02,3622.16,CR-39185,"Reported a damaged package, replacement dispatched."
+CUST100324,Sofia,Haddad,sofia.haddad324@example.com,,226 Willow Road,Austin,TX,15919,2022-09-11,,3513.23,CR-69589,Called to confirm the billing address after a failed payment.
+CUST100448,Daniel,Rossi,daniel.rossi448@example.com,(230) 972-2562,141 Willow Road,Peoria,IL,16762,2022-04-27,2022-12-11,2640.54,CR-10215,Asked whether the item is available in a larger size.
+CUST100128,Sarah,Kowalski,sarah.kowalski128@example.com,(269) 695-8671,392 Willow Road,Los Angeles,CA,67922,2022-10-11,2023-07-19,4334.42,CR-75415,"Enquired about loyalty points balance, no further action needed."
+CUST100237,James,Nakamura,james.nakamura237@example.com,(358) 474-6421,,Rochester,NY,21927,2022-07-25,,1288.25,CR-19800,"Reported a damaged package, replacement dispatched."
+CUST100359,Aisha,Rossi,aisha.rossi359@example.com,,33 Birch Street,Dallas,TX,30362,2022-10-04,,2012.51,CR-38811,"Requested a refund for the second item in the order, approved."
+CUST100355,David,Costa,david.costa355@example.com,,275 Maple Avenue,Los Angeles,CA,91087,2022-12-18,,1038.65,CR-30761,"Reported a damaged package, replacement dispatched."
+CUST100080,Priya,Tanaka,priya.tanaka80@example.com,(720) 532-6050,,Austin,TX,80617,2022-09-13,2023-05-30,3360.87,CR-53860,"Enquired about loyalty points balance, no further action needed."
+CUST100449,Fatima,Murphy,@example145.com,,141 Willow Road,Miami,FL,95702,2023-10-18,,4265.74,CR-14553,"Requested a refund for the second item in the order, approved."
+CUST100300,Sofia,Kowalski,sofia.kowalski300@example.com,,,Peoria,IL,48941,2023-08-04,,1694.74,CR-92474,Asked to change the delivery window to weekday mornings only.
+CUST100125,Daniel,Reyes,daniel.reyes125@example.com,(336) 339-3658,375 Willow Road,Peoria,IL,60518,2022-02-23,,855.59,CR-29339,Asked whether the item is available in a larger size.
+CUST100256,Nadia,Weber,nadia.weber256@example.com,(356) 780-6451,311 Willow Road,San Diego,CA,61192,2023-03-05,2023-09-07,4150.05,CR-83816,Wants marketing preferences updated to email only.
+CUST100388,Priya,Novak,fatima149@,(310) 643-2661,,Orlando,FL,26438,2023-02-03,,3284.41,CR-49924,Asked to change the delivery window to weekday mornings only.
+CUST100269,Thomas,Murphy,thomas.murphy269@example.com,(421) 962-8552,3 Birch Street,Chicago,IL,71941,2022-03-29,2023-02-18,3286.78,CR-40913,"Reported a damaged package, replacement dispatched."
+CUST100418,Sofia,Dubois,sofia.dubois418@example.com,(641) 526-6279,,Sacramento,California,89552,2023-09-06,2024-09-11,2989.79,CR-43604,"Requested a refund for the second item in the order, approved."
+CUST100211,Anna,Kowalski,anna.kowalski211@example.com,(812) 918-3677,,Miami,FL,13428,2022-07-27,2022-09-28,4385.72,CR-53637,"Requested a refund for the second item in the order, approved."
+CUST100391,Sarah,Andersson,leila153@.com,(963) 435-1259,270 Birch Street,Chicago,IL,89110,2023-08-17,2023-11-07,2612.39,CR-17186,Called to confirm the billing address after a failed payment.
+CUST100160,Omar,Ivanov,omar.ivanov160@example.com,(327) 572-5350,310 Oakwood Drive,Spokane,WA,40402,2023-01-16,2023-04-29,398.62,CR-60199,"Enquired about loyalty points balance, no further action needed."
+CUST100242,Omar,Haddad,omar.haddad242@example.com,(393) 815-1253,56 Willow Road,New York,NY,36539,2022-01-17,2022-12-08,3029.3,CR-47825,Called to confirm the billing address after a failed payment.
+CUST100109,Thomas,Weber,thomas.weber109@example.com,(421) 904-1454,,Austin,TX,65867,2023-07-11,2024-06-15,149.21,CR-30136,Wants marketing preferences updated to email only.
+CUST100303,Lucas,Andersson,lucas.andersson303@example.com,(567) 360-5309,174 Aspen Way,Orlando,FL,33203,2022-12-07,2023-08-07,2212.9,CR-98400,Asked whether the item is available in a larger size.
+CUST100018,Fatima,Okafor,fatima.okafor18@example.com,(702) 219-1643,11 Oakwood Drive,Spokane,WA,79421,2022-12-02,2023-12-05,3535.5,CR-57519,"Requested a refund for the second item in the order, approved."
+CUST100274,Anna,Murphy,anna.murphy274@example.com,(856) 738-8846,41 Aspen Way,Spokane,WA,23532,2023-10-03,2024-03-31,3937.89,CR-71974,Wants marketing preferences updated to email only.
+CUST100096,Sofia,Weber,sofia.weber96@example.com,(521) 227-4957,61 Birch Street,New York,NY,94516,2023-02-22,2023-08-23,3594.7,CR-53237,"Requested a refund for the second item in the order, approved."
+CUST100008,Michael,Haddad,michael.haddad8@example.com,(878) 599-1687,178 Aspen Way,San Diego,CA,97372,2022-05-06,,3523.81,CR-48675,"Requested a refund for the second item in the order, approved."
+CUST100249,Sofia,Nakamura,sofia.nakamura249@example.com,(572) 625-9876,,San Diego,CA,66288,2022-08-30,,2780.48,CR-47808,"Enquired about loyalty points balance, no further action needed."
+CUST100263,Daniel,Nakamura,daniel.nakamura263@example.com,,28 Cedar Lane,San Diego,CA,48931,2022-04-03,,447.85,CR-84587,"Requested a refund for the second item in the order, approved."
+CUST100069,Daniel,Silva,daniel.silva69@example.com,,169 Pine Crescent,Spokane,WA,79914,2022-08-06,2022-09-21,555.53,CR-14733,"Enquired about loyalty points balance, no further action needed."
+CUST100200,Fatima,Dubois,fatima.dubois200@example.com,(926) 937-1349,368 Cedar Lane,Dallas,TX,60637,2023-07-15,,1105.05,CR-69240,"Customer called about a delayed shipment, resolved on the same day."
+CUST100021,Rajesh,Ivanov,rajesh.ivanov21@example.com,(480) 493-4938,190 Aspen Way,Peoria,IL,57923,2023-11-20,,1148.19,CR-93096,Called to confirm the billing address after a failed payment.
+CUST100033,James,Silva,james.silva33@example.com,,246 Pine Crescent,Seattle,WA,98575,2022-03-29,,109.13,CR-53982,Asked to change the delivery window to weekday mornings only.
+CUST100454,Omar,Reyes,omar.reyes454@example.com,,,Los Angeles,CA,63164,2023-07-27,,38.36,CR-68327,"Customer called about a delayed shipment, resolved on the same day."
+CUST100133,Michael,Rossi,michael.rossi133@example.com,(440) 213-2396,,Dallas,TX,52455,2022-03-30,2022-11-25,1927.38,CR-50883,"Customer called about a delayed shipment, resolved on the same day."
+CUST100341,Michael,Novak,michael.novak341@example.com,(765) 966-7016,15 Cedar Lane,Spokane,WA,38885,2023-11-07,2024-05-20,1870.78,CR-62429,"Customer called about a delayed shipment, resolved on the same day."
+CUST100343,Ethan,Nakamura,lucas 171@example.com,(459) 270-5441,63 Cedar Lane,Seattle,Washington,57362,2022-07-08,,890.37,CR-22188,Called to confirm the billing address after a failed payment.
+CUST100342,Elena,Andersson,elena.andersson342@example.com,(295) 492-5084,313 Cedar Lane,Peoria,IL,50818,2023-07-07,2024-04-04,2492.49,CR-53845,Asked to change the delivery window to weekday mornings only.
+CUST100237,James,Nakamura,james.nakamura237@example.com,,,Rochester,NY,21927,2022-07-25,,1288.25,CR-19800,"Reported a damaged package, replacement dispatched."
+CUST100378,Aisha,Novak,aisha.novak378@example.com,,380 Cedar Lane,Seattle,WA,72551,2023-06-09,2023-10-26,717.48,CR-54146,Called to confirm the billing address after a failed payment.
+CUST100252,Chloe,Patel,chloe.patel252@example.com,(482) 206-8640,,Seattle,WA,83194,2023-04-18,,1898.63,626-73-4222,Wants marketing preferences updated to email only.
+CUST100444,Fatima,Kowalski,fatima.kowalski444@example.com,(636) 648-8301,117 Elm Court,Tacoma,WA,62245,2023-10-17,,2098.03,CR-17900,Called to confirm the billing address after a failed payment.
+CUST100422,James,Dubois,james.dubois422@example.com,(803) 547-2195,371 Maple Avenue,Dallas,TX,56578,2023-06-14,,1189.45,CR-81361,Asked to change the delivery window to weekday mornings only.
+CUST100373,Anna,Andersson,anna.andersson373@example.com,(406) 498-5666,190 Oakwood Drive,Orlando,FL,56724,2023-02-11,2023-07-30,2924.67,CR-40344,Asked to change the delivery window to weekday mornings only.
+CUST100101,Mei,Fischer,mei.fischer101@example.com,(963) 203-4269,,Tacoma,WA,14241,2022-07-13,2023-07-12,559.55,CR-77951,"Reported a damaged package, replacement dispatched."
+CUST100371,Thomas,Nakamura,thomas.nakamura371@example.com,,284 Cedar Lane,Los Angeles,CA,75487,2022-07-19,,397.6,CR-83256,"Reported a damaged package, replacement dispatched."
+CUST100218,Oliver,Costa,oliver.costa218@example.com,(937) 531-8267,,Sacramento,CA,34051,2022-07-21,2023-01-15,3410.39,CR-66389,"Requested a refund for the second item in the order, approved."
+CUST100089,Priya,Murphy,priya.murphy89@example.com,(272) 935-1943,399 Willow Road,Los Angeles,CA,97394,2022-02-04,2022-09-23,1982.03,CR-41817,"Customer called about a delayed shipment, resolved on the same day."
+CUST100431,Anna,Murphy,anna.murphy431@example.com,(965) 220-4434,272 Elm Court,Peoria,IL,90848,2023-06-14,2024-03-14,3058.67,CR-66614,Called to confirm the billing address after a failed payment.
+CUST100282,Rajesh,Ivanov,aisha 184@example.com,(327) 797-5211,289 Aspen Way,Buffalo,NY,71612,2022-11-02,2023-09-04,1166.75,CR-37687,Wants marketing preferences updated to email only.
+CUST100319,Sarah,Patel,sarah.patel319@example.com,(621) 788-4237,168 Oakwood Drive,Sacramento,CA,93537,2023-11-05,,1556.87,CR-49706,Called to confirm the billing address after a failed payment.
+CUST100234,Sofia,Nakamura,sofia.nakamura234@example.com,(539) 337-6122,,Buffalo,NY,22408,2023-11-18,2023-11-22,2523.81,CR-70448,"Requested a refund for the second item in the order, approved."
+CUST100202,Sarah,Khan,sarah.khan202@example.com,(917) 595-3980,96 Cedar Lane,Tampa,FL,39912,2022-07-05,,2276.92,CR-42068,Asked to change the delivery window to weekday mornings only.
+CUST100106,Fatima,Nakamura,fatima.nakamura106@example.com,,325 Willow Road,Spokane,WA,14312,2022-02-27,2022-11-18,3549.73,CR-63745,Asked to change the delivery window to weekday mornings only.
+CUST100116,James,Khan,james.khan116@example.com,(585) 789-7599,321 Maple Avenue,Dallas,TX,94652,2023-04-09,,1260.6,CR-45210,"Requested a refund for the second item in the order, approved."
+CUST100440,Grace,Rossi,grace.rossi440@example.com,,321 Maple Avenue,Miami,FL,83574,2023-09-30,2024-05-12,1038.68,CR-57182,Wants marketing preferences updated to email only.
+CUST100151,David,Mbeki,david.mbeki151@example.com,,,Rochester,NY,83652,2023-08-05,2024-02-06,427.4,CR-81359,Asked to change the delivery window to weekday mornings only.
+CUST100456,Daniel,Reyes,daniel.reyes456@example.com,(746) 599-5338,,Springfield,IL,50693,2022-08-25,2023-06-05,920.14,CR-37200,"Requested a refund for the second item in the order, approved."
+CUST100401,Rajesh,Costa,rajesh.costa401@example.com,(918) 467-2818,178 Aspen Way,Spokane,WA,74970,2023-03-18,,4762.63,CR-48227,"Customer called about a delayed shipment, resolved on the same day."
+CUST100005,Grace,Tanaka,grace.tanaka5@example.com,(500) 378-9083,228 Willow Road,Dallas,TX,74594,2023-10-11,2024-04-05,4424.39,CR-89504,Wants marketing preferences updated to email only.
+CUST100271,Priya,Mbeki,priya.mbeki271@example.com,,,Seattle,WA,52124,2022-05-18,,1888.97,CR-85292,Wants marketing preferences updated to email only.
+CUST100098,Ethan,Mbeki,ethan.mbeki98@example.com,,296 Maple Avenue,Austin,TX,27602,2022-02-18,2022-11-28,4695.14,CR-62168,"Requested a refund for the second item in the order, approved."
+CUST100183,Rajesh,Okafor,rajesh.okafor183@example.com,(793) 234-5583,344 Cedar Lane,Los Angeles,CA,32453,2023-03-19,,899.28,CR-10688,"Customer called about a delayed shipment, resolved on the same day."
+CUST100028,Lucas,Dubois,lucas.dubois28@example.com,(981) 458-1915,,Miami,FL,93367,2022-11-11,2023-12-15,2267.68,CR-55969,"Requested a refund for the second item in the order, approved."
+CUST100339,Anna,Chen,anna.chen339@example.com,(431) 426-6290,117 Birch Street,Spokane,WA,29408,2022-04-04,,4647.18,CR-74666,Asked whether the item is available in a larger size.
+CUST100329,Lucas,Silva,lucas.silva329@example.com,(485) 206-3102,,Buffalo,NY,96386,2022-09-22,,4598.79,CR-16761,"Requested a refund for the second item in the order, approved."
+CUST100162,Omar,Costa,omar.costa162@example.com,(257) 296-1762,331 Cedar Lane,Los Angeles,CA,12201,2022-11-02,,3668.25,CR-82856,Asked to change the delivery window to weekday mornings only.
+CUST100152,Daniel,Novak,daniel.novak152@example.com,(476) 592-5814,,Tacoma,WA,87660,2022-07-28,2023-03-24,4632.73,CR-66225,Wants marketing preferences updated to email only.
+CUST100347,Ethan,Kowalski,ethan.kowalski347@example.com,,,Austin,TX,41251,2023-03-02,2023-06-26,3006.81,CR-46475,Asked to change the delivery window to weekday mornings only.
+CUST100043,Sofia,Costa,sofia.costa43@example.com,(837) 952-4135,,Sacramento,CA,74096,2022-08-17,2023-07-01,1393.38,CR-85193,Asked whether the item is available in a larger size.
+CUST100124,Marcus,Larsen,marcus.larsen124@example.com,,328 Pine Crescent,Tampa,FL,43329,2023-01-08,2023-04-19,2737.26,CR-46442,Wants marketing preferences updated to email only.
+CUST100292,Daniel,Rossi,daniel.rossi292@example.com,(590) 531-5765,273 Elm Court,Tacoma,WA,59108,2022-01-08,2022-11-21,1878.6,CR-91838,"Requested a refund for the second item in the order, approved."
+CUST100026,Ethan,Moreau,ethan.moreau26@example.com,,148 Aspen Way,Tampa,Florida,51473,2022-05-25,2022-11-24,419.37,CR-66048,"Customer called about a delayed shipment, resolved on the same day."
+CUST100333,Omar,Nakamura,omar.nakamura333@example.com,(692) 614-3219,34 Maple Avenue,San Diego,CA,57381,2022-10-20,,4338.02,CR-10018,"Reported a damaged package, replacement dispatched."
+CUST100358,Fatima,Fischer,fatima.fischer358@example.com,(463) 371-3444,169 Elm Court,Buffalo,NY,74991,2022-04-12,2022-05-07,2514.63,CR-34865,Asked whether the item is available in a larger size.
+CUST100452,Marcus,Reyes,marcus.reyes452@example.com,,114 Birch Street,San Diego,CA,67086,2022-05-02,2022-12-02,4518.93,CR-33035,Called to confirm the billing address after a failed payment.
+CUST100031,Chloe,Kowalski,chloe.kowalski31@example.com,,,Austin,TX,58775,2022-11-27,2023-10-24,3913.13,CR-87288,"Reported a damaged package, replacement dispatched."
+CUST100063,Sofia,Khan,sofia.khan63@example.com,(688) 360-7584,,Austin,TX,53917,2022-12-11,2023-10-23,1419.34,CR-24823,Asked to change the delivery window to weekday mornings only.
+CUST100414,Yuki,Costa,yuki.costa414@example.com,,,Rochester,NY,87726,2022-12-03,2023-03-06,3182.07,CR-52143,"Requested a refund for the second item in the order, approved."
+CUST100311,Elena,Rossi,elena.rossi311@example.com,(819) 308-7140,,Seattle,WA,99563,2023-03-21,,3778.82,CR-64650,"Requested a refund for the second item in the order, approved."
+CUST100123,Yuki,Fischer,yuki.fischer123@example.com,(813) 969-6547,126 Pine Crescent,Rochester,NY,49520,2023-10-29,,1158.06,CR-33426,"Enquired about loyalty points balance, no further action needed."
+CUST100340,Aisha,Silva,aisha.silva340@example.com,(547) 263-9083,280 Birch Street,Houston,TX,89410,2022-12-09,,2143.84,CR-80922,Wants marketing preferences updated to email only.
+CUST100386,Thomas,Kowalski,thomas.kowalski386@example.com,(470) 987-6142,,Houston,TX,24605,2022-04-01,2023-01-12,4151.54,CR-41482,"Requested a refund for the second item in the order, approved."
+CUST100061,Sofia,Okafor,sofia.okafor61@example.com,,260 Aspen Way,Springfield,IL,84534,2022-04-22,2023-01-14,4048.63,CR-65618,"Customer called about a delayed shipment, resolved on the same day."
+CUST100450,Elena,Fischer,elena.fischer450@example.com,,63 Maple Avenue,Austin,TX,67881,2022-09-16,,3221.43,CR-68981,Asked whether the item is available in a larger size.
+CUST100387,Ethan,Murphy,ethan.murphy387@example.com,(536) 285-8765,198 Pine Crescent,Los Angeles,CA,72750,2022-06-19,,1711.14,CR-61584,"Reported a damaged package, replacement dispatched."
+CUST100345,Lucas,Murphy,lucas.murphy345@example.com,,,Houston,TX,65381,2022-04-28,2022-09-25,2197.93,CR-62631,"Enquired about loyalty points balance, no further action needed."
+CUST100360,Aisha,Chen,aisha.chen360@example.com,,161 Aspen Way,New York,NY,41704,2023-10-12,,2268.86,CR-44279,"Customer called about a delayed shipment, resolved on the same day."
+CUST100014,Nadia,Khan,nadia.khan14@example.com,,377 Elm Court,Houston,TX,16019,2023-03-29,2024-01-25,1583.23,CR-17867,Asked to change the delivery window to weekday mornings only.
+CUST100075,Marcus,Weber,marcus.weber75@example.com,(609) 888-6399,,Orlando,FL,67445,2023-08-22,2024-04-23,1604.74,CR-99656,Asked whether the item is available in a larger size.
+CUST100393,Thomas,Costa,thomas.costa393@example.com,(686) 524-2129,,New York,NY,41671,2022-04-16,,435.33,CR-88981,Asked to change the delivery window to weekday mornings only.
+CUST100445,Omar,Khan,omar.khan445@example.com,(393) 418-5856,,Tacoma,WA,19358,2022-07-15,2022-07-17,23.85,CR-93542,Wants marketing preferences updated to email only.
+CUST100433,Sofia,Haddad,sofia.haddad433@example.com,(650) 463-5616,185 Cedar Lane,New York,NY,61773,2023-08-23,2024-02-10,2135.45,CR-35360,Asked to change the delivery window to weekday mornings only.
+CUST100040,Thomas,Silva,thomas.silva40@example.com,(596) 579-7742,55 Oakwood Drive,San Diego,CA,80233,2023-02-12,2023-05-02,115.97,CR-26726,"Reported a damaged package, replacement dispatched."
+CUST100167,Oliver,Larsen,oliver.larsen167@example.com,,,Seattle,WA,73298,2022-09-15,,4439.06,CR-99600,"Enquired about loyalty points balance, no further action needed."
+CUST100102,David,Khan,david.khan102@example.com,(795) 260-6382,19 Cedar Lane,Spokane,WA,78065,2022-11-26,,1660.35,CR-74029,"Reported a damaged package, replacement dispatched."
+CUST100154,Rajesh,Haddad,rajesh.haddad154@example.com,(358) 957-6044,,New York,NY,56628,2023-04-28,2023-11-14,495.24,CR-74513,Asked whether the item is available in a larger size.
+CUST100087,Nadia,Murphy,nadia.murphy87@example.com,,203 Birch Street,Rochester,NY,53186,2022-10-03,2022-12-03,686.2,CR-22889,"Customer called about a delayed shipment, resolved on the same day."
+CUST100277,Thomas,Andersson,thomas.andersson277@example.com,,,Tacoma,WA,17584,2022-03-04,2022-05-01,1127.01,CR-58611,Asked to change the delivery window to weekday mornings only.
+CUST100302,Sarah,Weber,sarah.weber302@example.com,,310 Cedar Lane,Austin,TX,46692,2022-11-12,,4407.75,CR-46146,Called to confirm the billing address after a failed payment.
+CUST100331,Marcus,Moreau,marcus.moreau331@example.com,,,Spokane,WA,90535,2022-09-10,2022-11-12,1884.45,CR-58213,"Enquired about loyalty points balance, no further action needed."
+CUST100089,Priya,Murphy,priya.murphy89@example.com,(272) 935-1943,,Los Angeles,CA,97394,2022-02-04,2022-09-23,1982.03,CR-41817,"Customer called about a delayed shipment, resolved on the same day."
+CUST100145,Anna,Okafor,anna.okafor145@example.com,,,Tampa,FL,56046,2023-10-31,2023-12-07,396.28,CR-48202,Asked whether the item is available in a larger size.
+CUST100016,Leila,Andersson,leila.andersson16@example.com,,1 Birch Street,Tacoma,WA,42768,2023-09-11,2024-10-13,2384.54,CR-98109,Asked to change the delivery window to weekday mornings only.
+CUST100368,Yuki,Dubois,yuki.dubois368@example.com,,,Tacoma,WA,20084,2023-10-20,2024-09-13,3935.92,CR-95373,Wants marketing preferences updated to email only.
+CUST100000,Michael,Nakamura,michael.nakamura0@example.com,(923) 628-5868,124 Oakwood Drive,Austin,TX,33846,2023-10-16,2024-08-25,3335.19,CR-70866,Wants marketing preferences updated to email only.
+CUST100129,Aisha,Kowalski,aisha.kowalski129@example.com,,,Orlando,FL,87878,2022-10-13,2023-11-15,2961.48,CR-69819,"Enquired about loyalty points balance, no further action needed."
+CUST100168,Omar,Larsen,nadia242@@example.com,,305 Maple Avenue,Buffalo,New York,77089,2022-09-20,2023-05-14,1070.37,CR-35036,"Enquired about loyalty points balance, no further action needed."
+CUST100212,James,Ivanov,james.ivanov212@example.com,,,Peoria,IL,54608,2022-05-29,2022-11-23,4714.03,CR-73895,"Requested a refund for the second item in the order, approved."
+CUST100216,Anna,Larsen,anna.larsen216@example.com,,185 Birch Street,Sacramento,CA,21579,2022-03-18,,2639.06,CR-33108,Asked whether the item is available in a larger size.
+CUST100437,Chloe,Mbeki,chloe.mbeki437@example.com,,69 Aspen Way,San Diego,CA,60307,2022-05-09,,196.19,CR-79487,Asked whether the item is available in a larger size.
+CUST100211,Anna,Kowalski,anna.kowalski211@example.com,(812) 918-3677,,Miami,FL,13428,2022-07-27,2022-09-28,4385.72,CR-53637,"Requested a refund for the second item in the order, approved."
+CUST100439,Leila,Andersson,leila.andersson439@example.com,(314) 918-3676,124 Elm Court,Buffalo,NY,29371,2023-01-13,2023-10-09,833.84,298-79-2253,Asked to change the delivery window to weekday mornings only.
+CUST100227,Priya,Murphy,priya.murphy227@example.com,,180 Cedar Lane,San Diego,CA,52518,2022-08-04,,94.97,636-14-7279,"Customer called about a delayed shipment, resolved on the same day."
+CUST100052,Sofia,Khan,sofia.khan52@example.com,(758) 625-7455,203 Oakwood Drive,Tampa,FL,75414,2022-10-12,,424.6,CR-28916,Called to confirm the billing address after a failed payment.
+CUST100054,Fatima,Silva,fatima.silva54@example.com,(855) 214-9465,319 Willow Road,Miami,FL,49123,2022-11-29,2023-07-24,3850.05,CR-57948,"Customer called about a delayed shipment, resolved on the same day."
+CUST100134,Grace,Ivanov,grace.ivanov134@example.com,,106 Oakwood Drive,Buffalo,NY,74777,2022-08-07,2023-07-14,1782.16,CR-37220,"Enquired about loyalty points balance, no further action needed."
+CUST100178,Mei,Larsen,mei.larsen178@example.com,(386) 848-4075,256 Birch Street,Peoria,IL,28495,2023-07-23,,449.49,CR-70620,Called to confirm the billing address after a failed payment.
+CUST100148,Daniel,Nakamura,daniel.nakamura148@example.com,,275 Willow Road,San Diego,CA,65990,2022-11-08,,3693.02,CR-75094,Wants marketing preferences updated to email only.
+CUST100195,Aisha,Chen,aisha.chen195@example.com,(867) 353-3731,43 Birch Street,Houston,TX,80038,2022-10-16,2023-07-04,3560.18,CR-62432,Asked to change the delivery window to weekday mornings only.
+CUST100051,Chloe,Larsen,chloe.larsen51@example.com,,212 Cedar Lane,Los Angeles,CA,39726,2023-08-03,,758.87,CR-60129,"Customer called about a delayed shipment, resolved on the same day."
+CUST100243,Mei,Chen,mei.chen243@example.com,(617) 781-1243,337 Pine Crescent,Peoria,IL,90913,2023-03-10,2023-09-20,4291.49,CR-30917,"Customer called about a delayed shipment, resolved on the same day."
+CUST100278,Michael,Tanaka,michael.tanaka278@example.com,,93 Birch Street,Buffalo,NY,28102,2023-08-24,,877.52,CR-85792,Wants marketing preferences updated to email only.
+CUST100181,Sofia,Mbeki,sofia.mbeki181@example.com,(644) 292-9806,226 Maple Avenue,Sacramento,CA,41992,2022-08-04,2022-12-17,3201.92,CR-97075,"Enquired about loyalty points balance, no further action needed."
+CUST100253,Priya,Andersson,priya.andersson253@example.com,,241 Oakwood Drive,Rochester,NY,45596,2023-02-16,2024-03-01,3395.76,CR-39003,"Customer called about a delayed shipment, resolved on the same day."
+CUST100380,Yuki,Larsen,yuki.larsen380@example.com,,395 Aspen Way,Sacramento,CA,24562,2023-07-31,,2386.64,241-30-5045,Asked to change the delivery window to weekday mornings only.
+CUST100356,Ethan,Andersson,ethan.andersson356@example.com,,45 Maple Avenue,Springfield,IL,86420,2022-02-13,,2484.62,CR-18876,"Enquired about loyalty points balance, no further action needed."
+CUST100029,Chloe,Rossi,chloe.rossi29@example.com,(681) 507-3883,69 Elm Court,Sacramento,CA,31361,2023-05-19,,351.02,CR-27897,"Reported a damaged package, replacement dispatched."
+CUST100246,Nadia,Khan,nadia.khan246@example.com,(491) 286-8467,230 Elm Court,Houston,TX,67857,2022-10-11,2023-06-13,2365.05,CR-61575,Called to confirm the billing address after a failed payment.
+CUST100146,Oliver,Nakamura,oliver.nakamura146@example.com,(952) 602-7120,222 Aspen Way,Orlando,FL,79139,2023-10-01,,280.18,CR-56283,Wants marketing preferences updated to email only.
+CUST100417,James,Okafor,james.okafor417@example.com,(395) 351-9823,,Chicago,IL,99008,2022-01-11,2022-07-25,3682.89,CR-61703,"Enquired about loyalty points balance, no further action needed."
+CUST100173,Fatima,Reyes,fatima.reyes173@example.com,(822) 229-2677,190 Oakwood Drive,Dallas,TX,81990,2022-12-14,2023-03-27,3147.04,CR-76146,"Requested a refund for the second item in the order, approved."
+CUST100430,Michael,Kowalski,michael.kowalski430@example.com,(361) 861-6713,229 Elm Court,Tampa,FL,64833,2022-01-10,,2563.79,CR-37375,"Customer called about a delayed shipment, resolved on the same day."
+CUST100111,Chloe,Moreau,leila268@.com,(674) 681-1081,,Tacoma,WA,53444,2022-01-22,2022-09-03,3333.06,CR-54546,Called to confirm the billing address after a failed payment.
+CUST100097,Chloe,Reyes,chloe.reyes97@example.com,(380) 234-8053,49 Oakwood Drive,Houston,TX,89573,2022-12-10,,621.45,CR-32445,Asked to change the delivery window to weekday mornings only.
+CUST100022,James,Moreau,james.moreau22@example.com,(501) 304-3805,,Tampa,FL,73799,2022-05-26,,1925.13,CR-56344,Called to confirm the billing address after a failed payment.
+CUST100228,Sarah,Chen,sarah.chen228@example.com,(885) 265-2301,384 Elm Court,Rochester,NY,15358,2023-05-17,,3221.42,CR-40401,"Enquired about loyalty points balance, no further action needed."
+CUST100055,Fatima,Murphy,fatima.murphy55@example.com,,292 Cedar Lane,San Diego,CA,89308,2023-06-19,2024-06-04,853.2,CR-54536,Wants marketing preferences updated to email only.
+CUST100392,Thomas,Patel,thomas.patel392@example.com,(690) 689-6090,337 Maple Avenue,Orlando,FL,89319,2023-05-16,2023-08-14,3772.65,CR-10724,Asked to change the delivery window to weekday mornings only.
+CUST100409,Omar,Novak,omar.novak409@example.com,(631) 699-5981,,Peoria,IL,87838,2022-07-07,2023-05-23,725.61,CR-50798,Wants marketing preferences updated to email only.
+CUST100451,Mei,Chen,mei.chen451@example.com,(453) 296-4861,281 Pine Crescent,Peoria,IL,95789,2022-02-27,,4319.61,CR-45287,"Requested a refund for the second item in the order, approved."
+CUST100100,Leila,Kowalski,leila.kowalski100@example.com,(747) 370-9574,,San Diego,CA,39831,2023-03-29,,1274.03,CR-17523,"Customer called about a delayed shipment, resolved on the same day."
+CUST100261,Leila,Patel,leila.patel261@example.com,(510) 515-1859,291 Oakwood Drive,Chicago,IL,63520,2023-03-18,,3756.29,CR-56682,Asked to change the delivery window to weekday mornings only.
+CUST100365,David,Mbeki,david.mbeki365@example.com,(919) 273-3524,186 Oakwood Drive,Houston,TX,85708,2023-06-09,2023-09-13,2518.49,CR-52247,Wants marketing preferences updated to email only.
+CUST100114,Anna,Reyes,anna.reyes114@example.com,(878) 231-5821,7 Elm Court,New York,NY,63270,2022-03-01,2023-01-25,2705.08,CR-84551,"Customer called about a delayed shipment, resolved on the same day."
+CUST100366,Ethan,Nakamura,ethan.nakamura366@example.com,,33 Pine Crescent,Rochester,NY,92427,2023-01-27,,3947.78,CR-16083,"Requested a refund for the second item in the order, approved."
+CUST100220,Chloe,Rossi,chloe.rossi220@example.com,,334 Birch Street,Tampa,FL,62178,2022-05-22,,3671.76,CR-61417,"Customer called about a delayed shipment, resolved on the same day."
+CUST100438,Sofia,Khan,sofia.khan438@example.com,,315 Pine Crescent,Tampa,FL,95959,2023-09-28,2024-07-14,620.02,CR-21194,"Reported a damaged package, replacement dispatched."
+CUST100178,Mei,Larsen,mei.larsen178@example.com,(386) 848-4075,256 Birch Street,Peoria,IL,28495,2023-07-23,2023-08-13,449.49,CR-70620,Called to confirm the billing address after a failed payment.
+CUST100188,Marcus,Andersson,marcus.andersson188@example.com,(989) 963-8556,375 Elm Court,New York,NY,44097,2023-09-06,2024-08-26,4522.78,CR-49979,"Reported a damaged package, replacement dispatched."
+CUST100336,Omar,Larsen,omar.larsen336@example.com,(638) 467-1298,161 Willow Road,Peoria,IL,51792,2023-08-09,2023-08-18,1809.16,CR-36392,"Enquired about loyalty points balance, no further action needed."
+CUST100415,Priya,Okafor,priya.okafor415@example.com,(605) 363-4193,361 Maple Avenue,Peoria,Illinois,60906,2023-06-19,,794.24,CR-33846,Asked to change the delivery window to weekday mornings only.
+CUST100066,Oliver,Okafor,oliver.okafor66@example.com,(733) 718-2550,114 Cedar Lane,Tacoma,WA,26730,2023-10-30,2024-04-17,514.4,CR-63712,Asked to change the delivery window to weekday mornings only.
+CUST100247,Chloe,Tanaka,chloe.tanaka247@example.com,(614) 882-4882,,Tacoma,WA,78991,2022-03-31,2022-09-05,4463.32,CR-20501,Asked whether the item is available in a larger size.
+CUST100325,Nadia,Dubois,nadia.dubois325@example.com,(683) 487-8322,78 Aspen Way,Orlando,FL,85131,2023-08-30,2024-08-06,4785.69,CR-12829,"Customer called about a delayed shipment, resolved on the same day."
+CUST100214,Lucas,Patel,lucas.patel214@example.com,(743) 358-4266,322 Cedar Lane,Sacramento,CA,78008,2022-07-09,2022-09-07,1973.48,CR-44811,Called to confirm the billing address after a failed payment.
+CUST100406,Ethan,Reyes,ethan.reyes406@example.com,(947) 988-4150,,Dallas,TX,22745,2022-04-25,,817.53,CR-44905,Wants marketing preferences updated to email only.
+CUST100230,Priya,Okafor,priya.okafor230@example.com,(898) 288-9954,66 Aspen Way,Tacoma,WA,62699,2023-10-19,2024-01-22,3462.68,CR-66166,"Contact preference updated, best address is elena.fischer@example.com."
+CUST100105,Aisha,Silva,aisha.silva105@example.com,(836) 523-6828,316 Elm Court,Tampa,FL,55776,2022-09-02,2022-09-11,4404.24,CR-49444,"Requested a refund for the second item in the order, approved."
+CUST100193,Nadia,Rossi,nadia.rossi193@example.com,(436) 312-8880,41 Aspen Way,Houston,TX,96502,2022-09-05,2023-04-04,3618.18,CR-57589,"Customer called about a delayed shipment, resolved on the same day."
+CUST100004,Mei,Mbeki,mei.mbeki4@example.com,(474) 853-9597,268 Maple Avenue,Austin,TX,59529,2023-03-22,2023-05-06,1665.67,CR-82760,Wants marketing preferences updated to email only.
+CUST100224,Rajesh,Ivanov,rajesh.ivanov224@example.com,(435) 219-1718,137 Willow Road,Springfield,IL,28170,2022-10-15,,1758.61,CR-68341,"Enquired about loyalty points balance, no further action needed."
+CUST100307,Mei,Patel,mei.patel307@example.com,(919) 820-4435,275 Birch Street,Spokane,WA,76266,2023-02-21,2023-09-06,1691.02,CR-88357,Asked whether the item is available in a larger size.
+CUST100074,Lucas,Murphy,sofia 298@example.com,(460) 868-8249,,Dallas,TX,44078,2022-08-26,2023-02-28,4297.36,CR-61115,"Customer called about a delayed shipment, resolved on the same day."
+CUST100413,Grace,Reyes,grace.reyes413@example.com,,171 Elm Court,Sacramento,CA,16721,2023-06-01,2023-10-19,3725.91,CR-95129,"Customer called about a delayed shipment, resolved on the same day."
+CUST100363,David,Khan,david.khan363@example.com,,,Sacramento,California,55306,2023-06-18,,1050.12,CR-93376,Asked to change the delivery window to weekday mornings only.
+CUST100325,Nadia,Dubois,nadia.dubois325@example.com,,,Orlando,FL,85131,2023-08-30,2024-08-06,4785.69,CR-12829,"Contact preference updated, best address is marcus.rossi@example.com."
+CUST100169,Aisha,Rossi,aisha.rossi169@example.com,(953) 700-9705,101 Birch Street,Sacramento,CA,76254,2022-09-17,,1055.88,CR-95121,"Requested a refund for the second item in the order, approved."
+CUST100288,James,Andersson,james.andersson288@example.com,(263) 229-7225,367 Oakwood Drive,Austin,TX,13196,2023-10-31,,1490.05,CR-79356,Called to confirm the billing address after a failed payment.
+CUST100320,David,Ivanov,david.ivanov320@example.com,,259 Oakwood Drive,Austin,TX,93822,2022-12-08,2023-08-18,1437.71,CR-52767,"Reported a damaged package, replacement dispatched."
+CUST100402,Sofia,Tanaka,thomas305@example,(385) 556-4494,,Peoria,IL,64960,2022-02-20,2023-01-26,1752.85,CR-88805,"Reported a damaged package, replacement dispatched."
+CUST100141,Oliver,Reyes,oliver.reyes141@example.com,,373 Pine Crescent,Orlando,FL,77909,2023-03-31,,4079.64,CR-10676,"Reported a damaged package, replacement dispatched."
+CUST100407,Elena,Murphy,elena.murphy407@example.com,(520) 371-8010,19 Oakwood Drive,Tacoma,WA,24291,2023-07-01,2024-03-29,3956.96,CR-53735,"Enquired about loyalty points balance, no further action needed."
+CUST100127,Michael,Weber,michael.weber127@example.com,(805) 349-6052,326 Elm Court,Peoria,IL,91989,2022-05-07,,3484.56,CR-83041,"Reported a damaged package, replacement dispatched."
+CUST100443,Michael,Ivanov,michael.ivanov443@example.com,,190 Birch Street,Spokane,WA,59134,2022-07-19,2023-08-15,1139.29,CR-66994,"Customer called about a delayed shipment, resolved on the same day."
+CUST100455,Oliver,Ivanov,oliver.ivanov455@example.com,(847) 889-8912,40 Oakwood Drive,Miami,FL,51241,2023-01-06,,3555.62,CR-77186,Called to confirm the billing address after a failed payment.
+CUST100338,Michael,Dubois,michael.dubois338@example.com,(477) 602-2616,,Houston,TX,19332,2022-06-02,,2716.88,CR-42638,"Enquired about loyalty points balance, no further action needed."
+CUST100196,Elena,Silva,elena.silva196@example.com,(791) 789-2349,296 Willow Road,Sacramento,CA,90717,2022-09-23,2023-07-23,1704.17,CR-16847,Called to confirm the billing address after a failed payment.
+CUST100410,Sarah,Tanaka,sarah.tanaka410@example.com,(896) 995-3839,297 Aspen Way,Houston,TX,80236,2022-01-19,2022-05-31,1777.44,CR-68328,Called to confirm the billing address after a failed payment.
+CUST100385,Grace,Chen,grace.chen385@example.com,(259) 647-5956,,New York,NY,39996,2022-06-18,2022-08-31,2652.52,CR-16475,"Customer called about a delayed shipment, resolved on the same day."
+CUST100076,Marcus,Moreau,marcus.moreau76@example.com,(761) 323-7735,272 Elm Court,Spokane,WA,71953,2023-06-16,,3612.94,CR-84567,Called to confirm the billing address after a failed payment.
+CUST100362,Lucas,Andersson,lucas.andersson362@example.com,(600) 585-1680,,Dallas,TX,13279,2023-01-06,2023-03-31,2006.94,CR-43404,Called to confirm the billing address after a failed payment.
+CUST100118,Omar,Silva,omar.silva118@example.com,(451) 984-9671,,Austin,TX,32374,2023-07-08,2023-10-16,305.85,CR-18111,"Enquired about loyalty points balance, no further action needed."
+CUST100144,Nadia,Murphy,nadia.murphy144@example.com,(283) 586-6021,393 Oakwood Drive,Los Angeles,CA,17346,2022-06-22,,1526.56,CR-42685,"Customer called about a delayed shipment, resolved on the same day."
+CUST100187,Yuki,Kowalski,yuki.kowalski187@example.com,(459) 892-3077,149 Cedar Lane,San Diego,CA,46245,2023-05-20,2023-09-03,1055.18,CR-47669,Wants marketing preferences updated to email only.
+CUST100150,Marcus,Moreau,marcus.moreau150@example.com,,,Tacoma,WA,30285,2022-07-05,,1318.37,CR-51490,"Enquired about loyalty points balance, no further action needed."
+CUST100132,Thomas,Nakamura,thomas.nakamura132@example.com,(210) 536-1509,,Los Angeles,CA,30116,2023-10-07,2023-12-05,4484.41,CR-46919,"Requested a refund for the second item in the order, approved."
+CUST100225,Grace,Khan,grace.khan225@example.com,,,Tampa,FL,46604,2023-05-11,2023-06-04,2211.16,CR-91111,"Customer called about a delayed shipment, resolved on the same day."
+CUST100164,Oliver,Weber,oliver.weber164@example.com,,187 Oakwood Drive,Tampa,FL,22158,2023-02-11,,897.15,CR-78119,"Reported a damaged package, replacement dispatched."
+CUST100411,Mei,Ivanov,mei.ivanov411@example.com,(752) 794-9502,116 Elm Court,Austin,TX,83376,2023-09-04,2023-10-10,1263.19,CR-60313,Asked to change the delivery window to weekday mornings only.
+CUST100173,Fatima,Reyes,fatima.reyes173@example.com,,190 Oakwood Drive,Dallas,TX,81990,2022-12-14,2023-03-27,3147.04,CR-76146,"Requested a refund for the second item in the order, approved."
+CUST100446,Anna,Chen,anna.chen446@example.com,,350 Willow Road,Los Angeles,CA,79094,2023-11-21,2024-07-24,345.24,CR-76396,Called to confirm the billing address after a failed payment.
+CUST100416,Michael,Haddad,michael.haddad416@example.com,(458) 815-1145,158 Maple Avenue,Seattle,WA,51719,2023-01-19,2023-07-24,4070.13,CR-48774,Asked whether the item is available in a larger size.
+CUST100095,Grace,Larsen,@example328.com,(473) 542-6586,340 Birch Street,Spokane,WA,60570,2023-11-22,,3564.39,CR-20292,Asked whether the item is available in a larger size.
+CUST100404,Omar,Dubois,omar.dubois404@example.com,(691) 588-8963,62 Elm Court,Seattle,WA,59762,2023-10-04,,4790.01,CR-76796,Asked to change the delivery window to weekday mornings only.
+CUST100153,Thomas,Fischer,thomas.fischer153@example.com,(928) 683-4699,393 Birch Street,Peoria,IL,51860,2023-07-25,2023-10-14,2921.19,CR-17379,"Requested a refund for the second item in the order, approved."
+CUST100286,Nadia,Mbeki,nadia.mbeki286@example.com,(793) 966-7407,74 Elm Court,Orlando,FL,38363,2022-10-27,2023-06-23,1563.75,CR-38482,"Enquired about loyalty points balance, no further action needed."
+CUST100205,Sofia,Reyes,sofia.reyes205@example.com,(274) 773-2022,,Houston,TX,56862,2022-09-24,2023-03-05,23.18,CR-32340,Asked whether the item is available in a larger size.
+CUST100332,Lucas,Novak,lucas.novak332@example.com,,308 Maple Avenue,Houston,TX,48559,2022-08-03,,2067.54,CR-30942,Asked whether the item is available in a larger size.
+CUST100295,Sofia,Reyes,sofia.reyes295@example.com,(671) 380-1576,,Peoria,IL,87167,2023-01-23,,2462.37,CR-41887,"Requested a refund for the second item in the order, approved."
+CUST100357,Mei,Patel,mei.patel357@example.com,,126 Elm Court,Houston,TX,53555,2022-01-19,,3766.52,CR-68819,"Customer called about a delayed shipment, resolved on the same day."
+CUST100381,Marcus,Haddad,marcus.haddad381@example.com,,16 Elm Court,Spokane,WA,88856,2023-03-04,,3654.76,CR-22324,"Reported a damaged package, replacement dispatched."
+CUST100070,Rajesh,Patel,rajesh.patel70@example.com,,,Peoria,IL,53399,2022-12-29,2023-07-06,3228.82,CR-78550,Asked whether the item is available in a larger size.
+CUST100403,Oliver,Larsen,oliver.larsen403@example.com,(952) 366-5378,,Dallas,TX,55291,2022-05-03,,1667.69,CR-11786,Asked to change the delivery window to weekday mornings only.
+CUST100142,Ethan,Haddad,ethan.haddad142@example.com,(338) 794-3826,,Miami,Florida,55160,2023-10-15,2024-05-13,1833.49,CR-30379,"Customer called about a delayed shipment, resolved on the same day."
+CUST100135,Michael,Andersson,michael.andersson135@example.com,(625) 467-9296,73 Maple Avenue,Buffalo,NY,76995,2023-01-08,2024-01-09,2739.1,CR-31521,Wants marketing preferences updated to email only.
+CUST100073,Oliver,Dubois,oliver.dubois73@example.com,(332) 274-7496,372 Birch Street,Peoria,IL,20399,2022-10-08,,2988.12,CR-12754,Asked whether the item is available in a larger size.
+CUST100289,Anna,Patel,david342@,,,Chicago,IL,38435,2023-09-07,2024-06-20,2255.17,CR-87011,"Customer called about a delayed shipment, resolved on the same day."
+CUST100432,Michael,Tanaka,michael.tanaka432@example.com,(402) 617-8832,149 Willow Road,Tampa,FL,68976,2023-04-16,,1900.98,CR-72970,Asked whether the item is available in a larger size.
+CUST100367,Leila,Ivanov,leila.ivanov367@example.com,(926) 284-7134,376 Birch Street,Rochester,NY,76806,2023-11-11,2024-12-05,4057.28,CR-19840,Asked to change the delivery window to weekday mornings only.
+CUST100049,Elena,Nakamura,elena.nakamura49@example.com,,62 Willow Road,Peoria,IL,78037,2022-12-09,2023-09-21,4696.44,CR-26886,Asked whether the item is available in a larger size.
+CUST100283,Oliver,Chen,oliver.chen283@example.com,,,Tacoma,WA,35096,2022-02-23,2022-09-27,2518.8,CR-76762,Wants marketing preferences updated to email only.
+CUST100315,Michael,Silva,michael.silva315@example.com,(438) 618-7856,360 Aspen Way,Peoria,IL,76072,2022-02-19,2022-11-30,2453.7,CR-75077,Asked whether the item is available in a larger size.
+CUST100046,Daniel,Murphy,daniel.murphy46@example.com,(811) 505-3929,387 Oakwood Drive,New York,NY,85308,2023-05-04,2023-06-30,1795.44,CR-48680,"Customer called about a delayed shipment, resolved on the same day."
+CUST100071,Yuki,Novak,yuki.novak71@example.com,(513) 224-9723,,Peoria,IL,16642,2022-05-09,2022-09-16,133.02,CR-82566,Asked whether the item is available in a larger size.
+CUST100297,Sofia,Murphy,sofia.murphy297@example.com,(497) 929-6602,,Tampa,FL,68010,2023-10-28,2024-09-24,111.09,CR-25684,Asked whether the item is available in a larger size.
+CUST100158,Michael,Chen,michael.chen158@example.com,,128 Elm Court,Tacoma,WA,69159,2022-11-16,2023-11-09,655.92,CR-52647,Asked whether the item is available in a larger size.
+CUST100459,Leila,Murphy,leila.murphy459@example.com,(719) 742-1261,,Dallas,TX,90972,2022-09-30,2023-08-24,3481.32,CR-92648,Wants marketing preferences updated to email only.
+CUST100275,Lucas,Silva,lucas.silva275@example.com,(238) 816-4820,,Rochester,NY,31437,2023-10-14,2024-05-28,52.97,CR-73797,Asked whether the item is available in a larger size.
+CUST100060,Elena,Patel,elena.patel60@example.com,,226 Willow Road,Buffalo,NY,88675,2023-06-16,,100.62,CR-58009,"Enquired about loyalty points balance, no further action needed."
+CUST100078,Leila,Rossi,leila.rossi78@example.com,,398 Willow Road,Seattle,WA,82756,2022-05-07,2023-05-16,315.97,CR-72082,"Contact preference updated, best address is rajesh.moreau@example.com."
+CUST100435,Fatima,Rossi,fatima.rossi435@example.com,,119 Willow Road,Miami,FL,63349,2022-03-04,2022-09-06,2490.47,CR-11824,Asked whether the item is available in a larger size.
+CUST100441,Sofia,Weber,sofia.weber441@example.com,,36 Birch Street,Seattle,WA,76741,2022-11-25,,2544.37,CR-82744,"Reported a damaged package, replacement dispatched."
+CUST100020,Fatima,Moreau,fatima.moreau20@example.com,(378) 403-7114,327 Pine Crescent,Rochester,NY,76845,2022-11-01,2023-04-15,3078.97,CR-21980,"Enquired about loyalty points balance, no further action needed."
+CUST100335,Mei,Weber,mei.weber335@example.com,(221) 816-9216,241 Aspen Way,New York,NY,24252,2023-08-06,,1718.27,CR-92946,Customer asked us to follow up at lucas.haddad@example.com rather than this account.
+CUST100397,David,Chen,david.chen397@example.com,,181 Oakwood Drive,Seattle,WA,42730,2022-12-11,2023-10-22,593.34,CR-24733,Wants marketing preferences updated to email only.
+CUST100291,Michael,Costa,michael.costa291@example.com,(594) 479-8872,203 Pine Crescent,Miami,FL,18513,2022-06-16,2023-01-07,457.06,CR-88354,Asked to change the delivery window to weekday mornings only.
+CUST100369,Michael,Costa,michael.costa369@example.com,,,Tacoma,WA,67817,2022-09-23,2023-03-31,313.32,CR-35486,"Customer called about a delayed shipment, resolved on the same day."
+CUST100143,Elena,Fischer,elena.fischer143@example.com,(741) 992-5379,,Chicago,IL,38524,2023-05-08,,2233.05,CR-12206,"Enquired about loyalty points balance, no further action needed."
+CUST100038,Michael,Haddad,michael.haddad38@example.com,(917) 896-5963,35 Cedar Lane,Chicago,IL,22084,2022-06-03,2023-05-21,4259.12,CR-24374,Asked whether the item is available in a larger size.
+CUST100086,Yuki,Costa,yuki.costa86@example.com,(843) 368-5842,359 Elm Court,Orlando,FL,47355,2023-07-05,2023-10-17,3490.49,CR-43662,"Reported a damaged package, replacement dispatched."
+CUST100186,Oliver,Okafor,oliver.okafor186@example.com,(321) 912-4497,201 Pine Crescent,Miami,FL,34545,2023-02-07,,3291.69,CR-83830,Called to confirm the billing address after a failed payment.
+CUST100421,Sofia,Reyes,sofia.reyes421@example.com,,3 Pine Crescent,Los Angeles,CA,36307,2022-03-24,2022-08-24,3815.27,CR-66481,Duplicate account query - the other one is registered to elena.ivanov@example.com.
+CUST100108,Ethan,Andersson,ethan.andersson108@example.com,(585) 243-4876,134 Oakwood Drive,Peoria,IL,59167,2023-09-06,,3525.63,CR-90074,"Requested a refund for the second item in the order, approved."
+CUST100310,David,Haddad,david.haddad310@example.com,(865) 566-2030,359 Oakwood Drive,Austin,TX,29400,2022-03-07,,2874.98,CR-13987,Asked to change the delivery window to weekday mornings only.
+CUST100219,Yuki,Weber,yuki.weber219@example.com,(631) 361-5266,381 Aspen Way,Peoria,IL,96306,2022-04-03,,3827.94,CR-23688,"Contact preference updated, best address is sofia.murphy@example.com."
+CUST100091,Thomas,Moreau,thomas.moreau91@example.com,,7 Aspen Way,Buffalo,NY,90304,2023-03-09,2023-06-05,48.83,CR-69543,Called to confirm the billing address after a failed payment.
+CUST100442,Fatima,Dubois,fatima.dubois442@example.com,,,Seattle,WA,18789,2022-11-27,2023-04-12,55.94,CR-59745,Asked to change the delivery window to weekday mornings only.
+CUST100305,Grace,Costa,grace.costa305@example.com,(719) 397-6215,62 Cedar Lane,Rochester,NY,88213,2022-11-11,2023-11-17,3756.45,CR-83380,Called to confirm the billing address after a failed payment.
+CUST100171,Fatima,Weber,fatima.weber171@example.com,(692) 948-1596,291 Willow Road,Los Angeles,CA,14029,2023-07-20,2023-09-18,383.05,CR-92613,Asked whether the item is available in a larger size.
+CUST100342,Elena,Andersson,elena.andersson342@example.com,(295) 492-5084,313 Cedar Lane,Peoria,IL,50818,2023-07-07,2024-04-04,2492.49,CR-53845,Asked to change the delivery window to weekday mornings only.
+CUST100092,Michael,Chen,michael.chen92@example.com,(422) 318-8908,,Springfield,IL,22686,2022-09-10,2023-03-19,4122.23,CR-97765,"Reported a damaged package, replacement dispatched."
+CUST100349,Chloe,Rossi,chloe.rossi349@example.com,(918) 291-6874,274 Elm Court,Dallas,TX,25102,2022-11-18,2023-01-17,3928.75,CR-16237,Called to confirm the billing address after a failed payment.
+CUST100007,Daniel,Ivanov,daniel.ivanov7@example.com,,,Los Angeles,CA,11940,2023-09-17,,1847.99,CR-17846,Asked whether the item is available in a larger size.
+CUST100345,Lucas,Murphy,lucas.murphy345@example.com,(549) 898-3386,,Houston,TX,65381,2022-04-28,2022-09-25,2197.93,CR-62631,"Enquired about loyalty points balance, no further action needed."
+CUST100281,Nadia,Nakamura,nadia.nakamura281@example.com,,226 Elm Court,Houston,TX,11696,2023-05-20,2023-06-20,2548.64,CR-68543,Wants marketing preferences updated to email only.
+CUST100351,Thomas,Okafor,thomas.okafor351@example.com,(687) 854-5843,,Miami,FL,25466,2023-08-04,,18.02,CR-89538,Called to confirm the billing address after a failed payment.
+CUST100120,Daniel,Larsen,anna 382@example.com,,,Chicago,IL,95936,2023-01-06,2023-01-25,981.22,CR-23449,Asked whether the item is available in a larger size.
+CUST100326,Yuki,Andersson,yuki.andersson326@example.com,(309) 909-8703,151 Aspen Way,Peoria,IL,89564,2022-08-17,2022-08-23,4069.17,CR-31516,Duplicate account query - the other one is registered to chloe.okafor@example.com.
+CUST100201,Sarah,Mbeki,sarah.mbeki201@example.com,,,Tampa,FL,18007,2023-05-08,,1741.78,CR-23337,Asked whether the item is available in a larger size.
+CUST100110,Rajesh,Dubois,rajesh.dubois110@example.com,(587) 601-1406,140 Aspen Way,Dallas,TX,68351,2023-10-31,2023-11-10,49.4,CR-16122,"Enquired about loyalty points balance, no further action needed."
+CUST100251,Sofia,Moreau,sofia.moreau251@example.com,(938) 943-8343,395 Birch Street,San Diego,CA,57897,2023-08-09,2024-06-14,2316.03,CR-41163,"Reported a damaged package, replacement dispatched."
+CUST100199,Leila,Novak,leila.novak199@example.com,,,Seattle,WA,44828,2023-10-03,,2773.26,CR-20474,Called to confirm the billing address after a failed payment.
+CUST100198,Thomas,Okafor,thomas.okafor198@example.com,,17 Maple Avenue,New York,New York,10744,2022-03-21,2023-02-08,179.93,CR-25611,"Requested a refund for the second item in the order, approved."
+CUST100047,Priya,Larsen,priya.larsen47@example.com,,251 Maple Avenue,Miami,FL,44811,2022-12-16,2023-09-30,3763.91,CR-75565,Asked to change the delivery window to weekday mornings only.
+CUST100337,Priya,Ivanov,priya.ivanov337@example.com,(480) 373-3075,260 Cedar Lane,Austin,TX,64281,2023-09-23,,4163.23,CR-66984,"Customer called about a delayed shipment, resolved on the same day."
+CUST100207,Anna,Patel,anna.patel207@example.com,(354) 355-1962,128 Cedar Lane,Orlando,FL,97866,2023-04-12,2024-02-01,2130.65,CR-34116,Wants marketing preferences updated to email only.
+CUST100023,Nadia,Moreau,nadia.moreau23@example.com,(757) 361-8329,,Sacramento,CA,90125,2022-04-21,,1748.71,CR-46997,"Requested a refund for the second item in the order, approved."
+CUST100035,Nadia,Costa,nadia.costa35@example.com,(521) 919-3760,,Orlando,FL,46084,2022-10-15,2023-11-04,4050.69,CR-31554,Wants marketing preferences updated to email only.
+CUST100139,Yuki,Patel,yuki.patel139@example.com,(212) 839-9002,,Rochester,NY,96183,2023-02-05,,58.12,CR-51891,Wants marketing preferences updated to email only.
+CUST100262,Michael,Nakamura,elena 395@example.com,(683) 321-3840,167 Willow Road,Orlando,FL,42488,2023-10-26,2024-07-18,2550.91,CR-69386,"Enquired about loyalty points balance, no further action needed."
+CUST100458,Omar,Costa,omar.costa458@example.com,,292 Cedar Lane,Spokane,Washington,81553,2022-10-30,,1850.89,CR-66267,"Requested a refund for the second item in the order, approved."
+CUST100077,Leila,Dubois,leila.dubois77@example.com,,,Miami,Florida,38915,2022-09-22,2023-04-04,2368.88,CR-66460,Asked to change the delivery window to weekday mornings only.
+CUST100232,Lucas,Patel,lucas.patel232@example.com,(213) 609-1982,74 Oakwood Drive,Houston,TX,81333,2022-05-16,,1764.38,CR-60284,"Enquired about loyalty points balance, no further action needed."
+CUST100276,Marcus,Silva,marcus.silva276@example.com,,,Tampa,FL,32113,2023-09-28,,440.24,CR-20634,"Customer called about a delayed shipment, resolved on the same day."
+CUST100107,Lucas,Mbeki,lucas.mbeki107@example.com,(962) 412-7225,,San Diego,CA,66283,2023-01-16,2023-03-25,1588.68,CR-32008,"Requested a refund for the second item in the order, approved."
+CUST100226,Mei,Ivanov,mei.ivanov226@example.com,(304) 661-7800,148 Pine Crescent,Spokane,WA,28365,2022-06-12,2022-08-07,2461.39,CR-10796,Asked to change the delivery window to weekday mornings only.
+CUST100057,Elena,Moreau,elena.moreau57@example.com,(718) 656-5336,,Austin,Texas,18680,2022-10-10,2023-04-23,3344.86,CR-20253,Asked whether the item is available in a larger size.
+CUST100115,Fatima,Chen,fatima.chen115@example.com,(237) 251-5300,,Tacoma,Washington,41831,2022-12-06,2022-12-22,64.17,CR-50223,Customer asked us to follow up at marcus.murphy@example.com rather than this account.
+CUST100098,Ethan,Mbeki,ethan.mbeki98@example.com,,296 Maple Avenue,Austin,TX,27602,2022-02-18,,4695.14,674-59-6003,"Requested a refund for the second item in the order, approved."
+CUST100112,Leila,Chen,leila.chen112@example.com,(255) 894-7208,343 Maple Avenue,Rochester,New York,68763,2023-03-15,2023-05-17,3069.86,CR-43229,Asked to change the delivery window to weekday mornings only.
+CUST100228,Sarah,Chen,sarah.chen228@example.com,(885) 265-2301,384 Elm Court,Rochester,NY,15358,2023-05-17,2023-06-29,3221.42,CR-40401,"Enquired about loyalty points balance, no further action needed."
+CUST100136,Aisha,Patel,aisha.patel136@example.com,(394) 792-9670,,Tampa,FL,58126,2023-01-31,2023-03-01,752.01,CR-14759,Asked to change the delivery window to weekday mornings only.
+CUST100103,Nadia,Haddad,nadia.haddad103@example.com,(819) 486-1266,,Orlando,FL,34138,2022-12-12,,2078.14,CR-67538,Wants marketing preferences updated to email only.
+CUST100000,Michael,Nakamura,michael.nakamura0@example.com,(923) 628-5868,124 Oakwood Drive,Austin,TX,33846,2023-10-16,2024-08-25,3335.19,CR-70866,Wants marketing preferences updated to email only.
+CUST100361,Nadia,Costa,nadia.costa361@example.com,(474) 342-9755,,Peoria,IL,98122,2023-11-10,2023-12-12,21.75,CR-52609,"Enquired about loyalty points balance, no further action needed."
+CUST100003,Leila,Murphy,leila.murphy3@example.com,,257 Maple Avenue,Springfield,IL,69336,2022-03-05,2023-02-25,3020.47,CR-58285,"Reported a damaged package, replacement dispatched."
+CUST100264,James,Okafor,james.okafor264@example.com,(966) 386-5349,,Tampa,FL,72451,2023-02-06,2023-03-12,4027.17,CR-62899,Called to confirm the billing address after a failed payment.
+CUST100266,Sofia,Costa,sofia.costa266@example.com,(262) 333-3194,279 Pine Crescent,Rochester,NY,25220,2022-01-31,,749.78,CR-40454,Asked whether the item is available in a larger size.
+CUST100175,Yuki,Novak,yuki.novak175@example.com,,274 Aspen Way,Orlando,FL,70612,2022-11-21,,1916.37,CR-42935,Wants marketing preferences updated to email only.
+CUST100197,Michael,Costa,michael415@ example.com,(967) 332-1201,21 Cedar Lane,Seattle,WA,66783,2022-06-19,,1898.51,CR-41243,Asked whether the item is available in a larger size.
+CUST100250,Marcus,Costa,marcus.costa250@example.com,(618) 918-5798,321 Elm Court,Buffalo,NY,73889,2023-08-27,,4573.94,CR-92411,"Reported a damaged package, replacement dispatched."
+CUST100037,Leila,Dubois,leila.dubois37@example.com,(203) 232-6688,27 Cedar Lane,Orlando,FL,32676,2022-07-07,2022-10-10,3772.74,CR-58490,"Reported a damaged package, replacement dispatched."
+CUST100217,Aisha,Khan,aisha.khan217@example.com,,,Chicago,IL,72318,2023-02-22,,744.68,CR-84461,Called to confirm the billing address after a failed payment.
+CUST100150,Marcus,Moreau,marcus.moreau150@example.com,,,Tacoma,WA,30285,2022-07-05,2023-05-29,1318.37,CR-51490,"Enquired about loyalty points balance, no further action needed."
+CUST100375,Michael,Reyes,michael.reyes375@example.com,(943) 381-6972,,Peoria,IL,96729,2023-09-26,2024-04-04,4073.18,CR-43538,Wants marketing preferences updated to email only.
+CUST100189,Leila,Mbeki,leila.mbeki189@example.com,(842) 988-6750,34 Cedar Lane,Dallas,TX,22497,2022-01-25,,1729.85,CR-42402,"Requested a refund for the second item in the order, approved."
+CUST100294,Priya,Chen,priya.chen294@example.com,,257 Pine Crescent,New York,NY,26741,2023-03-01,2024-01-23,2718.63,CR-14333,"Enquired about loyalty points balance, no further action needed."
+CUST100179,Chloe,Mbeki,chloe.mbeki179@example.com,(845) 622-3512,373 Willow Road,Peoria,Illinois,80698,2022-04-28,2022-07-10,1594.11,CR-27388,Called to confirm the billing address after a failed payment.
+CUST100258,Chloe,Okafor,chloe.okafor258@example.com,(291) 427-7696,382 Birch Street,Peoria,IL,40085,2022-08-07,2023-04-13,4026.75,CR-28916,"Requested a refund for the second item in the order, approved."
+CUST100236,Yuki,Patel,yuki.patel236@example.com,(856) 478-9967,,Buffalo,NY,94869,2023-06-19,2024-01-04,2505.73,CR-23316,Called to confirm the billing address after a failed payment.
+CUST100099,Anna,Okafor,anna.okafor99@example.com,(502) 767-6176,284 Oakwood Drive,Sacramento,CA,42693,2022-10-18,,2458.4,CR-35069,"Customer called about a delayed shipment, resolved on the same day."
+CUST100379,James,Reyes,james.reyes379@example.com,,,Austin,TX,22210,2023-09-16,2024-01-25,109.82,CR-37339,Wants marketing preferences updated to email only.
+CUST100427,Ethan,Weber,ethan.weber427@example.com,,125 Maple Avenue,Tampa,FL,98155,2023-04-09,,1590.07,CR-97414,"Requested a refund for the second item in the order, approved."
+CUST100019,Chloe,Patel,chloe.patel19@example.com,(467) 826-7460,212 Willow Road,Orlando,FL,21178,2023-07-21,2024-02-23,794.46,CR-26046,Asked to change the delivery window to weekday mornings only.
+CUST100451,Mei,Chen,mei.chen451@example.com,(453) 296-4861,281 Pine Crescent,Peoria,IL,95789,2022-02-27,2022-10-16,4319.61,CR-45287,"Requested a refund for the second item in the order, approved."
+CUST100434,Ethan,Weber,ethan.weber434@example.com,,39 Cedar Lane,Austin,Texas,76317,2023-10-10,,1872.45,CR-41217,"Enquired about loyalty points balance, no further action needed."
+CUST100155,Mei,Patel,sofia 432@example.com,,86 Cedar Lane,Tacoma,WA,60824,2022-03-18,2022-12-25,394.27,CR-61251,Wants marketing preferences updated to email only.
+CUST100301,Aisha,Murphy,aisha.murphy301@example.com,(238) 646-9271,277 Pine Crescent,Sacramento,CA,85266,2022-01-11,,328.58,CR-10876,Asked to change the delivery window to weekday mornings only.
+CUST100039,Mei,Silva,mei.silva39@example.com,(274) 945-2121,,Los Angeles,CA,47392,2023-09-26,,2998.74,CR-65478,Asked to change the delivery window to weekday mornings only.
+CUST100309,Oliver,Mbeki,oliver.mbeki309@example.com,(739) 871-5845,337 Aspen Way,Buffalo,NY,97355,2022-03-11,,2637.66,CR-41495,Asked to change the delivery window to weekday mornings only.
+CUST100352,James,Weber,james.weber352@example.com,,,Seattle,WA,92714,2022-03-10,2022-06-03,4560.47,CR-85445,Wants marketing preferences updated to email only.
+CUST100372,Leila,Larsen,leila.larsen372@example.com,(801) 665-4827,,Tampa,FL,27177,2023-02-20,2023-08-21,1954.13,CR-53527,"Customer called about a delayed shipment, resolved on the same day."
+CUST100453,Ethan,Ivanov,ethan.ivanov453@example.com,,268 Pine Crescent,Spokane,WA,49529,2022-02-12,2022-10-30,139.7,CR-36357,Called to confirm the billing address after a failed payment.
+CUST100185,Marcus,Tanaka,marcus.tanaka185@example.com,(666) 619-7004,,Seattle,WA,31768,2022-02-25,,2642.68,CR-39877,"Enquired about loyalty points balance, no further action needed."
+CUST100436,Priya,Tanaka,priya.tanaka436@example.com,,,Tampa,FL,97447,2023-06-25,,4466.99,CR-77251,Wants marketing preferences updated to email only.
+CUST100180,Lucas,Silva,lucas.silva180@example.com,,333 Aspen Way,Peoria,IL,31207,2022-09-09,,1616.27,CR-50188,Called to confirm the billing address after a failed payment.
+CUST100186,Oliver,Okafor,oliver.okafor186@example.com,(321) 912-4497,,Miami,FL,34545,2023-02-07,2023-02-19,3291.69,CR-83830,Called to confirm the billing address after a failed payment.
+CUST100130,James,Mbeki,james.mbeki130@example.com,(682) 525-3082,395 Aspen Way,San Diego,CA,96911,2022-01-09,2022-08-05,4582.72,CR-59123,"Requested a refund for the second item in the order, approved."
+CUST100293,Sarah,Rossi,sarah.rossi293@example.com,(493) 558-3784,399 Pine Crescent,Tacoma,WA,42849,2022-08-03,2022-12-03,745.52,CR-19829,"Requested a refund for the second item in the order, approved."
+CUST100050,James,Kowalski,james.kowalski50@example.com,(228) 339-9015,61 Oakwood Drive,New York,NY,18172,2023-06-10,,2905.67,CR-99102,"Requested a refund for the second item in the order, approved."
+CUST100036,Nadia,Rossi,nadia.rossi36@example.com,(227) 377-7092,63 Aspen Way,Miami,Florida,34793,2022-07-02,2022-09-26,2061.24,CR-69239,Wants marketing preferences updated to email only.
+CUST100024,Oliver,Okafor,oliver.okafor24@example.com,(711) 978-2073,51 Birch Street,Orlando,FL,31086,2022-06-24,2023-01-03,1139.51,CR-14459,Asked to change the delivery window to weekday mornings only.
+CUST100121,Rajesh,Dubois,rajesh.dubois121@example.com,(244) 391-4496,206 Aspen Way,Dallas,TX,84558,2022-03-05,2022-03-25,4477.14,CR-27169,"Reported a damaged package, replacement dispatched."
+CUST100088,Sofia,Costa,sofia.costa88@example.com,(313) 552-5787,394 Maple Avenue,Rochester,NY,85002,2023-04-24,,2457.75,CR-74380,"Reported a damaged package, replacement dispatched."
+CUST100267,Yuki,Novak,yuki.novak267@example.com,(944) 889-3410,6 Aspen Way,Buffalo,NY,15393,2022-07-06,2022-08-19,680.52,CR-33305,"Enquired about loyalty points balance, no further action needed."
+CUST100408,Chloe,Khan,chloe.khan408@example.com,,114 Pine Crescent,Los Angeles,CA,17084,2023-04-12,,4606.11,CR-12786,Asked whether the item is available in a larger size.
+CUST100149,Marcus,Larsen,marcus.larsen149@example.com,,121 Pine Crescent,Springfield,IL,72844,2022-07-21,2022-10-30,3534.28,CR-58157,"Reported a damaged package, replacement dispatched."
+CUST100104,Nadia,Fischer,nadia.fischer104@example.com,(740) 359-2503,186 Birch Street,San Diego,CA,99316,2022-05-18,2022-06-19,1360.7,CR-16275,"Enquired about loyalty points balance, no further action needed."
+CUST100405,Omar,Haddad,omar.haddad405@example.com,,224 Willow Road,Chicago,IL,73806,2023-04-03,2023-08-04,98.26,CR-95512,Asked to change the delivery window to weekday mornings only.
+CUST100379,James,Reyes,james.reyes379@example.com,(785) 385-8551,110 Cedar Lane,Austin,TX,22210,2023-09-16,,109.82,CR-37339,Wants marketing preferences updated to email only.
+CUST100058,Sofia,Rossi,sofia.rossi58@example.com,(727) 263-7090,242 Willow Road,New York,NY,73990,2023-06-17,2023-07-01,4674.96,CR-67378,Called to confirm the billing address after a failed payment.
+CUST100394,Mei,Rossi,mei.rossi394@example.com,,179 Birch Street,New York,New York,90138,2023-03-09,,4198.48,CR-60646,"Requested a refund for the second item in the order, approved."
+CUST100025,Grace,Khan,grace.khan25@example.com,(528) 903-7536,,New York,NY,31713,2023-01-02,2023-03-14,1730.47,CR-61892,Asked whether the item is available in a larger size.
+CUST100396,Anna,Kowalski,anna.kowalski396@example.com,,211 Birch Street,Spokane,Washington,94269,2022-02-17,2022-11-03,2290.5,CR-87742,"Requested a refund for the second item in the order, approved."
+CUST100126,Marcus,Fischer,marcus.fischer126@example.com,(437) 296-4855,6 Cedar Lane,Tampa,FL,90191,2022-10-03,,1319.32,CR-13402,Wants marketing preferences updated to email only.
+CUST100032,Oliver,Larsen,oliver.larsen32@example.com,(731) 748-6425,,Dallas,TX,64680,2022-09-17,,3591.07,706-75-4851,Asked to change the delivery window to weekday mornings only.
+CUST100012,Grace,Dubois,grace.dubois12@example.com,(490) 758-7310,,Tacoma,WA,25884,2023-04-23,2023-06-23,1127.56,CR-27862,"Reported a damaged package, replacement dispatched."
+CUST100285,Lucas,Dubois,lucas.dubois285@example.com,,365 Birch Street,Buffalo,NY,94203,2023-10-27,,4250.21,CR-28675,"Reported a damaged package, replacement dispatched."
+CUST100195,Aisha,Chen,aisha.chen195@example.com,,43 Birch Street,Houston,TX,80038,2022-10-16,2023-07-04,3560.18,CR-62432,Asked to change the delivery window to weekday mornings only.
+CUST100248,Marcus,Ivanov,marcus.ivanov248@example.com,(668) 311-8311,244 Maple Avenue,Peoria,IL,28210,2023-01-01,2023-07-17,3634.08,CR-76082,"Enquired about loyalty points balance, no further action needed."
+CUST100166,Thomas,Rossi,thomas.rossi166@example.com,(512) 968-4577,157 Cedar Lane,Sacramento,California,76499,2023-04-30,,4707.18,CR-55993,Asked to change the delivery window to weekday mornings only.
+CUST100034,David,Dubois,david.dubois34@example.com,,321 Pine Crescent,Houston,TX,25738,2022-07-31,2022-12-18,2554.93,CR-45749,"Customer called about a delayed shipment, resolved on the same day."
+CUST100113,Rajesh,Tanaka,rajesh.tanaka113@example.com,(204) 337-2936,,Orlando,FL,21218,2022-11-23,2023-01-18,4110.45,CR-87867,"Requested a refund for the second item in the order, approved."
+CUST100082,Thomas,Patel,thomas.patel82@example.com,,,Buffalo,New York,18849,2023-07-21,2024-02-18,1805.84,CR-13927,"Requested a refund for the second item in the order, approved."
+CUST100426,Leila,Silva,leila.silva426@example.com,,131 Cedar Lane,Sacramento,CA,59583,2022-11-19,2023-08-11,2582.73,CR-19322,"Reported a damaged package, replacement dispatched."
+CUST100170,Daniel,Costa,daniel.costa170@example.com,(397) 363-7303,212 Elm Court,Tampa,FL,47028,2023-03-16,2024-02-17,2791.38,CR-66735,Asked to change the delivery window to weekday mornings only.
+CUST100389,Thomas,Mbeki,thomas.mbeki389@example.com,(201) 792-4160,193 Maple Avenue,Peoria,IL,57055,2023-07-17,,2051.46,CR-16217,Asked whether the item is available in a larger size.
+CUST100087,Nadia,Murphy,nadia.murphy87@example.com,,203 Birch Street,Rochester,NY,53186,2022-10-03,,686.2,CR-22889,"Customer called about a delayed shipment, resolved on the same day."
+CUST100346,James,Ivanov,james.ivanov346@example.com,(780) 457-4647,230 Pine Crescent,Houston,TX,12383,2023-08-04,2024-06-29,2122.8,CR-28992,Asked whether the item is available in a larger size.
+CUST100399,Marcus,Tanaka,marcus.tanaka399@example.com,(366) 771-6797,269 Aspen Way,Tampa,FL,54393,2022-01-30,2022-05-23,2383.29,CR-50051,"Requested a refund for the second item in the order, approved."
+CUST100240,Nadia,Kowalski,nadia.kowalski240@example.com,,,Miami,FL,19781,2022-12-14,2023-05-18,2208.05,CR-57427,Called to confirm the billing address after a failed payment.
+CUST100067,David,Murphy,david.murphy67@example.com,,368 Birch Street,Houston,Texas,83584,2022-04-29,,1511.76,CR-67770,"Requested a refund for the second item in the order, approved."
+CUST100030,Thomas,Fischer,thomas.fischer30@example.com,(451) 300-5755,14 Cedar Lane,Tampa,FL,29451,2022-11-21,2023-12-14,2118.25,CR-93060,Asked whether the item is available in a larger size.
+CUST100013,Nadia,Rossi,nadia.rossi13@example.com,(778) 462-6458,255 Cedar Lane,Tampa,FL,58399,2023-01-11,,2064.75,CR-82201,"Customer called about a delayed shipment, resolved on the same day."
+CUST100056,Sarah,Dubois,sarah.dubois56@example.com,(811) 756-2549,,Miami,FL,22666,2022-10-20,2023-02-14,3034.69,CR-32477,Called to confirm the billing address after a failed payment.
+CUST100109,Thomas,Weber,thomas.weber109@example.com,(421) 904-1454,218 Elm Court,Austin,TX,65867,2023-07-11,2024-06-15,149.21,CR-30136,Wants marketing preferences updated to email only.
+CUST100140,Oliver,Patel,oliver.patel140@example.com,(456) 632-5597,,Peoria,IL,96955,2022-11-18,2023-04-15,4711.99,CR-46032,Wants marketing preferences updated to email only.
+CUST100287,Michael,Dubois,rajesh483.example.com,(241) 787-8447,152 Aspen Way,Tacoma,Washington,53331,2022-05-20,2023-05-07,2713.15,CR-63173,Asked to change the delivery window to weekday mornings only.
+CUST100272,Michael,Larsen,michael.larsen272@example.com,(462) 493-6257,230 Maple Avenue,Miami,Florida,66187,2023-10-22,2024-07-13,2781.37,CR-43586,Called to confirm the billing address after a failed payment.
+CUST100245,David,Chen,david.chen245@example.com,,242 Cedar Lane,Austin,TX,46373,2023-07-18,2023-07-29,2235.22,CR-18881,Asked to change the delivery window to weekday mornings only.
+CUST100245,David,Chen,david.chen245@example.com,,,Austin,TX,46373,2023-07-18,2023-07-29,2235.22,CR-18881,Asked to change the delivery window to weekday mornings only.
+CUST100032,Oliver,Larsen,oliver.larsen32@example.com,(731) 748-6425,,Dallas,TX,64680,2022-09-17,2022-11-10,3591.07,CR-89568,Asked to change the delivery window to weekday mornings only.
+CUST100400,Elena,Reyes,elena.reyes400@example.com,,,Seattle,WA,30468,2022-01-29,2022-04-10,1906.58,CR-94151,Called to confirm the billing address after a failed payment.
+CUST100045,Sofia,Weber,sofia.weber45@example.com,,,Orlando,FL,39704,2022-03-24,2023-02-25,524.94,CR-96523,Wants marketing preferences updated to email only.
+CUST100354,Yuki,Moreau,yuki.moreau354@example.com,(872) 958-5804,,Sacramento,CA,12479,2022-11-17,,1617.65,CR-83617,Asked whether the item is available in a larger size.
+CUST100017,Ethan,Khan,ethan.khan17@example.com,(728) 267-8794,263 Elm Court,Rochester,NY,84200,2023-01-12,2023-04-29,2209.93,CR-55190,Asked whether the item is available in a larger size.
+CUST100210,Marcus,Chen,marcus.chen210@example.com,(642) 944-9346,,Seattle,WA,28180,2022-06-05,,2059.38,CR-72697,Asked to change the delivery window to weekday mornings only.
+CUST100009,Daniel,Haddad,nadia493@.com,(669) 630-1178,258 Maple Avenue,Miami,FL,36887,2022-10-09,2023-04-19,2988.88,CR-86881,"Reported a damaged package, replacement dispatched."
+CUST100162,Omar,Costa,omar.costa162@example.com,(257) 296-1762,331 Cedar Lane,Los Angeles,CA,12201,2022-11-02,,3668.25,CR-82856,Asked to change the delivery window to weekday mornings only.
+CUST100290,Thomas,Reyes,thomas.reyes290@example.com,(331) 497-4908,,New York,NY,71289,2022-12-01,,2876.8,CR-14252,Asked to change the delivery window to weekday mornings only.
+CUST100093,Sarah,Kowalski,sarah.kowalski93@example.com,(582) 632-1625,159 Aspen Way,San Diego,CA,89984,2022-04-23,2022-07-06,2444.2,CR-15408,Asked to change the delivery window to weekday mornings only.
+CUST100398,Marcus,Kowalski,marcus.kowalski398@example.com,(785) 278-8715,397 Birch Street,Tampa,Florida,60773,2022-12-13,,3722.79,CR-90865,"Reported a damaged package, replacement dispatched."
+CUST100084,Chloe,Costa,chloe.costa84@example.com,,141 Elm Court,Dallas,TX,18367,2022-10-16,2023-10-02,3632.58,CR-93091,Asked whether the item is available in a larger size.
+CUST100384,Thomas,Kowalski,thomas.kowalski384@example.com,(833) 694-2760,185 Pine Crescent,Houston,TX,97845,2023-10-04,2024-01-28,4011.07,CR-51011,Called to confirm the billing address after a failed payment.
